@@ -2,16 +2,22 @@ import React from 'react';
 import 'bulma/css/bulma.min.css';
 import './App.css';
 
-import TemplateBase from './components/templateBase';
+import TemplatePicker from './components/templatePicker';
+// import ParentSelector from './components/test/parentSelector';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className='App'>
+      <header className='App-header'>
         EMU
       </header>
       <main>
-        <TemplateBase />
+        {/* <div>
+        <ParentSelector />
+        </div> */}
+        <div>
+         <TemplatePicker />
+        </div>
       </main>
     </div>
   );
