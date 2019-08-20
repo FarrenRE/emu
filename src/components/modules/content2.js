@@ -24,7 +24,7 @@ class Content2 extends React.Component {
                             <table align="center" border={0} cellPadding={0} cellSpacing={0} width="100%">
                               <tbody>
                                 <tr>
-                                  <td align="center" valign="top"><a href="https://www.adma.com.au/iq/certificate/digital-marketing-certificate?utm_medium=Email&utm_source=ADMA&utm_campaign=Monthly&content=Content" name="Content_1_Image" target="_blank" rel="noopener noreferrer" xt="SPCLICK"><img alt="content" border={0} height={190} src="https://via.placeholder.com/269x190.jpg" style={{display: 'block'}} width={269} /></a></td>
+                                  <td align="center" valign="top"><a href="https://www.adma.com.au/iq/certificate/digital-marketing-certificate?utm_medium=Email&utm_source=ADMA&utm_campaign=Monthly&content=Content" name={ `Content_${ this.props.id }_IMAGE` } target="_blank" rel="noopener noreferrer" xt="SPCLICK"><img alt="content" border={0} height={190} src="https://via.placeholder.com/269x190.jpg" style={{display: 'block'}} width={269} /></a></td>
                                 </tr>
                                 <tr>
                                   <td className="em_height" height={15} style={{fontSize: '1px', lineHeight: '1px'}} />
