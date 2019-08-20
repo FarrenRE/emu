@@ -7,23 +7,20 @@ class Base extends React.Component {
   }
   render() {
     return (
-      <table align="center" bgcolor="#f6f6f6" border={0} cellPadding={0} cellSpacing={0} width="100%">
+      <table align="center" bgcolor={ this.props.theme.colors.bgColor } border={0} cellPadding={0} cellSpacing={0} width="100%">
         {/* ==Header Starts Here==*/}
         <tbody>
-          <tr>
-            <td><span className="preheader" style={{color: 'rgb(54, 54, 54)', fontSize: '1px'}}>All the highlights from ADMA Data Day now available On-Demand.</span></td>
-          </tr>
           <tr>
             <td align="center" valign="top">
               <table align="center" bgcolor="#ffffff" border={0} cellPadding={0} cellSpacing={0} width="100%">
                 <tbody>
                   <tr>
                     {/* Left side*/}
-                    <td className="em_hide" height={50} valign="top">
-                      <table align="left" bgcolor="#f6f6f6" border={0} cellPadding={0} cellSpacing={0} width="100%">
+                    <td className="em_hide" bgcolor="#f6f6f6" height={50} valign="top">
+                      <table align="left" border={0} cellPadding={0} cellSpacing={0} width="100%">
                         <tbody>
                           <tr>
-                            <td height={50}><img alt="" border={0} contentid="5ac949b4-16a23e21e10-c2a8af96738cc20073a7254c07aedd78" height={1} name="7325376_spacer.gif" spname="7325376_spacer.gif" src="7325376_spacer.gif" style={{display: 'block'}} width={1} xt="SPIMAGE" /></td>
+                            <td className="em_height" height={50}>&nbsp;</td>
                           </tr>
                         </tbody>
                       </table>
@@ -37,7 +34,10 @@ class Base extends React.Component {
                               <table align="center" bgcolor="#ffffff" border={0} cellPadding={0} cellSpacing={0} width="100%">
                                 <tbody>
                                   <tr>
-                                    <td className="em_side" height={50} style={{textAlign: 'center', color: 'rgb(153, 153, 153)', fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '11px'}} valign="middle">If you cannot see this email, please <a href="#SPCLICKTOVIEW" name="SPCLICKTOVIEW" style={{color: 'rgb(153, 153, 153)', textDecoration: 'underline'}} target="_blank" rel="noopener noreferrer" xt="SPCLICKTOVIEW">click to view it online</a></td>
+                                    <td bgcolor="#FFFFFF"><span className="preheader" style={{color: this.props.theme.colors.bgColor, fontSize: '1px'}}>Preheader goes here.</span></td>
+                                  </tr>
+                                  <tr>
+                                    <td style={{textAlign: 'center', color: 'rgb(153, 153, 153)', fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '11px'}} valign="middle">If you cannot see this email, please <a href="#SPCLICKTOVIEW" name="SPCLICKTOVIEW" style={{color: 'rgb(153, 153, 153)', textDecoration: 'underline'}} target="_blank" rel="noopener noreferrer" xt="SPCLICKTOVIEW">click to view it online</a></td>
                                   </tr>
                                 </tbody>
                               </table>
@@ -47,11 +47,11 @@ class Base extends React.Component {
                       </table>
                     </td>
                     {/* Right side*/}
-                    <td className="em_hide" height={50} valign="top">
+                    <td className="em_hide" bgcolor="#f6f6f6" height={50} valign="top">
                       <table align="left" border={0} cellPadding={0} cellSpacing={0} width="100%">
                         <tbody>
                           <tr>
-                            <td bgcolor="#f6f6f6" height={50}><img alt="" border={0} contentid="5ac949b4-16a23e21e10-c2a8af96738cc20073a7254c07aedd78" height={1} name="7325376_spacer.gif" spname="7325376_spacer.gif" src="7325376_spacer.gif" style={{display: 'block'}} width={1} xt="SPIMAGE" /></td>
+                            <td className="em_height" height={50}>&nbsp;</td>
                           </tr>
                         </tbody>
                       </table>
@@ -142,15 +142,15 @@ class Base extends React.Component {
           {/* ===Footer Starts Here===*/}
           <tr>
             <td align="center" valign="top">
-              <table align="center" bgcolor="#363636" border={0} cellPadding={0} cellSpacing={0} width="100%">
+              <table align="center" bgcolor={ this.props.theme.colors.footer } border={0} cellPadding={0} cellSpacing={0} width="100%">
                 <tbody>
                   <tr>
-                    <td bgcolor="#363636" height={106}><img alt="" border={0} contentid="5ac949b4-16a23e21e10-c2a8af96738cc20073a7254c07aedd78" height={1} name="7325376_spacer.gif" spname="7325376_spacer.gif" src="7325376_spacer.gif" style={{display: 'block'}} width={1} xt="SPIMAGE" /></td>
+                    <td  height={106}><img alt="" border={0} contentid="5ac949b4-16a23e21e10-c2a8af96738cc20073a7254c07aedd78" height={1} name="7325376_spacer.gif" spname="7325376_spacer.gif" src="7325376_spacer.gif" style={{display: 'block'}} width={1} xt="SPIMAGE" /></td>
                     <td width={600}>
                       <table className="em_wrapper" align="center" border={0} cellPadding={0} cellSpacing={0} style={{tableLayout: 'fixed'}} width={600}>
                         <tbody>
                           <tr>
-                            <td className="em_hide" bgcolor="#363636" height={1} style={{lineHeight: '0px', fontSize: '0px'}}><img alt="" border={0} contentid="5ac949b4-16a23e21e10-c2a8af96738cc20073a7254c07aedd78" height={1} name="7325376_spacer.gif" spname="7325376_spacer.gif" src="7325376_spacer.gif" style={{width: '600px', display: 'block', minWidth: '600px'}} xt="SPIMAGE" /></td>
+                            <td className="em_hide" height={1} style={{lineHeight: '0px', fontSize: '0px'}}><img alt="" border={0} contentid="5ac949b4-16a23e21e10-c2a8af96738cc20073a7254c07aedd78" height={1} name="7325376_spacer.gif" spname="7325376_spacer.gif" src="7325376_spacer.gif" style={{width: '600px', display: 'block', minWidth: '600px'}} xt="SPIMAGE" /></td>
                           </tr>
                           <tr>
                             <td align="center" valign="top">
@@ -223,27 +223,24 @@ class Base extends React.Component {
                         </tbody>
                       </table>
                     </td>
-                    <td bgcolor="#363636" height={106}><img alt="" border={0} contentid="5ac949b4-16a23e21e10-c2a8af96738cc20073a7254c07aedd78" height={1} name="7325376_spacer.gif" spname="7325376_spacer.gif" src="7325376_spacer.gif" style={{display: 'block'}} width={1} xt="SPIMAGE" /></td>
+                    <td height={106}><img alt="" border={0} contentid="5ac949b4-16a23e21e10-c2a8af96738cc20073a7254c07aedd78" height={1} name="7325376_spacer.gif" spname="7325376_spacer.gif" src="7325376_spacer.gif" style={{display: 'block'}} width={1} xt="SPIMAGE" /></td>
                   </tr>
                 </tbody>
               </table>
             </td>
           </tr>
           {/* // Footer Ends Here*/}
-          {/* Red Line Starts Here*/}
+          {/* Line Starts Here*/}
           <tr>
-            <td align="center" bgcolor="#e01d21">
-              <table className="em_wrapper" align="center" border={0} cellPadding={0} cellSpacing={0} style={{tableLayout: 'fixed'}} width={600}>
+            <td align="center" bgcolor={ this.props.theme.colors.primary } height={3}>
+              <table align="center" border={0} cellPadding={0} cellSpacing={0} style={{tableLayout: 'fixed'}} width="100%">
                 <tbody>
-                  <tr>
-                    <td className="em_hide" bgcolor="#e01d21" height={1} style={{lineHeight: '0px', fontSize: '0px'}}><img alt="" border={0} contentid="5ac949b4-16a23e21e10-c2a8af96738cc20073a7254c07aedd78" height={1} name="7325376_spacer.gif" spname="7325376_spacer.gif" src="7325376_spacer.gif" style={{width: '600px', display: 'block', minWidth: '600px'}} xt="SPIMAGE" /></td>
-                  </tr>
                   <tr>
                     <td align="center" valign="top">
                       <table align="center" border={0} cellPadding={0} cellSpacing={0} width="100%">
                         <tbody>
                           <tr>
-                            <td height={2} style={{lineHeight: '0px', fontSize: '0px'}}><img alt="" border={0} contentid="5ac949b4-16a23e21e10-c2a8af96738cc20073a7254c07aedd78" height={1} name="7325376_spacer.gif" spname="7325376_spacer.gif" src="7325376_spacer.gif" style={{display: 'block'}} width={1} xt="SPIMAGE" /></td>
+                            <td height={3} style={{lineHeight: '0px', fontSize: '0px'}}>&nbsp;</td>
                           </tr>
                         </tbody>
                       </table>
@@ -253,21 +250,21 @@ class Base extends React.Component {
               </table>
             </td>
           </tr>
-          {/* // Red Line Ends Here*/}
+          {/* // Line Ends Here*/}
           {/* Copy Rights Starts Here*/}
           <tr>
             <td align="center" bgcolor="#010101">
               <table className="em_wrapper" align="center" border={0} cellPadding={0} cellSpacing={0} style={{tableLayout: 'fixed'}} width={600}>
                 <tbody>
                   <tr>
-                    <td className="em_hide" bgcolor="#010101" height={1} style={{lineHeight: '0px', fontSize: '0px'}}><img alt="" border={0} contentid="5ac949b4-16a23e21e10-c2a8af96738cc20073a7254c07aedd78" height={1} name="7325376_spacer.gif" spname="7325376_spacer.gif" src="7325376_spacer.gif" style={{width: '600px', display: 'block', minWidth: '600px'}} xt="SPIMAGE" /></td>
+                    <td className="em_hide" bgcolor="#010101" height={1} style={{lineHeight: '0px', fontSize: '0px'}}>&nbsp;</td>
                   </tr>
                   <tr>
                     <td align="center" valign="top">
                       <table align="center" border={0} cellPadding={0} cellSpacing={0} width="100%">
                         <tbody>
                           <tr>
-                            <td className="em_side" height={50} style={{textAlign: 'left', color: 'rgb(111, 111, 111)', fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '11px'}} valign="middle">© ADMA Australia. All rights reserved.</td>
+                            <td className="em_side" height={50} style={{textAlign: 'left', color: 'rgb(111, 111, 111)', fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '11px'}} valign="middle">© { this.props.theme.org.abbr } Australia. All rights reserved.</td>
                           </tr>
                         </tbody>
                       </table>
