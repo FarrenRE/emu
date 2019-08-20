@@ -13,7 +13,8 @@ class TemplatePicker extends React.Component {
     super(props);
     this.state = {
       modules: ['text', 'content2'],
-      assoc: 'adma'
+      assoc: 'adma',
+      utm: { medium: 'Email', source: 'ADMA', campaign: 'Monthly' }
     };
 
     this.themes = {
@@ -75,6 +76,13 @@ class TemplatePicker extends React.Component {
   updateAssoc = (evt) => {
     this.setState({ assoc: evt.target.value });
   }
+  updateUTM = (evt) => {
+    let newUTM = this.state.utm;
+    const name = evt.target.name;
+    const value = evt.target.value;
+    newUTM[ name ] = value;
+    this.setState({ utm: newUTM });
+  }
   render() {
     const childs = [];
 
@@ -114,6 +122,10 @@ class TemplatePicker extends React.Component {
               <option value='adma'>ADMA</option>
               <option value='dtc'>D+TC</option>
             </select>
+            <br />
+            utm_medium=<input onChange={ this.updateUTM } type='text' name='medium' defaultValue='Email' /><br />
+            utm_source=<input onChange={ this.updateUTM } type='text' name='source' defaultValue={ this.state.assoc.toUpperCase() } /><br />
+            utm_campaign<input onChange={ this.updateUTM } type='text' name='campaign' defaultValue='Monthly' />
           </div>
         </div>
       </div>
