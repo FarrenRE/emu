@@ -9,7 +9,7 @@ function App() {
   return (
     <div className='App'>
       <header className='App-header'>
-        EMU
+        <h1>EMU</h1>
       </header>
       <main>
         {/* <div>
