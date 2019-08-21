@@ -3,9 +3,13 @@ import React from 'react';
 import Base from './base';
 import Text from './modules/text';
 import Content2 from './modules/content2';
+import ContentLeft from './modules/contentLeft';
 import Banner from './modules/banner';
 import Button1 from './modules/button1';
 import Button2 from './modules/button2';
+import Heading from './modules/heading';
+
+import themes from './themes';
 
 /**
  * Placeholder
@@ -14,67 +18,11 @@ class TemplatePicker extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      modules: ['button1', 'content2', 'button2'],
+      modules: ['text', 'button2', 'heading', 'content2', 'content-left', 'button1', 'banner'],
       assoc: 'adma',
       utm: { medium: 'Email', source: 'ADMA', campaign: 'Monthly' }
     };
-    this.themes = {
-      adma: {
-        org: {
-          name: 'Association for Data-driven Marketing and Advertising',
-          abbr: 'ADMA',
-          abn: '34 002 909 800',
-          addr: 'Level 6 50 Carrington Street, Sydney NSW 2000',
-          website: 'https://www.adma.com.au',
-          social: {
-            fb: 'http://www.facebook.com/adma.com.au',
-            tw: 'http://www.twitter.com/adma',
-            li: 'https://www.linkedin.com/company/adma',
-          },
-          logos: {
-            header: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/ADMA_assoc_header-logos_400x75.jpg',
-            lockup: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/ADMA_assoc_aadl-lockup_110x40.png',
-          },
-        },
-        colors: {
-          primary: '#CC0000',
-          primaryLighter: '#e60000',
-          primaryDarker: '#b30000',
-          secondary: '#FFFFFF',
-          bgColor: '#F6F6F6',
-          link: '#CC0000',
-          footer: '#363636'
-        }
-      },
-      dtc: {
-        org: {
-          name: 'Digital + Technology Collective',
-          abbr: 'D+TC',
-          abn: '34 002 909 800',
-          addr: 'Level 6 50 Carrington Street, Sydney NSW 2000',
-          website: 'https://www.dtcollective.org.au',
-          social: {
-            fb: 'https://www.facebook.com/DigitalTechnologyCollective',
-            tw: 'https://twitter.com/DandTCollective',
-            li: 'https://www.linkedin.com/company/72345',
-          },
-          logos: {
-            header: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/DTC_assoc_header-logos_400x75.jpg',
-            lockup: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/DTC_assoc_aadl-lockup_110x40.png',
-          },
-        },
-        colors: {
-          primary: '#553278',
-          primaryLighter: '#663c90',
-          primaryDarker: '#40265a',
-          secondary: '#FFFFFF',
-          bgColor: '#F6F6F6',
-          link: '#804bb4',
-          footer: '#553278',
-          footerStripe: '#363636',
-        }
-      }
-    }
+    this.themes = themes;
   }
   spawnChild = (evt) => {
     const catArr = this.state.modules.concat( evt.target.value )
@@ -114,6 +62,16 @@ class TemplatePicker extends React.Component {
             />
           );
           break;
+          case 'content-left':
+              childs.push( 
+                <ContentLeft
+                  key={i}
+                  id={i+1} 
+                  theme={ this.themes[this.state.assoc] }
+                  utms={ `?utm_medium=${ this.state.utm.medium }&utm_source=${ this.state.utm.source }&utm_campaign=${ this.state.utm.campaign }` }
+                />
+              );
+              break;
         case 'text':
           childs.push( 
             <Text
@@ -154,6 +112,16 @@ class TemplatePicker extends React.Component {
             />
           );
           break;
+          case 'heading':
+          childs.push( 
+            <Heading
+              key={i}
+              id={i+1} 
+              theme={ this.themes[this.state.assoc] }
+              utms={ `?utm_medium=${ this.state.utm.medium }&utm_source=${ this.state.utm.source }&utm_campaign=${ this.state.utm.campaign }` }
+            />
+          );
+          break;
         default:
           break;
       }
@@ -162,6 +130,7 @@ class TemplatePicker extends React.Component {
       <div>
         <select onChange={ this.updateAssoc } style={{ padding: '0.25em', fontSize: '1em', margin: '0.25em' }}>
           <option value='adma'>ADMA</option>
+          <option value='iq'>IQ</option>
           <option value='dtc'>D+TC</option>
         </select>
         <div className='columns'>
@@ -177,15 +146,16 @@ class TemplatePicker extends React.Component {
           </div>
           <div className='column'>
             <h2>Settings</h2>
-            <div>
+            <div style={{ marginBottom: '1em' }}>
               <button onClick={ this.spawnChild } value='text'>Spawn text</button><br />
               <button onClick={ this.spawnChild } value='content2'>Spawn content2</button><br />
+              <button onClick={ this.spawnChild } value='content-left'>Spawn content-left</button><br />
               <button onClick={ this.spawnChild } value='banner'>Spawn banner</button><br />
               <button onClick={ this.spawnChild } value='button1'>Spawn button1</button><br />
               <button onClick={ this.spawnChild } value='button2'>Spawn button2</button><br />
             </div>
-            <div><button onClick={ this.despawnChild }>Despawn module</button></div>            
-            <div>
+            <div style={{ marginBottom: '1em' }}><button onClick={ this.despawnChild }>Despawn module</button></div>            
+            <div style={{ marginBottom: '1em' }}>
               utm_medium=<input onChange={ this.updateUTM } type='text' name='medium' defaultValue='Email' /><br />
               utm_source=<input onChange={ this.updateUTM } type='text' name='source' defaultValue={ this.state.assoc.toUpperCase() } /><br />
               utm_campaign<input onChange={ this.updateUTM } type='text' name='campaign' defaultValue='Monthly' />
