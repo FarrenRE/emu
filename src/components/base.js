@@ -1,10 +1,8 @@
 import React from 'react';
 
+import IQFooterLinks from './modules/iqFooterLinks';
+
 class Base extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {};
-  }
   render() {
     return (
       <html>
@@ -87,7 +85,7 @@ class Base extends React.Component {
                               <table align="center" bgcolor="#ffffff" border={0} cellPadding={0} cellSpacing={0} width="100%">
                                 <tbody>
                                   <tr>
-                                    <td align="left" valign="bottom" style={{ verticalAlign: 'bottom' }}><a href={ this.props.theme.org.website + this.props.utms } name="logo_link" target="_blank" rel="noopener noreferrer" xt="SPCLICK"><img className="em_full_img" alt={ this.props.theme.org.abbr } border={0} height={75} src={ this.props.theme.org.logos.header } title={ this.props.theme.org.abbr } width={400} xt="SPIMAGE" /></a></td>
+                                    <td align="left" valign="bottom" style={{ verticalAlign: 'bottom' }}><a href={ this.props.theme.org.website + this.props.utms } name="logo_link" target="_blank" rel="noopener noreferrer" xt="SPCLICK"><img className="em_full_img" style={{ display: 'block' }} alt={ this.props.theme.org.abbr } border={0} height={75} src={ this.props.theme.org.logos.header } title={ this.props.theme.org.abbr } width={400} xt="SPIMAGE" /></a></td>
                                     <td align="right" valign="bottom" style={{ verticalAlign: 'bottom' }}>
                                       <table align="center" border={0} cellPadding={0} cellSpacing={0} width="100%">
                                         <tbody>
@@ -140,8 +138,8 @@ class Base extends React.Component {
               <table align="center" bgcolor={ this.props.theme.colors.footer } border={0} cellPadding={0} cellSpacing={0} width="100%">
                 <tbody>
                   <tr>
-                    <td>&nbsp;</td>
-                    <td width={580}>
+                    <td align="center" valign="top">&nbsp;</td>
+                    <td align="center" valign="top">
                       <table className="em_wrapper" align="center" border={0} cellPadding={0} cellSpacing={0} style={{tableLayout: 'fixed'}} width={580}>
                         <tbody>
                           <tr>
@@ -149,64 +147,55 @@ class Base extends React.Component {
                               <table border={0} cellPadding={0} cellSpacing={0} width="100%">
                                 <tbody>
                                   <tr>
-                                    <td className="em_height" height={26} style={{lineHeight: '1px', fontSize: '1px'}}><img alt="" border={0} contentid="5ac949b4-16a23e21e10-c2a8af96738cc20073a7254c07aedd78" height={1} name="7325376_spacer.gif" spname="7325376_spacer.gif" src="7325376_spacer.gif" style={{display: 'block'}} width={1} xt="SPIMAGE" /></td>
+                                    <td className="em_height" height={20} style={{lineHeight: '1px', fontSize: '1px'}}>&nbsp;</td>
                                   </tr>
                                   <tr>
                                     <td valign="top">
                                       <table className="em_tbl_312" align="center" border={0} cellPadding={0} cellSpacing={0} width="100%">
-                                        <tbody>
-                                          <tr>
-                                            <td valign="top">
-                                              <table className="em_wrapper" align="left" border={0} cellPadding={0} cellSpacing={0} width={450}>
-                                                <tbody>
-                                                  <tr>
-                                                    <td className="em_white" style={{textAlign: 'left', color: 'rgb(255, 255, 255)', lineHeight: '13px', fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '10px'}}>AADL trading as { this.props.theme.org.abbr }. Level 6 50 Carrington Street, Sydney NSW 2000. ABN: 34 002 909 800. This email was sent to %%email%%. Click <a href="http://www.pages01.net/adma/ADMAPreference/unsubscribe.html/" name="www_pages01_net_adma_ADMAPrefe" style={{color: 'rgb(255, 255, 255)'}} xt="SPCLICK">here</a>	if you prefer not to receive emails from { this.props.theme.org.abbr } Australia. © Copyright { new Date().getFullYear() } { this.props.theme.org.abbr } Australia. All Rights Reserved.</td>
-                                                  </tr>
-                                                </tbody>
-                                              </table>
-                                              <table className="em_wrapper" align="right" border={0} cellPadding={0} cellSpacing={0} width={130}>
-                                                <tbody>
-                                                  <tr>
-                                                    <td className="em_pad_top" align="right" valign="top"><img alt="ADMA" border={0} height={25} src={ this.props.theme.org.logos.lockup } style={{display: 'block'}} title="ADMA" width={110} xt="SPIMAGE" /></td>
-                                                  </tr>
-                                                </tbody>
-                                              </table>
-                                            </td>
-                                          </tr>
-                                        </tbody>
+                                        <tr>
+                                          <td valign="top">
+                                            <table className="em_wrapper" align="left" border={0} cellPadding={0} cellSpacing={0} width={450}>
+
+                                              { this.props.theme.org.abbr === 'ADMA IQ' ? <IQFooterLinks /> : '' }
+
+                                              <tr>
+                                                <td className="em_white" style={{textAlign: 'left', color: 'rgb(255, 255, 255)', lineHeight: '13px', fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '10px'}}>AADL trading as { this.props.theme.org.abbr }. Level 6 50 Carrington Street, Sydney NSW 2000. ABN: 34 002 909 800. This email was sent to %%email%%. Click <a href="http://www.pages01.net/adma/ADMAPreference/unsubscribe.html/" name="www_pages01_net_adma_ADMAPrefe" style={{color: 'rgb(255, 255, 255)'}} xt="SPCLICK">here</a>	if you prefer not to receive emails from { this.props.theme.org.abbr } Australia. © Copyright { new Date().getFullYear() } { this.props.theme.org.abbr } Australia. All Rights Reserved.</td>
+                                              </tr>
+                                            </table>
+                                            <table className="em_wrapper" align="right" border={0} cellPadding={0} cellSpacing={0} width={130}>
+                                              <tr>
+                                                <td className="em_pad_top" align="right" valign="top"><img alt="ADMA" border={0} height={25} src={ this.props.theme.org.logos.lockup } style={{display: 'block'}} title="ADMA" width={110} xt="SPIMAGE" /></td>
+                                              </tr>
+                                            </table>
+                                          </td>
+                                        </tr>
                                       </table>
                                     </td>
                                   </tr>
                                   <tr>
-                                    <td className="em_height" height={20} style={{lineHeight: '1px', fontSize: '1px'}}><img alt="" border={0} contentid="5ac949b4-16a23e21e10-c2a8af96738cc20073a7254c07aedd78" height={1} name="7325376_spacer.gif" spname="7325376_spacer.gif" src="7325376_spacer.gif" style={{display: 'block'}} width={1} xt="SPIMAGE" /></td>
+                                    <td className="em_height" height={20} style={{lineHeight: '1px', fontSize: '1px'}}>&nbsp;</td>
                                   </tr>
                                   <tr>
                                     <td align="left" valign="top">
-                                      <table className="em_wrapper" align="left" border={0} cellPadding={0} cellSpacing={0} width={312}>
-                                        <tbody>
-                                          <tr>
-                                            <td align="center" valign="top">
-                                              <table align="center" border={0} cellPadding={0} cellSpacing={0} width={180}>
-                                                <tbody>
-                                                  <tr>
-                                                    <td align="center" valign="top" width={47}><a href="http://www.facebook.com/adma.com.au" name="www_facebook_com_adma_com_au" target="_blank" rel="noopener noreferrer" xt="SPCLICK"><img alt="facebook" border={0} height={47} src="https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/icon_facebook.jpg" style={{display: 'block'}} width={47} /></a></td>
-                                                    <td className="em_width" width={13}>&nbsp;&nbsp;</td>
-                                                    <td align="center" valign="top" width={47}><a href="http://www.twitter.com/adma" name="www_twitter_com_adma" target="_blank" rel="noopener noreferrer" xt="SPCLICK"><img alt="twitter" border={0} height={47} src="https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/icon_twitter.jpg" style={{display: 'block'}} width={47} /></a></td>
-                                                    <td className="em_width" width={13}>&nbsp;&nbsp;</td>
-                                                    <td align="center" valign="top" width={47}><a href="https://www.youtube.com/channel/UCP8TUs7qz8wxAnNyLH3bfpQ" name="www_youtube_com_channel_UCP8TU" target="_blank" rel="noopener noreferrer" xt="SPCLICK"><img alt="you tube" border={0} height={47} src="https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/icon_you_tube.jpg" style={{display: 'block'}} width={47} /></a></td>
-                                                    <td className="em_width" width={13}>&nbsp;&nbsp;</td>
-                                                    <td align="center" valign="top" width={47}><a href="https://www.linkedin.com/company/adma" name="www_linkedin_com_company_adma" target="_blank" rel="noopener noreferrer" xt="SPCLICK"><img alt="linkedin" border={0} height={47} src="https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/icon_linkedin.jpg" style={{display: 'block'}} width={47} /></a></td>
-                                                  </tr>
-                                                </tbody>
-                                              </table>
-                                            </td>
-                                          </tr>
-                                        </tbody>
+                                      <table className="em_wrapper" align="left" border={0} cellPadding={0} cellSpacing={0} width="100%">
+                                        <tr>
+                                          <td align="center" valign="top">
+                                            <table align="left" border={0} cellPadding={0} cellSpacing={0} width={159}>
+                                              <tr>
+                                                <td align="center" valign="top" width={47} height={47}><a href={this.props.theme.org.social.fb + this.props.utms + '&utm_content=footerSocialFacebook' } name="social_footer_facebook" target="_blank" rel="noopener noreferrer" xt="SPCLICK"><img alt="facebook" border={0} width={47} height={47} src="https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/icon_facebook.jpg" style={{display: 'block'}} /></a></td>
+                                                <td></td>
+                                                <td align="center" valign="top" width={47} height={47}><a href={this.props.theme.org.social.tw + this.props.utms + '&utm_content=footerSocialTwitter' } name="social_footer_twitter" target="_blank" rel="noopener noreferrer" xt="SPCLICK"><img alt="twitter" border={0} width={47} height={47} src="https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/icon_twitter.jpg" style={{display: 'block'}} /></a></td>
+                                                <td></td>
+                                                <td align="center" valign="top" width={47} height={47}><a href={this.props.theme.org.social.li + this.props.utms + '&utm_content=footerSocialLinkedin' } name="social_footer_linkedin" target="_blank" rel="noopener noreferrer" xt="SPCLICK"><img alt="linkedin" border={0} width={47} height={47} src="https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/icon_linkedin.jpg" style={{display: 'block'}} /></a></td>
+                                              </tr>
+                                            </table>
+                                          </td>
+                                        </tr>
                                       </table>
                                     </td>
                                   </tr>
                                   <tr>
-                                    <td className="em_height" height={26} style={{lineHeight: '1px', fontSize: '1px'}}><img alt="" border={0} contentid="5ac949b4-16a23e21e10-c2a8af96738cc20073a7254c07aedd78" height={1} name="7325376_spacer.gif" spname="7325376_spacer.gif" src="7325376_spacer.gif" style={{display: 'block'}} width={1} xt="SPIMAGE" /></td>
+                                    <td className="em_height" height={20} style={{lineHeight: '1px', fontSize: '1px'}}>&nbsp;</td>
                                   </tr>
                                 </tbody>
                               </table>
