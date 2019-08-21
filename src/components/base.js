@@ -12,7 +12,61 @@ class Base extends React.Component {
           <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
           <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
           <title>%%MAILING_ID%%</title>
-          <style type="text/css" dangerouslySetInnerHTML={{__html: `\n            body{-webkit-text-size-adjust:100%!important;-ms-text-size-adjust:100%!important;-webkit-font-smoothing:antialiased!important;}\n            img{border:0!important;outline:none!important;}\n            table{border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;}\n            td{border-collapse:collapse;mso-line-height-rule:exactly;}\n            a{color: ${ this.props.theme.colors.link }; }\n            a,span{mso-line-height-rule:exactly;}\n            .ExternalClass *{line-height:100%;}\n            span.MsoHyperlink{mso-style-priority:99;color:inherit;}\n            span.MsoHyperlinkFollowed{mso-style-priority:99;color:inherit;}\n            .em_white a{text-decoration:none!important;color:#ffffff!important;}\n            span.preheader \t{display: none !important; font-size: 1px; color: #363636;}\n            @media only screen and (min-width:480px) and (max-width:600px){\n            table[class=em_wrapper]{width:100%!important;}\n            td[class=em_w250]{width:300px!important;}\n            img[class=em_full_img]{width:100%!important;height:auto!important;max-width:none!important;}\n            td[class=em_hide],table[class=em_hide],span[class=em_hide],br[class=em_hide]{display:none!important;}\n            td[class=em_width]{width:10px!important;}\n            td[class=em_txt]{font-size:20px!important;line-height:23px!important;}\n            td[class=em_pad_top]{padding-top:20px!important;}\n            td[class=em_height]{height:20px!important;}\n            td[class=em_height1]{height:10px!important;}\n            td[class=em_align_cent]{text-align:center!important;}\n            td[class=em_left]{text-align:left!important; font-size:24px!important; line-height:26px!important;}\n            td[class=em_align_cent1]{text-align:center!important;font-size:11px!important;line-height:14px!important;}\n            td[class=em_pad]{padding-left:10px!important;}\n            td[class=em_side]{padding-left:10px!important;padding-right:10px!important;}\n            div[class=hide_disktop]{display:table!important;float:none!important;width:100%!important;overflow:visible!important;height:auto!important;}\n            table[class=em_tbl_312]{width:312px!important;}\n            }\n            @media only screen and (max-width:480px){\n            table[class=em_wrapper]{width:100%!important;}\n            td[class=em_w250]{width:250px!important;}\n            td[class=em_hide],table[class=em_hide],span[class=em_hide],br[class=em_hide]{display:none!important;}\n            td[class=em_txt]{font-size:20px!important;line-height:23px!important;}\n            img[class=em_full_img]{width:100%!important;height:auto!important;max-width:none!important;}\n            td[class=em_width]{width:10px!important;}\n            td[class=em_height]{height:20px!important;}\n            td[class=em_height1]{height:10px!important;}\n            td[class=em_pad_top]{padding-top:20px!important;}\n            td[class=em_align_cent]{text-align:center!important;}\n            td[class=em_left]{text-align:left!important; font-size:24px!important; line-height:26px!important;}\n            td[class=em_align_cent1]{text-align:center!important;font-size:11px!important;line-height:14px!important;}\n            td[class=em_pad]{padding-left:10px!important;}\n            td[class=em_side]{padding-left:10px!important;padding-right:10px!important;}\n            div[class=hide_disktop]{display:table!important;float:none!important;width:100%!important;overflow:visible!important;height:auto!important;}\n            img[class=em_w140]{width:80px!important;height:auto!important;}\n            img[class=em_w150]{width:110px!important;height:auto!important;}\n            img[class=em_w40]{width:40px!important;height:auto!important;}\n            table[class=em_tbl_312]{width:312px!important;}\n            .dateheader {width:80% !important}\n            .date {width:20% !important}\n            }\n          ` }} />
+          <style type="text/css" dangerouslySetInnerHTML={{__html: `
+            \nbody{-webkit-text-size-adjust:100%!important;-ms-text-size-adjust:100%!important;-webkit-font-smoothing:antialiased!important;}
+            \nimg{border:0!important;outline:none!important;}
+            \ntable{border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;}
+            \ntd{border-collapse:collapse;mso-line-height-rule:exactly;}
+            \na{color: ${ this.props.theme.colors.link }; }
+            \na,span{mso-line-height-rule:exactly;}
+            \n.ExternalClass *{line-height:100%;}
+            \nspan.MsoHyperlink{mso-style-priority:99;color:inherit;}
+            \nspan.MsoHyperlinkFollowed{mso-style-priority:99;color:inherit;}
+            \n.em_white a{text-decoration:none!important;color:#ffffff!important;}
+            \nspan.preheader \t{display: none !important; font-size: 1px; color: #363636;}
+
+            \n@media only screen and (min-width:480px) and (max-width:600px){
+              \ntable[class=em_wrapper]{width:100%!important;}
+              \ntd[class=em_w250]{width:300px!important;}
+              \nimg[class=em_full_img]{width:100%!important;height:auto!important;max-width:none!important;}
+              \ntd[class=em_hide],table[class=em_hide],span[class=em_hide],br[class=em_hide]{display:none!important;}
+              \ntd[class=em_width]{width:10px!important;}
+              \ntd[class=em_txt]{font-size:20px!important;line-height:23px!important;}
+              \ntd[class=em_pad_top]{padding-top:20px!important;}
+              \ntd[class=em_height]{height:20px!important;}
+              \ntd[class=em_height1]{height:10px!important;}
+              \ntd[class=em_align_cent]{text-align:center!important;}
+              \ntd[class=em_left]{text-align:left!important; font-size:24px!important; line-height:26px!important;}
+              \ntd[class=em_align_cent1]{text-align:center!important;font-size:11px!important;line-height:14px!important;}
+              \ntd[class=em_pad]{padding-left:10px!important;}
+              \ntd[class=em_side]{padding-left:10px!important;padding-right:10px!important;}
+              \ndiv[class=hide_disktop]{display:table!important;float:none!important;width:100%!important;overflow:visible!important;height:auto!important;}
+              \ntable[class=em_tbl_312]{width:312px!important;}
+              \n}
+              
+            \n@media only screen and (max-width:480px){
+              \ntable[class=em_wrapper]{width:100%!important;}
+              \ntd[class=em_w250]{width:250px!important;}
+              \ntd[class=em_hide],table[class=em_hide],span[class=em_hide],br[class=em_hide]{display:none!important;}
+              \ntd[class=em_txt]{font-size:20px!important;line-height:23px!important;}
+              \nimg[class=em_full_img]{width:100%!important;height:auto!important;max-width:none!important;}
+              \ntd[class=em_width]{width:10px!important;}
+              \ntd[class=em_height]{height:20px!important;}
+              \ntd[class=em_height1]{height:10px!important;}
+              \ntd[class=em_pad_top]{padding-top:20px!important;}
+              \ntd[class=em_align_cent]{text-align:center!important;}
+              \ntd[class=em_left]{text-align:left!important; font-size:24px!important; line-height:26px!important;}
+              \ntd[class=em_align_cent1]{text-align:center!important;font-size:11px!important;line-height:14px!important;}
+              \ntd[class=em_pad]{padding-left:10px!important;}
+              \ntd[class=em_side]{padding-left:10px!important;padding-right:10px!important;}
+              \ndiv[class=hide_disktop]{display:table!important;float:none!important;width:100%!important;overflow:visible!important;height:auto!important;}
+              \nimg[class=em_w140]{width:80px!important;height:auto!important;}
+              \nimg[class=em_w150]{width:110px!important;height:auto!important;}
+              \nimg[class=em_w40]{width:40px!important;height:auto!important;}
+              \ntable[class=em_tbl_312]{width:312px!important;}
+              \n.dateheader {width:80% !important}
+              \n.date {width:20% !important}
+              \n}` }} />
         </head>
         <body>
       <table align="center" bgcolor={ this.props.theme.colors.bgColor } border={0} cellPadding={0} cellSpacing={0} width="100%">

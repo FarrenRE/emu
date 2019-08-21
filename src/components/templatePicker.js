@@ -23,9 +23,10 @@ class TemplatePicker extends React.Component {
       utm: { medium: 'Email', source: 'ADMA', campaign: 'Monthly' }
     };
     this.themes = themes;
+    this.utmString = `?utm_medium=${this.state.utm.medium}&utm_source=${this.state.utm.source}&utm_campaign=${this.state.utm.campaign}`;
   }
   spawnChild = (evt) => {
-    const catArr = this.state.modules.concat( evt.target.value )
+    const catArr = this.state.modules.concat(evt.target.value)
     this.setState({
       modules: catArr
     });
@@ -33,92 +34,95 @@ class TemplatePicker extends React.Component {
   despawnChild = () => {
     let arr = this.state.modules;
     arr.pop();
-    this.setState({ 
+    this.setState({
       modules: arr
     });
   }
   updateAssoc = (evt) => {
     this.setState({ assoc: evt.target.value });
   }
-  updateUTM = (evt) => {
+  updateUtm = (evt) => {
     let newUTM = this.state.utm;
     const name = evt.target.name;
     const value = evt.target.value;
-    newUTM[ name ] = value;
+    newUTM[name] = value;
     this.setState({ utm: newUTM });
+  }
+  getUtmString = () => {
+    return `?utm_medium=${this.state.utm.medium}&utm_source=${this.state.utm.source}&utm_campaign=${this.state.utm.campaign}`;
   }
   render() {
     const childs = [];
 
-    for ( let i=0; i<this.state.modules.length; i++ ) {
-      switch( this.state.modules[i] ) {
+    for (let i = 0; i < this.state.modules.length; i++) {
+      switch (this.state.modules[i]) {
         case 'content2':
-          childs.push( 
+          childs.push(
             <Content2
               key={i}
-              id={i+1} 
-              theme={ this.themes[this.state.assoc] }
-              utms={ `?utm_medium=${ this.state.utm.medium }&utm_source=${ this.state.utm.source }&utm_campaign=${ this.state.utm.campaign }` }
+              id={i + 1}
+              theme={this.themes[this.state.assoc]}
+              utms={this.getUtmString()}
             />
           );
           break;
-          case 'content-left':
-              childs.push( 
-                <ContentLeft
-                  key={i}
-                  id={i+1} 
-                  theme={ this.themes[this.state.assoc] }
-                  utms={ `?utm_medium=${ this.state.utm.medium }&utm_source=${ this.state.utm.source }&utm_campaign=${ this.state.utm.campaign }` }
-                />
-              );
-              break;
+        case 'content-left':
+          childs.push(
+            <ContentLeft
+              key={i}
+              id={i + 1}
+              theme={this.themes[this.state.assoc]}
+              utms={this.getUtmString()}
+            />
+          );
+          break;
         case 'text':
-          childs.push( 
+          childs.push(
             <Text
               key={i}
-              id={i+1} 
-              theme={ this.themes[this.state.assoc] }
-              utms={ `?utm_medium=${ this.state.utm.medium }&utm_source=${ this.state.utm.source }&utm_campaign=${ this.state.utm.campaign }` }
+              id={i + 1}
+              theme={this.themes[this.state.assoc]}
+              utms={this.getUtmString()}
             />
           );
           break;
         case 'banner':
-          childs.push( 
+          childs.push(
             <Banner
               key={i}
-              id={i+1} 
-              theme={ this.themes[this.state.assoc] }
-              utms={ `?utm_medium=${ this.state.utm.medium }&utm_source=${ this.state.utm.source }&utm_campaign=${ this.state.utm.campaign }` }
+              id={i + 1}
+              theme={this.themes[this.state.assoc]}
+              utms={this.getUtmString()}
             />
           );
           break;
         case 'button1':
-          childs.push( 
+          childs.push(
             <Button1
               key={i}
-              id={i+1} 
-              theme={ this.themes[this.state.assoc] }
-              utms={ `?utm_medium=${ this.state.utm.medium }&utm_source=${ this.state.utm.source }&utm_campaign=${ this.state.utm.campaign }` }
+              id={i + 1}
+              theme={this.themes[this.state.assoc]}
+              utms={this.getUtmString()}
             />
           );
           break;
-          case 'button2':
-          childs.push( 
+        case 'button2':
+          childs.push(
             <Button2
               key={i}
-              id={i+1} 
-              theme={ this.themes[this.state.assoc] }
-              utms={ `?utm_medium=${ this.state.utm.medium }&utm_source=${ this.state.utm.source }&utm_campaign=${ this.state.utm.campaign }` }
+              id={i + 1}
+              theme={this.themes[this.state.assoc]}
+              utms={this.getUtmString()}
             />
           );
           break;
-          case 'heading':
-          childs.push( 
+        case 'heading':
+          childs.push(
             <Heading
               key={i}
-              id={i+1} 
-              theme={ this.themes[this.state.assoc] }
-              utms={ `?utm_medium=${ this.state.utm.medium }&utm_source=${ this.state.utm.source }&utm_campaign=${ this.state.utm.campaign }` }
+              id={i + 1}
+              theme={this.themes[this.state.assoc]}
+              utms={this.getUtmString()}
             />
           );
           break;
@@ -126,9 +130,9 @@ class TemplatePicker extends React.Component {
           break;
       }
     }
-    return(
+    return (
       <div>
-        <select onChange={ this.updateAssoc } style={{ padding: '0.25em', fontSize: '1em', margin: '0.25em' }}>
+        <select onChange={this.updateAssoc} style={{ padding: '0.25em', fontSize: '1em', margin: '0.25em' }}>
           <option value='adma'>ADMA</option>
           <option value='iq'>IQ</option>
           <option value='dtc'>D+TC</option>
@@ -138,27 +142,27 @@ class TemplatePicker extends React.Component {
             <h2>Preview</h2>
             <div id='edm-content' style={{ border: '1px solid black' }}>
               <Base
-                theme={ this.themes[this.state.assoc] }
-                utms={ `?utm_medium=${ this.state.utm.medium }&utm_source=${ this.state.utm.source }&utm_campaign=${ this.state.utm.campaign }` }>
-                { childs }
+                theme={this.themes[this.state.assoc]}
+                utms={this.getUtmString()}>
+                {childs}
               </Base>
             </div>
           </div>
           <div className='column'>
             <h2>Settings</h2>
             <div style={{ marginBottom: '1em' }}>
-              <button onClick={ this.spawnChild } value='text'>Spawn text</button><br />
-              <button onClick={ this.spawnChild } value='content2'>Spawn content2</button><br />
-              <button onClick={ this.spawnChild } value='content-left'>Spawn content-left</button><br />
-              <button onClick={ this.spawnChild } value='banner'>Spawn banner</button><br />
-              <button onClick={ this.spawnChild } value='button1'>Spawn button1</button><br />
-              <button onClick={ this.spawnChild } value='button2'>Spawn button2</button><br />
+              <button onClick={this.spawnChild} value='text'>Spawn text</button><br />
+              <button onClick={this.spawnChild} value='content2'>Spawn content2</button><br />
+              <button onClick={this.spawnChild} value='content-left'>Spawn content-left</button><br />
+              <button onClick={this.spawnChild} value='banner'>Spawn banner</button><br />
+              <button onClick={this.spawnChild} value='button1'>Spawn button1</button><br />
+              <button onClick={this.spawnChild} value='button2'>Spawn button2</button><br />
             </div>
-            <div style={{ marginBottom: '1em' }}><button onClick={ this.despawnChild }>Despawn module</button></div>            
+            <div style={{ marginBottom: '1em' }}><button onClick={this.despawnChild}>Despawn module</button></div>
             <div style={{ marginBottom: '1em' }}>
-              utm_medium=<input onChange={ this.updateUTM } type='text' name='medium' defaultValue='Email' /><br />
-              utm_source=<input onChange={ this.updateUTM } type='text' name='source' defaultValue={ this.state.assoc.toUpperCase() } /><br />
-              utm_campaign<input onChange={ this.updateUTM } type='text' name='campaign' defaultValue='Monthly' />
+              utm_medium=<input onChange={this.updateUtm} type='text' name='medium' defaultValue='Email' /><br />
+              utm_source=<input onChange={this.updateUtm} type='text' name='source' defaultValue={this.state.assoc.toUpperCase()} /><br />
+              utm_campaign<input onChange={this.updateUtm} type='text' name='campaign' defaultValue='Monthly' />
             </div>
 
           </div>
