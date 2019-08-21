@@ -38,7 +38,7 @@ class Content2 extends React.Component {
                                   <td style={{fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '13px', lineHeight: '21px', color: '#000000', textAlign: 'left'}}>Nulla scelerisque sapien elit, vitae ultricies magna iaculis eu. Morbi interdum magna eu tortor scelerisque, quis dignissim urna egestas. Aliquam ac sollicitudin quam. Fusce erat elit, volutpat vitae lorem et, congue lacinia risus. </td>
                                 </tr>
                                 <tr>
-                                  <td style={{fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '13px', lineHeight: '21px', color: '#df1a23', textAlign: 'left'}}><a href={ `${ this.props.theme.org.website }${ this.props.utms }&content=Content` } name={ `Content_${ this.props.id }_CTA` } style={{textDecoration: 'none', color: this.props.theme.colors.link}} target="_blank" rel="noopener noreferrer" xt="SPCLICK">Find out more&nbsp;»</a></td>
+                                  <td style={{fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '13px', lineHeight: '21px', textAlign: 'left'}}><a href={ `${ this.props.theme.org.website }${ this.props.utms }&content=Content` } name={ `Content_${ this.props.id }_CTA` } style={{textDecoration: 'none', color: this.props.theme.colors.link}} target="_blank" rel="noopener noreferrer" xt="SPCLICK">Find out more&nbsp;»</a></td>
                                 </tr>
                               </tbody>
                             </table>
