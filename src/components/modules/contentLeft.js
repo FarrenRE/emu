@@ -11,11 +11,11 @@ class ContentLeft extends React.Component {
               <table className="em_wrapper" align="left" border={0} cellPadding={0} cellSpacing={0} width={270}>
                 <tbody>
                   <tr>
-                    <td align="center" valign="top"><a href={ this.props.theme.org.website + this.props.utms + '&utm_content=contentLeftImage' } name={ `Content_${ this.props.id }_Image` } target="_blank" rel="noopener noreferrer"><img alt="content" border={0} height={190} src="https://via.placeholder.com/270x190" width={270} xt="SPIMAGE" /></a></td>
+                    <td align="center" valign="top"><a href={ this.props.theme.org.website + this.props.utms + '&utm_content=contentLeftImage' } style={{ display: 'block' }} name={ `Content_${ this.props.id }_Image` } target="_blank" rel="noopener noreferrer"><img alt="content" style={{ display: 'block' }} border={0} height={190} src="https://via.placeholder.com/270x190" width={270} xt="SPIMAGE" /></a></td>
                   </tr>
                 </tbody>
               </table>
-              <table className="em_wrapper" align="right" border={0} cellPadding={0} cellSpacing={0} width={280}>
+              <table className="em_wrapper" align="right" border={0} cellPadding={0} cellSpacing={0} width={270}>
                 <tbody>
                   <tr>
                     <td valign="top">
@@ -43,7 +43,7 @@ class ContentLeft extends React.Component {
             <td className="em_width" width="20">&nbsp;</td>
           </tr>
           <tr>
-            <td className="em_height" bgcolor="#FFFFFF" height={25} style={{fontSize: '1px', lineHeight: '1px'}}>&nbsp;</td>
+            <td className="em_height" bgcolor="#FFFFFF" height={20} style={{fontSize: '1px', lineHeight: '1px'}}>&nbsp;</td>
           </tr>
         </tbody>
       </table>

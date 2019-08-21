@@ -1,10 +1,6 @@
 import React from 'react';
 
 class Button1 extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {};
-  }
   render() {
     return (
       <table align="center" border={0} cellPadding={0} cellSpacing={0} width="100%">

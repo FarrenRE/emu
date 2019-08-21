@@ -1,10 +1,6 @@
 import React from 'react';
 
 class Heading extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {};
-  }
   render() {
     return (
       <table align="center" border={0} cellPadding={0} cellSpacing={0} style={{minWidth: '100%'}} width="100%">
