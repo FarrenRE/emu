@@ -7,6 +7,16 @@ class Base extends React.Component {
   }
   render() {
     return (
+      <html>
+        <head>
+          <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+          <meta content="telephone=no" name="format-detection"/>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+          <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+          <title>%%MAILING_ID%%</title>
+          <style type="text/css" dangerouslySetInnerHTML={{__html: `\n            body{-webkit-text-size-adjust:100%!important;-ms-text-size-adjust:100%!important;-webkit-font-smoothing:antialiased!important;}\n            img{border:0!important;outline:none!important;}\n            table{border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;}\n            td{border-collapse:collapse;mso-line-height-rule:exactly;}\n            a{color: ${ this.props.theme.colors.link }; }\n            a,span{mso-line-height-rule:exactly;}\n            .ExternalClass *{line-height:100%;}\n            span.MsoHyperlink{mso-style-priority:99;color:inherit;}\n            span.MsoHyperlinkFollowed{mso-style-priority:99;color:inherit;}\n            .em_white a{text-decoration:none!important;color:#ffffff!important;}\n            span.preheader \t{display: none !important; font-size: 1px; color: #363636;}\n            @media only screen and (min-width:480px) and (max-width:600px){\n            table[class=em_wrapper]{width:100%!important;}\n            td[class=em_w250]{width:300px!important;}\n            img[class=em_full_img]{width:100%!important;height:auto!important;max-width:none!important;}\n            td[class=em_hide],table[class=em_hide],span[class=em_hide],br[class=em_hide]{display:none!important;}\n            td[class=em_width]{width:10px!important;}\n            td[class=em_txt]{font-size:20px!important;line-height:23px!important;}\n            td[class=em_pad_top]{padding-top:20px!important;}\n            td[class=em_height]{height:20px!important;}\n            td[class=em_height1]{height:10px!important;}\n            td[class=em_align_cent]{text-align:center!important;}\n            td[class=em_left]{text-align:left!important; font-size:24px!important; line-height:26px!important;}\n            td[class=em_align_cent1]{text-align:center!important;font-size:11px!important;line-height:14px!important;}\n            td[class=em_pad]{padding-left:10px!important;}\n            td[class=em_side]{padding-left:10px!important;padding-right:10px!important;}\n            div[class=hide_disktop]{display:table!important;float:none!important;width:100%!important;overflow:visible!important;height:auto!important;}\n            table[class=em_tbl_312]{width:312px!important;}\n            }\n            @media only screen and (max-width:480px){\n            table[class=em_wrapper]{width:100%!important;}\n            td[class=em_w250]{width:250px!important;}\n            td[class=em_hide],table[class=em_hide],span[class=em_hide],br[class=em_hide]{display:none!important;}\n            td[class=em_txt]{font-size:20px!important;line-height:23px!important;}\n            img[class=em_full_img]{width:100%!important;height:auto!important;max-width:none!important;}\n            td[class=em_width]{width:10px!important;}\n            td[class=em_height]{height:20px!important;}\n            td[class=em_height1]{height:10px!important;}\n            td[class=em_pad_top]{padding-top:20px!important;}\n            td[class=em_align_cent]{text-align:center!important;}\n            td[class=em_left]{text-align:left!important; font-size:24px!important; line-height:26px!important;}\n            td[class=em_align_cent1]{text-align:center!important;font-size:11px!important;line-height:14px!important;}\n            td[class=em_pad]{padding-left:10px!important;}\n            td[class=em_side]{padding-left:10px!important;padding-right:10px!important;}\n            div[class=hide_disktop]{display:table!important;float:none!important;width:100%!important;overflow:visible!important;height:auto!important;}\n            img[class=em_w140]{width:80px!important;height:auto!important;}\n            img[class=em_w150]{width:110px!important;height:auto!important;}\n            img[class=em_w40]{width:40px!important;height:auto!important;}\n            table[class=em_tbl_312]{width:312px!important;}\n            .dateheader {width:80% !important}\n            .date {width:20% !important}\n            }\n          ` }} />
+        </head>
+        <body>
       <table align="center" bgcolor={ this.props.theme.colors.bgColor } border={0} cellPadding={0} cellSpacing={0} width="100%">
         {/* ==Header Starts Here==*/}
         <tbody>
@@ -30,7 +40,7 @@ class Base extends React.Component {
                       <table className="em_wrapper" align="center" bgcolor="#ffffff" border={0} cellPadding={0} cellSpacing={0} height={50} style={{tableLayout: 'fixed'}} width={600}>
                         <tbody>
                           <tr>
-                            <td align="center" valign="top">
+                            <td align="center" valign="middle" style={{ verticalAlign: 'middle' }}>
                               <table align="center" bgcolor="#ffffff" border={0} cellPadding={0} cellSpacing={0} width="100%">
                                 <tbody>
                                   <tr>
@@ -68,9 +78,6 @@ class Base extends React.Component {
               <table className="em_wrapper" align="center" border={0} cellPadding={0} cellSpacing={0} style={{tableLayout: 'fixed'}} width={600}>
                 <tbody>
                   <tr>
-                    <td className="em_hide" bgcolor="#ffffff" height={1} style={{lineHeight: '0px', fontSize: '0px'}}><img alt="" border={0} contentid="5ac949b4-16a23e21e10-c2a8af96738cc20073a7254c07aedd78" height={1} name="7325376_spacer.gif" spname="7325376_spacer.gif" src="7325376_spacer.gif" style={{width: '600px', display: 'block', minWidth: '600px'}} xt="SPIMAGE" /></td>
-                  </tr>
-                  <tr>
                     <td align="center" valign="top">
                       <table align="center" border={0} cellPadding={0} cellSpacing={0} width="100%">
                         {/* banner image starts here*/}
@@ -80,15 +87,15 @@ class Base extends React.Component {
                               <table align="center" bgcolor="#ffffff" border={0} cellPadding={0} cellSpacing={0} width="100%">
                                 <tbody>
                                   <tr>
-                                    <td align="left" valign="top"><a href="https://www.adma.com.au/" name="logo_link" target="_blank" rel="noopener noreferrer" xt="SPCLICK"><img className="em_full_img" alt="ADMA" border={0} height={75} src="https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/ADMA-logo-edm-wide.jpg" title="ADMA" width={400} xt="SPIMAGE" /></a></td>
-                                    <td>
+                                    <td align="left" valign="bottom" style={{ verticalAlign: 'bottom' }}><a href={ this.props.theme.org.website + this.props.utms } name="logo_link" target="_blank" rel="noopener noreferrer" xt="SPCLICK"><img className="em_full_img" alt={ this.props.theme.org.abbr } border={0} height={75} src={ this.props.theme.org.logos.header } title={ this.props.theme.org.abbr } width={400} xt="SPIMAGE" /></a></td>
+                                    <td align="right" valign="bottom" style={{ verticalAlign: 'bottom' }}>
                                       <table align="center" border={0} cellPadding={0} cellSpacing={0} width="100%">
                                         <tbody>
                                           <tr>
-                                            <td className="em_height" bgcolor="#ffffff" height={10} style={{lineHeight: '1px', fontSize: '1px'}}><img alt="" border={0} contentid="5ac949b4-16a23e21e10-c2a8af96738cc20073a7254c07aedd78" height={1} name="7325376_spacer.gif" spname="7325376_spacer.gif" src="7325376_spacer.gif" style={{display: 'block'}} width={1} xt="SPIMAGE" /></td>
+                                            <td style={{color: 'rgb(153, 153, 153)', lineHeight: '14px', fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '10px'}}>NEWSLETTER<br />{ new Date().toLocaleString('en-AU', {month: 'long', year: 'numeric'}).toUpperCase() }</td>
                                           </tr>
                                           <tr>
-                                            <td style={{color: 'rgb(153, 153, 153)', lineHeight: '14px', fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '10px'}}>NEWSLETTER<br />APRIL 2019</td>
+                                            <td className="em_height" bgcolor="#ffffff" height={20} style={{lineHeight: '1px', fontSize: '1px'}}>&nbsp;</td>
                                           </tr>
                                         </tbody>
                                       </table>
@@ -99,7 +106,7 @@ class Base extends React.Component {
                             </td>
                           </tr>
                           <tr>
-                            <td className="em_height" bgcolor="#ffffff" height={10} style={{lineHeight: '1px', fontSize: '1px', borderTopColor: 'rgb(182, 182, 182)', borderTopWidth: '1px', borderTopStyle: 'solid'}}><img alt="" border={0} contentid="5ac949b4-16a23e21e10-c2a8af96738cc20073a7254c07aedd78" height={1} name="7325376_spacer.gif" spname="7325376_spacer.gif" src="7325376_spacer.gif" style={{display: 'block'}} width={1} xt="SPIMAGE" /></td>
+                            <td className="em_height" bgcolor="#ffffff" height={20} style={{lineHeight: '1px', fontSize: '1px', borderTopColor: `${ this.props.theme.colors.primary }`, borderTopWidth: '3px', borderTopStyle: 'solid'}}></td>
                           </tr>
                           {/* Full Content Section starts here*/}
                           <tr>
@@ -118,18 +125,6 @@ class Base extends React.Component {
                             </td>
                           </tr>
                           {/* // Full Content section ends here*/}
-                          <tr>
-                            <td valign="top">
-                              <table align="center" bgcolor="#ffffff" border={0} cellPadding={0} cellSpacing={0} width="100%">
-                                <tbody>
-                                  <tr>
-                                    <td><img className="em_full_img" alt="ADMA Partners" src="https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/adma-partners.jpg" style={{display: 'block'}} title="ADMA Partners" xt="SPIMAGE" /></td>
-                                  </tr>
-                                </tbody>
-                              </table>
-                            </td>
-                          </tr>
-                          {/* // Thanks to our sponsors section ends here*/}
                         </tbody>
                       </table>
                     </td>
@@ -145,13 +140,10 @@ class Base extends React.Component {
               <table align="center" bgcolor={ this.props.theme.colors.footer } border={0} cellPadding={0} cellSpacing={0} width="100%">
                 <tbody>
                   <tr>
-                    <td  height={106}><img alt="" border={0} contentid="5ac949b4-16a23e21e10-c2a8af96738cc20073a7254c07aedd78" height={1} name="7325376_spacer.gif" spname="7325376_spacer.gif" src="7325376_spacer.gif" style={{display: 'block'}} width={1} xt="SPIMAGE" /></td>
-                    <td width={600}>
-                      <table className="em_wrapper" align="center" border={0} cellPadding={0} cellSpacing={0} style={{tableLayout: 'fixed'}} width={600}>
+                    <td>&nbsp;</td>
+                    <td width={580}>
+                      <table className="em_wrapper" align="center" border={0} cellPadding={0} cellSpacing={0} style={{tableLayout: 'fixed'}} width={580}>
                         <tbody>
-                          <tr>
-                            <td className="em_hide" height={1} style={{lineHeight: '0px', fontSize: '0px'}}><img alt="" border={0} contentid="5ac949b4-16a23e21e10-c2a8af96738cc20073a7254c07aedd78" height={1} name="7325376_spacer.gif" spname="7325376_spacer.gif" src="7325376_spacer.gif" style={{width: '600px', display: 'block', minWidth: '600px'}} xt="SPIMAGE" /></td>
-                          </tr>
                           <tr>
                             <td align="center" valign="top">
                               <table border={0} cellPadding={0} cellSpacing={0} width="100%">
@@ -168,14 +160,14 @@ class Base extends React.Component {
                                               <table className="em_wrapper" align="left" border={0} cellPadding={0} cellSpacing={0} width={450}>
                                                 <tbody>
                                                   <tr>
-                                                    <td className="em_white" style={{textAlign: 'left', color: 'rgb(255, 255, 255)', lineHeight: '13px', fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '10px'}}>AADL trading as ADMA. Level 6 50 Carrington Street, Sydney NSW 2000. ABN: 34 002 909 800. This email was sent to %%email%%. Click <a href="http://www.pages01.net/adma/ADMAPreference/unsubscribe.html/" name="www_pages01_net_adma_ADMAPrefe" style={{color: 'rgb(255, 255, 255)'}} xt="SPCLICK">here</a>	if you prefer not to receive emails from ADMA Australia. © Copyright 2019 ADMA Australia. All Rights Reserved.</td>
+                                                    <td className="em_white" style={{textAlign: 'left', color: 'rgb(255, 255, 255)', lineHeight: '13px', fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '10px'}}>AADL trading as { this.props.theme.org.abbr }. Level 6 50 Carrington Street, Sydney NSW 2000. ABN: 34 002 909 800. This email was sent to %%email%%. Click <a href="http://www.pages01.net/adma/ADMAPreference/unsubscribe.html/" name="www_pages01_net_adma_ADMAPrefe" style={{color: 'rgb(255, 255, 255)'}} xt="SPCLICK">here</a>	if you prefer not to receive emails from { this.props.theme.org.abbr } Australia. © Copyright { new Date().getFullYear() } { this.props.theme.org.abbr } Australia. All Rights Reserved.</td>
                                                   </tr>
                                                 </tbody>
                                               </table>
-                                              <table className="em_wrapper" align="right" border={0} cellPadding={0} cellSpacing={0} width={97}>
+                                              <table className="em_wrapper" align="right" border={0} cellPadding={0} cellSpacing={0} width={130}>
                                                 <tbody>
                                                   <tr>
-                                                    <td className="em_pad_top" align="left" valign="top"><a href="https://www.adma.com.au/" name="_6" target="_blank" rel="noopener noreferrer" xt="SPCLICK"><img alt="ADMA" border={0} height={25} src="https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/AADL_ADMA_Logo_LockUp-NoTag_White4.png" style={{display: 'block'}} title="ADMA" width={110} xt="SPIMAGE" /></a></td>
+                                                    <td className="em_pad_top" align="right" valign="top"><img alt="ADMA" border={0} height={25} src={ this.props.theme.org.logos.lockup } style={{display: 'block'}} title="ADMA" width={110} xt="SPIMAGE" /></td>
                                                   </tr>
                                                 </tbody>
                                               </table>
@@ -223,7 +215,7 @@ class Base extends React.Component {
                         </tbody>
                       </table>
                     </td>
-                    <td height={106}><img alt="" border={0} contentid="5ac949b4-16a23e21e10-c2a8af96738cc20073a7254c07aedd78" height={1} name="7325376_spacer.gif" spname="7325376_spacer.gif" src="7325376_spacer.gif" style={{display: 'block'}} width={1} xt="SPIMAGE" /></td>
+                    <td>&nbsp;</td>
                   </tr>
                 </tbody>
               </table>
@@ -232,7 +224,7 @@ class Base extends React.Component {
           {/* // Footer Ends Here*/}
           {/* Line Starts Here*/}
           <tr>
-            <td align="center" bgcolor={ this.props.theme.colors.primary } height={3}>
+            <td align="center" bgcolor={ this.props.theme.colors.footerStripe ? this.props.theme.colors.footerStripe : this.props.theme.colors.primary } height={3}>
               <table align="center" border={0} cellPadding={0} cellSpacing={0} style={{tableLayout: 'fixed'}} width="100%">
                 <tbody>
                   <tr>
@@ -254,7 +246,7 @@ class Base extends React.Component {
           {/* Copy Rights Starts Here*/}
           <tr>
             <td align="center" bgcolor="#010101">
-              <table className="em_wrapper" align="center" border={0} cellPadding={0} cellSpacing={0} style={{tableLayout: 'fixed'}} width={600}>
+              <table className="em_wrapper" align="center" border={0} cellPadding={0} cellSpacing={0} style={{tableLayout: 'fixed'}} width={580}>
                 <tbody>
                   <tr>
                     <td className="em_hide" bgcolor="#010101" height={1} style={{lineHeight: '0px', fontSize: '0px'}}>&nbsp;</td>
@@ -264,7 +256,7 @@ class Base extends React.Component {
                       <table align="center" border={0} cellPadding={0} cellSpacing={0} width="100%">
                         <tbody>
                           <tr>
-                            <td className="em_side" height={50} style={{textAlign: 'left', color: 'rgb(111, 111, 111)', fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '11px'}} valign="middle">© { this.props.theme.org.abbr } Australia. All rights reserved.</td>
+                            <td className="em_side" height={40} style={{textAlign: 'left', verticalAlign: 'middle', color: 'rgb(111, 111, 111)', fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '11px'}} valign="middle">© { this.props.theme.org.abbr } Australia. All rights reserved.</td>
                           </tr>
                         </tbody>
                       </table>
@@ -277,6 +269,8 @@ class Base extends React.Component {
           {/* //Copy Rights Ends Here*/}
         </tbody>
       </table>
+      </body>
+      </html>
     );
   }
 }
