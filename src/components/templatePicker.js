@@ -51,6 +51,15 @@ class TemplatePicker extends React.Component {
   getUtmString = () => {
     return `?utm_medium=${this.state.utm.medium}&utm_source=${this.state.utm.source}&utm_campaign=${this.state.utm.campaign}`;
   }
+  /**
+   * TODO: React-ify this function...
+   */
+  getHtml = () => {
+    const edmHtml = document.getElementById( 'edm-content' );
+    const textarea = document.getElementById( 'edm-html' );
+
+    textarea.value = edmHtml.innerHTML;
+  }
   render() {
     const childs = [];
 
@@ -164,7 +173,10 @@ class TemplatePicker extends React.Component {
               utm_source=<input onChange={this.updateUtm} type='text' name='source' defaultValue={this.state.assoc.toUpperCase()} /><br />
               utm_campaign<input onChange={this.updateUtm} type='text' name='campaign' defaultValue='Monthly' />
             </div>
-
+            <div style={{ marginBottom: '1em' }}>
+              <textarea id='edm-html' /><br />
+              <button onClick={ this.getHtml }>Get HTML</button>
+            </div>
           </div>
         </div>
       </div>
