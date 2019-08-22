@@ -4,7 +4,8 @@ class IQFooterLinks extends React.Component {
   render() {
     return (
       <table align="center" border={0} cellPadding={0} cellSpacing={0} width="100%">
-          <tr>
+        <tbody>
+        <tr>
             <td align="center" className="em_white" style={{fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '12px', lineHeight: '18px', color: '#ffffff', textAlign: 'center'}}>
               <a href="https://www.adma.com.au/user" style={{textDecoration: 'none', color: '#ffffff'}}><span style={{textDecoration: 'none', color: '#ffffff'}}><font style={{textDecoration: 'none', color: '#ffffff'}}>My&nbsp;Account </font></span></a>
               <span>|</span> <a href="https://www.adma.com.au/iq/courses#sydney" style={{textDecoration: 'none', color: '#ffffff'}}><span style={{textDecoration: 'none', color: '#ffffff'}}><font style={{textDecoration: 'none', color: '#ffffff'}}>Sydney&nbsp;Courses </font></span></a>
@@ -18,6 +19,7 @@ class IQFooterLinks extends React.Component {
           <tr>
             <td className="em_height" height={10} style={{lineHeight: '1px', fontSize: '1px'}}>&nbsp;</td>
           </tr>
+        </tbody>
       </table>
     );
   }

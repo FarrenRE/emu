@@ -7,10 +7,10 @@ class Base extends React.Component {
     return (
       <html>
         <head>
-          <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+          <meta httpEquiv="Content-Type" content="text/html; charset=utf-8"/>
           <meta content="telephone=no" name="format-detection"/>
           <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-          <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+          <meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
           <title>%%MAILING_ID%%</title>
           <style type="text/css" dangerouslySetInnerHTML={{__html: `
             \nbody{-webkit-text-size-adjust:100%!important;-ms-text-size-adjust:100%!important;-webkit-font-smoothing:antialiased!important;}
@@ -43,7 +43,7 @@ class Base extends React.Component {
               \ndiv[class=hide_disktop]{display:table!important;float:none!important;width:100%!important;overflow:visible!important;height:auto!important;}
               \ntable[class=em_tbl_312]{width:312px!important;}
               \n}
-              
+
             \n@media only screen and (max-width:480px){
               \ntable[class=em_wrapper]{width:100%!important;}
               \ntd[class=em_w250]{width:250px!important;}
@@ -206,23 +206,37 @@ class Base extends React.Component {
                                   <tr>
                                     <td valign="top">
                                       <table className="em_tbl_312" align="center" border={0} cellPadding={0} cellSpacing={0} width="100%">
+                                        <tbody>
                                         <tr>
                                           <td valign="top">
                                             <table className="em_wrapper" align="left" border={0} cellPadding={0} cellSpacing={0} width={450}>
-
-                                              { this.props.theme.org.abbr === 'ADMA IQ' ? <IQFooterLinks /> : '' }
-
-                                              <tr>
-                                                <td className="em_white" style={{textAlign: 'left', color: 'rgb(255, 255, 255)', lineHeight: '13px', fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '10px'}}>AADL trading as { this.props.theme.org.abbr }. Level 6 50 Carrington Street, Sydney NSW 2000. ABN: 34 002 909 800. This email was sent to %%email%%. Click <a href="http://www.pages01.net/adma/ADMAPreference/unsubscribe.html/" name="www_pages01_net_adma_ADMAPrefe" style={{color: 'rgb(255, 255, 255)'}} xt="SPCLICK">here</a>	if you prefer not to receive emails from { this.props.theme.org.abbr } Australia. © Copyright { new Date().getFullYear() } { this.props.theme.org.abbr } Australia. All Rights Reserved.</td>
-                                              </tr>
+                                              <tbody>
+                                                <tr>
+                                                  <td valign="top">
+                                                    { this.props.theme.org.abbr === 'ADMA IQ' ? <IQFooterLinks /> : '' }
+                                                    <table align="center" border={0} cellPadding={0} cellSpacing={0} width="100%">
+                                                      <tbody>
+                                                        <tr>
+                                                        <td className="em_white" style={{textAlign: 'left', color: 'rgb(255, 255, 255)', lineHeight: '13px', fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '10px'}}>
+                                                          AADL trading as { this.props.theme.org.abbr }. Level 6 50 Carrington Street, Sydney NSW 2000. ABN: 34 002 909 800. This email was sent to %%email%%. Click <a href="http://www.pages01.net/adma/ADMAPreference/unsubscribe.html/" name="www_pages01_net_adma_ADMAPrefe" style={{color: 'rgb(255, 255, 255)'}} xt="SPCLICK">here</a>	if you prefer not to receive emails from { this.props.theme.org.abbr } Australia. © Copyright { new Date().getFullYear() } { this.props.theme.org.abbr } Australia. All Rights Reserved.
+                                                        </td>
+                                                        </tr>
+                                                      </tbody>
+                                                    </table>
+                                                  </td>
+                                                </tr>
+                                              </tbody>
                                             </table>
                                             <table className="em_wrapper" align="right" border={0} cellPadding={0} cellSpacing={0} width={130}>
+                                              <tbody>
                                               <tr>
                                                 <td className="em_pad_top" align="right" valign="top"><img alt="ADMA" border={0} height={25} src={ this.props.theme.org.logos.lockup } style={{display: 'block'}} title="ADMA" width={110} xt="SPIMAGE" /></td>
                                               </tr>
+                                              </tbody>
                                             </table>
                                           </td>
                                         </tr>
+                                        </tbody>
                                       </table>
                                     </td>
                                   </tr>
@@ -232,19 +246,23 @@ class Base extends React.Component {
                                   <tr>
                                     <td align="left" valign="top">
                                       <table className="em_wrapper" align="left" border={0} cellPadding={0} cellSpacing={0} width="100%">
-                                        <tr>
-                                          <td align="center" valign="top">
-                                            <table align="left" border={0} cellPadding={0} cellSpacing={0} width={159}>
-                                              <tr>
-                                                <td align="center" valign="top" width={47} height={47}><a href={this.props.theme.org.social.fb + this.props.utms + '&utm_content=footerSocialFacebook' } name="social_footer_facebook" target="_blank" rel="noopener noreferrer" xt="SPCLICK"><img alt="facebook" border={0} width={47} height={47} src="https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/icon_facebook.jpg" style={{display: 'block'}} /></a></td>
-                                                <td></td>
-                                                <td align="center" valign="top" width={47} height={47}><a href={this.props.theme.org.social.tw + this.props.utms + '&utm_content=footerSocialTwitter' } name="social_footer_twitter" target="_blank" rel="noopener noreferrer" xt="SPCLICK"><img alt="twitter" border={0} width={47} height={47} src="https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/icon_twitter.jpg" style={{display: 'block'}} /></a></td>
-                                                <td></td>
-                                                <td align="center" valign="top" width={47} height={47}><a href={this.props.theme.org.social.li + this.props.utms + '&utm_content=footerSocialLinkedin' } name="social_footer_linkedin" target="_blank" rel="noopener noreferrer" xt="SPCLICK"><img alt="linkedin" border={0} width={47} height={47} src="https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/icon_linkedin.jpg" style={{display: 'block'}} /></a></td>
-                                              </tr>
-                                            </table>
-                                          </td>
-                                        </tr>
+                                        <tbody>
+                                          <tr>
+                                            <td align="center" valign="top">
+                                              <table align="left" border={0} cellPadding={0} cellSpacing={0} width={159}>
+                                                <tbody>
+                                                <tr>
+                                                  <td align="center" valign="top" width={47} height={47}><a href={this.props.theme.org.social.fb + this.props.utms + '&utm_content=footerSocialFacebook' } name="social_footer_facebook" target="_blank" rel="noopener noreferrer" xt="SPCLICK"><img alt="facebook" border={0} width={47} height={47} src="https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/icon_facebook.jpg" style={{display: 'block'}} /></a></td>
+                                                  <td></td>
+                                                  <td align="center" valign="top" width={47} height={47}><a href={this.props.theme.org.social.tw + this.props.utms + '&utm_content=footerSocialTwitter' } name="social_footer_twitter" target="_blank" rel="noopener noreferrer" xt="SPCLICK"><img alt="twitter" border={0} width={47} height={47} src="https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/icon_twitter.jpg" style={{display: 'block'}} /></a></td>
+                                                  <td></td>
+                                                  <td align="center" valign="top" width={47} height={47}><a href={this.props.theme.org.social.li + this.props.utms + '&utm_content=footerSocialLinkedin' } name="social_footer_linkedin" target="_blank" rel="noopener noreferrer" xt="SPCLICK"><img alt="linkedin" border={0} width={47} height={47} src="https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/icon_linkedin.jpg" style={{display: 'block'}} /></a></td>
+                                                </tr>
+                                                </tbody>
+                                              </table>
+                                            </td>
+                                          </tr>
+                                        </tbody>
                                       </table>
                                     </td>
                                   </tr>
