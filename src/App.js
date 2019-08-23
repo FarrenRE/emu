@@ -1,5 +1,6 @@
 import React from 'react';
 import 'bulma/css/bulma.min.css';
+import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import './App.css';
 
 import TemplatePicker from './components/templatePicker';
