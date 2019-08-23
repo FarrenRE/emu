@@ -26,6 +26,24 @@
   display: none;
 }
 
+.editable.active {
+  border: 2px dotted rebeccapurple;
+}
+
+/* Draftjs demo */
+.rdw-editor-main {
+  height: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+.demo-editor {
+  height: 275px !important;
+  border: 1px solid #F1F1F1 !important;
+  padding: 5px !important;
+  border-radius: 2px !important;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
