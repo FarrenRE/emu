@@ -1,13 +1,8 @@
 import React from 'react';
 
-import Base from './base';
-import Text from './modules/text';
-import Content2 from './modules/content2';
-import ContentLeft from './modules/contentLeft';
-import Banner from './modules/banner';
-import Button1 from './modules/button1';
-import Button2 from './modules/button2';
-import Heading from './modules/heading';
+import Base from './Base';
+import DraftTest from './draftTest';
+import Module from './Module';
 
 import themes from './themes';
 
@@ -18,9 +13,10 @@ class TemplatePicker extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      modules: ['text', 'button2', 'heading', 'content2', 'content-left', 'button1', 'banner'],
+      modules: ['text', 'text', 'text'],
       assoc: 'adma',
-      utm: { medium: 'Email', source: 'ADMA', campaign: 'Monthly' }
+      utm: { medium: 'Email', source: 'ADMA', campaign: 'Monthly' },
+      activeID: null,
     };
     this.themes = themes;
     this.utmString = `?utm_medium=${this.state.utm.medium}&utm_source=${this.state.utm.source}&utm_campaign=${this.state.utm.campaign}`;
@@ -51,6 +47,10 @@ class TemplatePicker extends React.Component {
   getUtmString = () => {
     return `?utm_medium=${this.state.utm.medium}&utm_source=${this.state.utm.source}&utm_campaign=${this.state.utm.campaign}`;
   }
+  setActiveEdit = (e) => {
+    const id = e.target.id;
+    this.setState({ activeID: id });
+  }
   /**
    * TODO: React-ify this function...
    */
@@ -62,83 +62,17 @@ class TemplatePicker extends React.Component {
   }
   render() {
     const childs = [];
-
     for (let i = 0; i < this.state.modules.length; i++) {
-      switch (this.state.modules[i]) {
-        case 'content2':
-          childs.push(
-            <Content2
-              key={i}
-              id={i + 1}
-              theme={this.themes[this.state.assoc]}
-              utms={this.getUtmString()}
-            />
-          );
-          break;
-        case 'content-left':
-          childs.push(
-            <ContentLeft
-              key={i}
-              id={i + 1}
-              theme={this.themes[this.state.assoc]}
-              utms={this.getUtmString()}
-            />
-          );
-          break;
-        case 'text':
-          childs.push(
-            <Text
-              key={i}
-              id={i + 1}
-              theme={this.themes[this.state.assoc]}
-              utms={this.getUtmString()}
-            />
-          );
-          break;
-        case 'banner':
-          childs.push(
-            <Banner
-              key={i}
-              id={i + 1}
-              theme={this.themes[this.state.assoc]}
-              utms={this.getUtmString()}
-            />
-          );
-          break;
-        case 'button1':
-          childs.push(
-            <Button1
-              key={i}
-              id={i + 1}
-              theme={this.themes[this.state.assoc]}
-              utms={this.getUtmString()}
-            />
-          );
-          break;
-        case 'button2':
-          childs.push(
-            <Button2
-              key={i}
-              id={i + 1}
-              theme={this.themes[this.state.assoc]}
-              utms={this.getUtmString()}
-            />
-          );
-          break;
-        case 'heading':
-          childs.push(
-            <Heading
-              key={i}
-              id={i + 1}
-              theme={this.themes[this.state.assoc]}
-              utms={this.getUtmString()}
-            />
-          );
-          break;
-        default:
-          break;
-      }
+      childs.push(
+        <Module
+          type={ this.state.modules[i] }
+          key={i} id={i}
+          theme={this.themes[this.state.assoc]}
+          utms={this.getUtmString()}
+          setActiveEdit={ this.setActiveEdit }
+          activeID={ this.state.activeID } />);
     }
+
     return (
       <div>
         <select onChange={this.updateAssoc} style={{ padding: '0.25em', fontSize: '1em', margin: '0.25em' }}>
@@ -176,6 +110,9 @@ class TemplatePicker extends React.Component {
             <div style={{ marginBottom: '1em' }}>
               <textarea id='edm-html' /><br />
               <button onClick={ this.getHtml }>Get HTML</button>
+            </div>
+            <div style={{ marginBottom: '1em' }}>
+              <DraftTest />
             </div>
           </div>
         </div>
