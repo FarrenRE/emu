@@ -13,7 +13,7 @@ class TemplatePicker extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      modules: ['text', 'text', 'text'],
+      modules: ['text', 'button2', 'text'],
       assoc: 'adma',
       utm: { medium: 'Email', source: 'ADMA', campaign: 'Monthly' },
       activeID: null,
@@ -48,6 +48,7 @@ class TemplatePicker extends React.Component {
     return `?utm_medium=${this.state.utm.medium}&utm_source=${this.state.utm.source}&utm_campaign=${this.state.utm.campaign}`;
   }
   setActiveEdit = (e) => {
+    e.preventDefault();
     const id = e.target.id;
     this.setState({ activeID: id });
   }
