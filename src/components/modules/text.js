@@ -18,7 +18,7 @@ class Text extends React.Component {
                   <tr>
                     <td align="left" style={{fontFamily: 'Arial, Helvetica, sans-serif', fontSize: '14px', color: '#494949'}}>
                       <Editable setActiveEdit={ this.props.setActiveEdit } activeID={ this.props.activeID }>
-                        Hello %%FIRST NAME%%,<br /><br />Lorem ipsum dolor sit amet, consectetur <a href="https://www.adma.com.au/events/2019/global-forum?utm_source=ADMA&utm_medium=EDM&utm_campaign=Monthly">adipiscing elit</a>. Nullam hendrerit fermentum turpis sit amet luctus. Curabitur ac purus tortor. <br /><br /> Praesent non pretium ex.
+                        Hello %%FIRST NAME%%,<br /><br />Lorem ipsum dolor sit amet, consectetur <a href={ `${ this.props.theme.org.website }${ this.props.utms }&content=inline` }>adipiscing elit</a>. Nullam hendrerit fermentum turpis sit amet luctus. Curabitur ac purus tortor. <br /><br /> Praesent non pretium ex.
                       </Editable>
                     </td>
                   </tr>

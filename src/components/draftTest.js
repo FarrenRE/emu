@@ -7,28 +7,34 @@ import htmlToDraft from 'html-to-draftjs';
 class DraftTest extends Component {
   constructor(props) {
     super(props);
-    const html = '<p>Hey this <strong>editor</strong> rocks 😀</p>';
-    const contentBlock = htmlToDraft(html);
-    if (contentBlock) {
-      const contentState = ContentState.createFromBlockArray(contentBlock.contentBlocks);
-      const editorState = EditorState.createWithContent(contentState);
-      this.state = {
-        editorState,
-      };
-    }
+    const contentBlock = htmlToDraft(this.props.content);
+    this.state = {
+      editorState: EditorState.createWithContent(ContentState.createFromBlockArray(contentBlock.contentBlocks))
+    };
   }
 
-  onEditorStateChange: Function = (editorState) => {
+  onEditorStateChange = (editorState) => {
+    console.log('onEditorStateChange()');
     this.setState({
       editorState,
     });
+    console.log('-----------');
   };
 
+  onChange = () => {
+    console.log('onChange()');
+    const convertedContent = draftToHtml(convertToRaw(this.state.editorState.getCurrentContent()))
+    this.setState({ convertedContent, });
+    this.props.updateEditable( convertedContent );
+    console.log('-----------');
+  }
+  
   render() {
+    console.log('DraftTest render');
     const { editorState } = this.state;
+
     return (
       <div className="demo-section">
-        <h3>1. Controlled editor component with conversion of content from and to HTML</h3>
         <div className="demo-section-wrapper">
           <div className="demo-editor-wrapper">
             <Editor
@@ -36,6 +42,7 @@ class DraftTest extends Component {
               wrapperClassName="demo-wrapper"
               editorClassName="demo-editor"
               onEditorStateChange={this.onEditorStateChange}
+              onChange={ this.onChange }
             />
             <textarea
               disabled

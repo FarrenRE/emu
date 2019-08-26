@@ -1,4 +1,6 @@
 import React from 'react';
+import { renderToString } from 'react-dom/server';
+import _ from 'lodash';
 
 import Base from './Base';
 import DraftTest from './draftTest';
@@ -17,10 +19,12 @@ class TemplatePicker extends React.Component {
       assoc: 'adma',
       utm: { medium: 'Email', source: 'ADMA', campaign: 'Monthly' },
       activeID: null,
-      editorContent: '<p>Hello world</p>'
+      editorContent: '<p>Um, <span>Hello world!</span></p>',
+      currentEditable: null
     };
     this.themes = themes;
     this.utmString = `?utm_medium=${this.state.utm.medium}&utm_source=${this.state.utm.source}&utm_campaign=${this.state.utm.campaign}`;
+    this.id = _.uniqueId('editor');
   }
   spawnChild = (evt) => {
     const catArr = this.state.modules.concat(evt.target.value)
@@ -51,13 +55,24 @@ class TemplatePicker extends React.Component {
   setActiveEdit = (e, el) => {
     e.preventDefault();
     const id = e.currentTarget.id;
-    this.setState({ activeID: id });
+    this.setState({ 
+      activeID: id,
+      currentEditable: el.myRef
+    });
+    this.setEditorContent( el.props.children );
 
-    // this.setEditorContent( el.props.children );
-    this.setState({ editorContent: el.props.children });
+    console.log(el.myRef.current.innerHTML);
+    //this.setState({ editorContent: el.props.children });
   }
   setEditorContent = (content) => {
-    console.log(content);
+    console.log('setEditorContent()');
+    this.id = _.uniqueId('editor'); // updating key triggers component update
+    this.setState({ editorContent: renderToString( content ) });
+  }
+  updateEditable = (updatedContent) => {
+    console.log( updatedContent );
+    const currentRef = this.state.currentEditable;
+    currentRef.current.innerHTML = updatedContent;
   }
   /**
    * TODO: React-ify this function...
@@ -120,7 +135,7 @@ class TemplatePicker extends React.Component {
               <button onClick={ this.getHtml }>Get HTML</button>
             </div>
             <div style={{ marginBottom: '1em' }}>
-              <DraftTest content={ this.state.editorContent } />
+              <DraftTest key={ this.id } content={ this.state.editorContent } updateEditable={ this.updateEditable } />
             </div>
           </div>
         </div>
