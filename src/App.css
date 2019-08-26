@@ -39,6 +39,7 @@
 
 .demo-editor {
   height: 275px !important;
+  background: #ddd;
   border: 1px solid #F1F1F1 !important;
   padding: 5px !important;
   border-radius: 2px !important;
