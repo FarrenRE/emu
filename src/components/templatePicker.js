@@ -17,6 +17,7 @@ class TemplatePicker extends React.Component {
       assoc: 'adma',
       utm: { medium: 'Email', source: 'ADMA', campaign: 'Monthly' },
       activeID: null,
+      editorContent: '<p>Hello world</p>'
     };
     this.themes = themes;
     this.utmString = `?utm_medium=${this.state.utm.medium}&utm_source=${this.state.utm.source}&utm_campaign=${this.state.utm.campaign}`;
@@ -47,10 +48,16 @@ class TemplatePicker extends React.Component {
   getUtmString = () => {
     return `?utm_medium=${this.state.utm.medium}&utm_source=${this.state.utm.source}&utm_campaign=${this.state.utm.campaign}`;
   }
-  setActiveEdit = (e) => {
+  setActiveEdit = (e, el) => {
     e.preventDefault();
-    const id = e.target.id;
+    const id = e.currentTarget.id;
     this.setState({ activeID: id });
+
+    // this.setEditorContent( el.props.children );
+    this.setState({ editorContent: el.props.children });
+  }
+  setEditorContent = (content) => {
+    console.log(content);
   }
   /**
    * TODO: React-ify this function...
@@ -113,7 +120,7 @@ class TemplatePicker extends React.Component {
               <button onClick={ this.getHtml }>Get HTML</button>
             </div>
             <div style={{ marginBottom: '1em' }}>
-              <DraftTest />
+              <DraftTest content={ this.state.editorContent } />
             </div>
           </div>
         </div>
