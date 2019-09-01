@@ -96,7 +96,7 @@ class Base extends React.Component {
                               <table align="center" bgcolor="#ffffff" border={0} cellPadding={0} cellSpacing={0} width="100%">
                                 <tbody>
                                   <tr>
-                                    <td bgcolor="#FFFFFF"><span className="preheader" style={{color: this.props.theme.colors.bgColor, fontSize: '1px'}}>Preheader goes here.</span></td>
+                                    <td bgcolor="#FFFFFF"><span className="preheader" style={{color: this.props.theme.colors.bgColor, fontSize: '1px'}}>{ this.props.preheader }</span></td>
                                   </tr>
                                   <tr>
                                     <td style={{textAlign: 'center', color: 'rgb(153, 153, 153)', fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '11px'}} valign="middle">If you cannot see this email, please <a href="#SPCLICKTOVIEW" name="SPCLICKTOVIEW" style={{color: 'rgb(153, 153, 153)', textDecoration: 'underline'}} target="_blank" rel="noopener noreferrer" xt="SPCLICKTOVIEW">click to view it online</a></td>
@@ -139,7 +139,11 @@ class Base extends React.Component {
                               <table align="center" bgcolor="#ffffff" border={0} cellPadding={0} cellSpacing={0} width="100%">
                                 <tbody>
                                   <tr>
-                                    <td align="left" valign="bottom" style={{ verticalAlign: 'bottom' }}><a href={ this.props.theme.org.website + this.props.utms } name="logo_link" target="_blank" rel="noopener noreferrer" xt="SPCLICK"><img className="em_full_img" style={{ display: 'block' }} alt={ this.props.theme.org.abbr } border={0} height={75} src={ this.props.theme.org.logos.header } title={ this.props.theme.org.abbr } width={400} xt="SPIMAGE" /></a></td>
+                                    <td align="left" valign="bottom" style={{ verticalAlign: 'bottom' }}>
+                                      <a href={ this.props.theme.org.website + this.props.utms } name="logo_link" target="_blank" rel="noopener noreferrer" xt="SPCLICK">
+                                        <img className="em_full_img" style={{ display: 'block' }} alt={ this.props.theme.org.abbr } border={0} height={75} src={ this.props.theme.org.logos.header } title={ this.props.theme.org.abbr } width={400} />
+                                      </a>
+                                    </td>
                                     <td align="right" valign="bottom" style={{ verticalAlign: 'bottom' }}>
                                       <table align="center" border={0} cellPadding={0} cellSpacing={0} width="100%">
                                         <tbody>
@@ -230,7 +234,7 @@ class Base extends React.Component {
                                             <table className="em_wrapper" align="right" border={0} cellPadding={0} cellSpacing={0} width={130}>
                                               <tbody>
                                               <tr>
-                                                <td className="em_pad_top" align="right" valign="top"><img alt="ADMA" border={0} height={25} src={ this.props.theme.org.logos.lockup } style={{display: 'block'}} title="ADMA" width={110} xt="SPIMAGE" /></td>
+                                                <td className="em_pad_top" align="right" valign="top"><img alt="ADMA" border={0} height={40} src={ this.props.theme.org.logos.lockup } style={{display: 'block'}} title="ADMA" width={110} /></td>
                                               </tr>
                                               </tbody>
                                             </table>

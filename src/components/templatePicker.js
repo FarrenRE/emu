@@ -3,7 +3,7 @@ import { renderToString } from 'react-dom/server';
 import _ from 'lodash';
 
 import Base from './Base';
-import DraftTest from './draftTest';
+import DraftWYSIWYG from './DraftWYSIWYG';
 import Module from './Module';
 
 import themes from './themes';
@@ -19,7 +19,7 @@ class TemplatePicker extends React.Component {
       assoc: 'adma',
       utm: { medium: 'Email', source: 'ADMA', campaign: 'Monthly' },
       activeID: null,
-      editorContent: '<p>Um, <span>Hello world!</span></p>',
+      editorContent: '<p>To get started, <strong>click</strong> on an <span style="color:rebeccapurple;">editable element</span>. Then you may edit the contents <em>here</em>!</p>',
       currentEditable: null
     };
     this.themes = themes;
@@ -41,6 +41,12 @@ class TemplatePicker extends React.Component {
   }
   updateAssoc = (evt) => {
     this.setState({ assoc: evt.target.value });
+  }
+  /**
+   * Generic handler for <input> updates. Updates state corresponding to name value
+   */
+  onInputUpdate = (evt) => {
+    this.setState({ [evt.target.name]: evt.target.value });
   }
   updateUtm = (evt) => {
     let newUTM = this.state.utm;
@@ -109,7 +115,8 @@ class TemplatePicker extends React.Component {
             <div id='edm-content' style={{ border: '1px solid black' }}>
               <Base
                 theme={this.themes[this.state.assoc]}
-                utms={this.getUtmString()}>
+                utms={this.getUtmString()}
+                preheader={this.state.preheader}>
                 {childs}
               </Base>
             </div>
@@ -118,6 +125,7 @@ class TemplatePicker extends React.Component {
             <h2>Settings</h2>
             <div style={{ marginBottom: '1em' }}>
               <button onClick={this.spawnChild} value='text'>Spawn text</button><br />
+              <button onClick={this.spawnChild} value='heading'>Spawn heading</button><br />
               <button onClick={this.spawnChild} value='content2'>Spawn content2</button><br />
               <button onClick={this.spawnChild} value='content-left'>Spawn content-left</button><br />
               <button onClick={this.spawnChild} value='banner'>Spawn banner</button><br />
@@ -131,11 +139,17 @@ class TemplatePicker extends React.Component {
               utm_campaign<input onChange={this.updateUtm} type='text' name='campaign' defaultValue='Monthly' />
             </div>
             <div style={{ marginBottom: '1em' }}>
+              Preheader: <input onChange={this.onInputUpdate} type='text' name='preheader' defaultValue={'I\'ll be a header one day!'} />
+            </div>
+            <div style={{ marginBottom: '1em' }}>
               <textarea id='edm-html' /><br />
               <button onClick={ this.getHtml }>Get HTML</button>
             </div>
             <div style={{ marginBottom: '1em' }}>
-              <DraftTest key={ this.id } content={ this.state.editorContent } updateEditable={ this.updateEditable } />
+              <DraftWYSIWYG
+                key={ this.id }
+                content={ this.state.editorContent }
+                updateEditable={ this.updateEditable } />
             </div>
           </div>
         </div>
