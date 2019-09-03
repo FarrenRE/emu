@@ -7,7 +7,6 @@ class Editable extends React.Component {
     this.state = {};
     this.id = this.setId();
     this.myRef = React.createRef();
-    console.log(this.myRef);
   }
   setId = () => {
     return _.uniqueId('editable_');

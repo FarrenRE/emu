@@ -7,10 +7,19 @@ import htmlToDraft from 'html-to-draftjs';
 class DraftWYSIWYG extends Component {
   constructor(props) {
     super(props);
-    const contentBlock = htmlToDraft(this.props.content);
-    this.state = {
-      editorState: EditorState.createWithContent(ContentState.createFromBlockArray(contentBlock.contentBlocks))
-    };
+    console.log('--- constructor ---');
+    console.log(`content prop: ${ props.content }`);
+
+    const blocksFromHtml = htmlToDraft(props.content);
+    const { contentBlocks, entityMap } = blocksFromHtml;
+    const contentState = ContentState.createFromBlockArray( contentBlocks, entityMap );
+    const editorState = EditorState.createWithContent( contentState );
+    this.state = { editorState: editorState };
+    
+    // this.state = {
+    //   editorState: EditorState.createWithContent(ContentState.createFromBlockArray(initialContentBlock.contentBlocks))
+    // };
+    console.log('-----------');
   }
 
   onEditorStateChange = (editorState) => {

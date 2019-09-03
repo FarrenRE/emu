@@ -4,6 +4,8 @@ import _ from 'lodash';
 
 import Base from './Base';
 import DraftWYSIWYG from './DraftWYSIWYG';
+import CKEditor from '@ckeditor/ckeditor5-react';
+import InlineEditor from '@ckeditor/ckeditor5-build-inline';
 import Module from './Module';
 
 import themes from './themes';
@@ -59,21 +61,30 @@ class TemplatePicker extends React.Component {
     return `?utm_medium=${this.state.utm.medium}&utm_source=${this.state.utm.source}&utm_campaign=${this.state.utm.campaign}`;
   }
   setActiveEdit = (e, el) => {
+    console.log('--- setActiveEdit() ---');
     e.preventDefault();
     const id = e.currentTarget.id;
     this.setState({ 
       activeID: id,
       currentEditable: el.myRef
     });
+    
+    console.log('innerHTML:');
+    console.log(el.myRef.current.innerHTML);
+    console.log('children:');
+    console.log(el.myRef);
+    console.log('props children:');
+    console.log(el.props.children);
+
     this.setEditorContent( el.props.children );
 
-    console.log(el.myRef.current.innerHTML);
-    //this.setState({ editorContent: el.props.children });
+    console.log('-----------');
   }
   setEditorContent = (content) => {
-    console.log('setEditorContent()');
+    console.log('--- setEditorContent() ---');
     this.id = _.uniqueId('editor'); // updating key triggers component update
     this.setState({ editorContent: renderToString( content ) });
+    console.log('-----------');
   }
   updateEditable = (updatedContent) => {
     console.log( updatedContent );
@@ -150,6 +161,16 @@ class TemplatePicker extends React.Component {
                 key={ this.id }
                 content={ this.state.editorContent }
                 updateEditable={ this.updateEditable } />
+            </div>
+            <div style={{ marginBottom: '1em' }}>
+              <CKEditor 
+                editor={ InlineEditor }
+                data="<p>Hello world</p>"
+                onChange={ ( event, editor ) => {
+                  const data = editor.getData();
+                  console.log( { event, editor, data } );
+                } }
+              />
             </div>
           </div>
         </div>
