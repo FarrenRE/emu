@@ -4,7 +4,7 @@ const themes = {
       name: 'Association for Data-driven Marketing and Advertising',
       abbr: 'ADMA',
       abn: '34 002 909 800',
-      addr: 'Level 6 50 Carrington Street, Sydney NSW 2000',
+      addr: 'Level 5, 115 Pitt Street, Sydney NSW 2000',
       website: 'https://www.adma.com.au',
       social: {
         fb: 'http://www.facebook.com/adma.com.au',
@@ -31,7 +31,7 @@ const themes = {
       name: 'Association for Data-driven Marketing and Advertising',
       abbr: 'ADMA IQ',
       abn: '34 002 909 800',
-      addr: 'Level 6 50 Carrington Street, Sydney NSW 2000',
+      addr: 'Level 5, 115 Pitt Street, Sydney NSW 2000',
       website: 'https://www.adma.com.au/iq',
       social: {
         fb: 'http://www.facebook.com/adma.com.au',
@@ -58,7 +58,7 @@ const themes = {
       name: 'Digital + Technology Collective',
       abbr: 'D+TC',
       abn: '34 002 909 800',
-      addr: 'Level 6 50 Carrington Street, Sydney NSW 2000',
+      addr: 'Level 5, 115 Pitt Street, Sydney NSW 2000',
       website: 'https://www.dtcollective.org.au',
       social: {
         fb: 'https://www.facebook.com/DigitalTechnologyCollective',
