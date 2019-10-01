@@ -1,23 +1,21 @@
 import React from 'react';
-import { renderToString } from 'react-dom/server';
 import _ from 'lodash';
 
 import Base from './Base';
 import DraftWYSIWYG from './DraftWYSIWYG';
-import CKEditor from '@ckeditor/ckeditor5-react';
-import InlineEditor from '@ckeditor/ckeditor5-build-inline';
 import Module from './Module';
 
 import themes from './themes';
 
 /**
- * Placeholder
+ * TemplatePicker class contains working email template, editor, and settings
+ * TODO: Split into separate components
  */
 class TemplatePicker extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      modules: ['text', 'button2', 'text'],
+      modules: ['text', 'heading', 'content2', 'contentLeft', 'banner', 'button2'],
       assoc: 'adma',
       utm: { medium: 'Email', source: 'ADMA', campaign: 'Monthly' },
       activeID: null,
@@ -28,28 +26,26 @@ class TemplatePicker extends React.Component {
     this.utmString = `?utm_medium=${this.state.utm.medium}&utm_source=${this.state.utm.source}&utm_campaign=${this.state.utm.campaign}`;
     this.id = _.uniqueId('editor');
   }
+  /** Adds element to bottom of edm template */
   spawnChild = (evt) => {
     const catArr = this.state.modules.concat(evt.target.value)
-    this.setState({
-      modules: catArr
-    });
+    this.setState({ modules: catArr });
   }
+  /** Removes last element from edm template */
   despawnChild = () => {
     let arr = this.state.modules;
     arr.pop();
-    this.setState({
-      modules: arr
-    });
+    this.setState({ modules: arr });
   }
+  /** Handler for Association <select> */
   updateAssoc = (evt) => {
     this.setState({ assoc: evt.target.value });
   }
-  /**
-   * Generic handler for <input> updates. Updates state corresponding to name value
-   */
+  /** Generic handler for <input> updates. Updates state corresponding to name value */
   onInputUpdate = (evt) => {
     this.setState({ [evt.target.name]: evt.target.value });
   }
+  /** Handler for UTM <input> updates. */
   updateUtm = (evt) => {
     let newUTM = this.state.utm;
     const name = evt.target.name;
@@ -57,60 +53,56 @@ class TemplatePicker extends React.Component {
     newUTM[name] = value;
     this.setState({ utm: newUTM });
   }
+  /** Compiles valid entire UTM string for a URL */
   getUtmString = () => {
     return `?utm_medium=${this.state.utm.medium}&utm_source=${this.state.utm.source}&utm_campaign=${this.state.utm.campaign}`;
   }
+  /** Set active Editable on click. Updates WYSIWYG */
   setActiveEdit = (e, el) => {
-    console.log('--- setActiveEdit() ---');
     e.preventDefault();
     const id = e.currentTarget.id;
-    this.setState({ 
+    this.setState({
       activeID: id,
       currentEditable: el.myRef
     });
-    
-    console.log('innerHTML:');
-    console.log(el.myRef.current.innerHTML);
-    console.log('children:');
-    console.log(el.myRef);
-    console.log('props children:');
-    console.log(el.props.children);
-
-    this.setEditorContent( el.props.children );
-
-    console.log('-----------');
+    // set editor content to active Editable's HTML
+    this.setEditorContent(el.myRef.current.innerHTML);
   }
+  /** Sets editor HTML
+   * @param {String} content : HTML string (Editable contents)
+   */
   setEditorContent = (content) => {
     console.log('--- setEditorContent() ---');
     this.id = _.uniqueId('editor'); // updating key triggers component update
-    this.setState({ editorContent: renderToString( content ) });
+    this.setState({ editorContent: content });
+    console.log((content));
     console.log('-----------');
   }
+  /** DraftWYSIWYG updateEditable() event handler */
   updateEditable = (updatedContent) => {
-    console.log( updatedContent );
+    console.log(updatedContent);
     const currentRef = this.state.currentEditable;
     currentRef.current.innerHTML = updatedContent;
   }
-  /**
-   * TODO: React-ify this function...
-   */
+  /** TODO: React-ify this function... */
   getHtml = () => {
-    const edmHtml = document.getElementById( 'edm-content' );
-    const textarea = document.getElementById( 'edm-html' );
+    const edmHtml = document.getElementById('edm-content');
+    const textarea = document.getElementById('edm-html');
 
     textarea.value = edmHtml.innerHTML;
   }
   render() {
+    // spawn all Modules in array
     const childs = [];
     for (let i = 0; i < this.state.modules.length; i++) {
       childs.push(
         <Module
-          type={ this.state.modules[i] }
+          type={this.state.modules[i]}
           key={i} id={i}
           theme={this.themes[this.state.assoc]}
           utms={this.getUtmString()}
-          setActiveEdit={ this.setActiveEdit }
-          activeID={ this.state.activeID } />);
+          setActiveEdit={this.setActiveEdit}
+          activeID={this.state.activeID} />);
     }
 
     return (
@@ -133,6 +125,12 @@ class TemplatePicker extends React.Component {
             </div>
           </div>
           <div className='column'>
+            <div style={{ marginBottom: '1em' }}>
+              <DraftWYSIWYG
+                key={this.id}
+                content={this.state.editorContent}
+                updateEditable={this.updateEditable} />
+            </div>
             <h2>Settings</h2>
             <div style={{ marginBottom: '1em' }}>
               <button onClick={this.spawnChild} value='text'>Spawn text</button><br />
@@ -154,24 +152,9 @@ class TemplatePicker extends React.Component {
             </div>
             <div style={{ marginBottom: '1em' }}>
               <textarea id='edm-html' /><br />
-              <button onClick={ this.getHtml }>Get HTML</button>
+              <button onClick={this.getHtml}>Get HTML</button>
             </div>
-            <div style={{ marginBottom: '1em' }}>
-              <DraftWYSIWYG
-                key={ this.id }
-                content={ this.state.editorContent }
-                updateEditable={ this.updateEditable } />
-            </div>
-            <div style={{ marginBottom: '1em' }}>
-              <CKEditor 
-                editor={ InlineEditor }
-                data="<p>Hello world</p>"
-                onChange={ ( event, editor ) => {
-                  const data = editor.getData();
-                  console.log( { event, editor, data } );
-                } }
-              />
-            </div>
+
           </div>
         </div>
       </div>
