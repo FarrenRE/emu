@@ -4,6 +4,7 @@ import _ from 'lodash';
 import Base from './Base';
 import DraftWYSIWYG from './DraftWYSIWYG';
 import Module from './Module';
+import ModuleSpawner from './ModuleSpawner';
 
 import themes from './themes';
 
@@ -17,6 +18,7 @@ class TemplatePicker extends React.Component {
     this.state = {
       modules: ['text', 'heading', 'content2', 'contentLeft', 'banner', 'button2'],
       assoc: 'adma',
+      campaign: 'monthly',
       utm: { medium: 'Email', source: 'ADMA', campaign: 'Monthly' },
       activeID: null,
       editorContent: '<p>To get started, <strong>click</strong> on an <span style="color:rebeccapurple;">editable element</span>. Then you may edit the contents <em>here</em>!</p>',
@@ -40,6 +42,10 @@ class TemplatePicker extends React.Component {
   /** Handler for Association <select> */
   updateAssoc = (evt) => {
     this.setState({ assoc: evt.target.value });
+  }
+  /** Handler for Campaign <select> */
+  updateCampaign = (evt) => {
+    this.setState({ campaign: evt.target.value });
   }
   /** Generic handler for <input> updates. Updates state corresponding to name value */
   onInputUpdate = (evt) => {
@@ -105,19 +111,32 @@ class TemplatePicker extends React.Component {
           activeID={this.state.activeID} />);
     }
 
+    // generate list of available campaigns
+    console.log('------- campaigns -------');
+    const campaigns = this.themes[this.state.assoc].campaign;
+    console.log(campaigns);
+    let campaignOptions = ``;
+    for (let c of Object.keys(campaigns)) {
+      console.log(c);
+      campaignOptions += `<option value='${c}'>${campaigns[c].name}</option>`;
+    }
+    console.log('----------------------');
+
     return (
       <div>
-        <select onChange={this.updateAssoc} style={{ padding: '0.25em', fontSize: '1em', margin: '0.25em' }}>
+        <select onChange={this.updateAssoc} className='select'>
           <option value='adma'>ADMA</option>
           <option value='iq'>IQ</option>
           <option value='dtc'>D+TC</option>
         </select>
+        <select onChange={this.updateCampaign} className='select' dangerouslySetInnerHTML={{ __html: campaignOptions }}></select>
         <div className='columns'>
           <div className='column'>
             <h2>Preview</h2>
             <div id='edm-content' style={{ border: '1px solid black' }}>
               <Base
                 theme={this.themes[this.state.assoc]}
+                campaign={this.state.campaign}
                 utms={this.getUtmString()}
                 preheader={this.state.preheader}>
                 {childs}
@@ -131,17 +150,12 @@ class TemplatePicker extends React.Component {
                 content={this.state.editorContent}
                 updateEditable={this.updateEditable} />
             </div>
-            <h2>Settings</h2>
+            <h2>Spawn Modules</h2>
             <div style={{ marginBottom: '1em' }}>
-              <button onClick={this.spawnChild} value='text'>Spawn text</button><br />
-              <button onClick={this.spawnChild} value='heading'>Spawn heading</button><br />
-              <button onClick={this.spawnChild} value='content2'>Spawn content2</button><br />
-              <button onClick={this.spawnChild} value='contentLeft'>Spawn content-left</button><br />
-              <button onClick={this.spawnChild} value='banner'>Spawn banner</button><br />
-              <button onClick={this.spawnChild} value='button1'>Spawn button1</button><br />
-              <button onClick={this.spawnChild} value='button2'>Spawn button2</button><br />
+              <ModuleSpawner
+                spawnChild={this.spawnChild}
+                despawnChild={this.despawnChild} />
             </div>
-            <div style={{ marginBottom: '1em' }}><button onClick={this.despawnChild}>Despawn module</button></div>
             <div style={{ marginBottom: '1em' }}>
               utm_medium=<input onChange={this.updateUtm} type='text' name='medium' defaultValue='Email' /><br />
               utm_source=<input onChange={this.updateUtm} type='text' name='source' defaultValue={this.state.assoc.toUpperCase()} /><br />

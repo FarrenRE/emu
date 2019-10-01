@@ -26,12 +26,18 @@ const themes = {
       footer: '#363636'
     },
     campaign: {
+      monthly: {
+        name: 'Monthly',
+        header: 'monthly'
+      },
       globalForum: {
+        name: 'Global Forum',
+        header: 'image'
+      },
+      test: {
+        name: 'Test Campaign',
         header: 'monthly'
       }
-    },
-    opts: {
-      header: 'monthly'
     }
   },
   iq: {
@@ -60,8 +66,11 @@ const themes = {
       link: '#CC0000',
       footer: '#363636'
     },
-    opts: {
-      header: 'monthly'
+    campaign: {
+      monthly: {
+        name: 'Monthly',
+        header: 'monthly'
+      }
     }
   },
   dtc: {
@@ -91,8 +100,11 @@ const themes = {
       footer: '#553278',
       footerStripe: '#363636',
     },
-    opts: {
-      header: 'monthly'
+    campaign: {
+      monthly: {
+        name: 'Monthly',
+        header: 'monthly'
+      }
     }
   }
 }

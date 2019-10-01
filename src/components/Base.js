@@ -141,8 +141,8 @@ class Base extends React.Component {
                               <tr>
                                 <td>
 
-                                  {this.props.theme.opts.header === 'monthly' ? <HeaderMonthly theme={this.props.theme} utms={this.props.utms} /> : ''}
-                                  {this.props.theme.opts.header !== 'image' ? <HeaderImage theme={this.props.theme} utms={this.props.utms} /> : ''}
+                                  {this.props.theme.campaign[this.props.campaign].header === 'monthly' ? <HeaderMonthly theme={this.props.theme} utms={this.props.utms} /> : ''}
+                                  {this.props.theme.campaign[this.props.campaign].header === 'image' ? <HeaderImage theme={this.props.theme} utms={this.props.utms} /> : ''}
 
                                 </td>
                               </tr>
