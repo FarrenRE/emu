@@ -1,5 +1,7 @@
 import React from 'react';
 
+import HeaderMonthly from './modules/HeaderMonthly';
+import HeaderImage from './modules/HeaderImage';
 import IQFooterLinks from './modules/iqFooterLinks';
 
 class Base extends React.Component {
@@ -25,6 +27,7 @@ class Base extends React.Component {
             \nspan.MsoHyperlinkFollowed{mso-style-priority:99;color:inherit;}
             \n.em_white a{text-decoration:none!important;color:#ffffff!important;}
             \nspan.preheader \t{display: none !important; font-size: 1px; color: #363636;}
+            \np \t{margin:0 !important;}
 
             \n@media only screen and (min-width:480px) and (max-width:600px){
               \ntable[class=em_wrapper]{width:100%!important;}
@@ -137,29 +140,10 @@ class Base extends React.Component {
                             <tbody>
                               <tr>
                                 <td>
-                                  <table align="center" bgcolor="#ffffff" border={0} cellPadding={0} cellSpacing={0} width="100%">
-                                    <tbody>
-                                      <tr>
-                                        <td align="left" valign="bottom" style={{ verticalAlign: 'bottom' }}>
-                                          <a href={this.props.theme.org.website + this.props.utms} name="logo_link" target="_blank" rel="noopener noreferrer" xt="SPCLICK">
-                                            <img className="em_full_img" style={{ display: 'block' }} alt={this.props.theme.org.abbr} border={0} height={75} src={this.props.theme.org.logos.header} title={this.props.theme.org.abbr} width={400} />
-                                          </a>
-                                        </td>
-                                        <td align="right" valign="bottom" style={{ verticalAlign: 'bottom' }}>
-                                          <table align="center" border={0} cellPadding={0} cellSpacing={0} width="100%">
-                                            <tbody>
-                                              <tr>
-                                                <td style={{ color: 'rgb(153, 153, 153)', lineHeight: '14px', fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '10px' }}>NEWSLETTER<br />{new Date().toLocaleString('en-AU', { month: 'long', year: 'numeric' }).toUpperCase()}</td>
-                                              </tr>
-                                              <tr>
-                                                <td className="em_height" bgcolor="#ffffff" height={20} style={{ lineHeight: '1px', fontSize: '1px' }}>&nbsp;</td>
-                                              </tr>
-                                            </tbody>
-                                          </table>
-                                        </td>
-                                      </tr>
-                                    </tbody>
-                                  </table>
+
+                                  {this.props.theme.opts.header === 'monthly' ? <HeaderMonthly theme={this.props.theme} utms={this.props.utms} /> : ''}
+                                  {this.props.theme.opts.header !== 'image' ? <HeaderImage theme={this.props.theme} utms={this.props.utms} /> : ''}
+
                                 </td>
                               </tr>
                               <tr>
@@ -258,9 +242,9 @@ class Base extends React.Component {
                                                     <tbody>
                                                       <tr>
                                                         <td align="center" valign="top" width={47} height={47}><a href={this.props.theme.org.social.fb + this.props.utms + '&utm_content=footerSocialFacebook'} name="social_footer_facebook" target="_blank" rel="noopener noreferrer" xt="SPCLICK"><img alt="facebook" border={0} width={47} height={47} src="https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/icon_facebook.jpg" style={{ display: 'block' }} /></a></td>
-                                                        <td></td>
+                                                        <td>&nbsp;</td>
                                                         <td align="center" valign="top" width={47} height={47}><a href={this.props.theme.org.social.tw + this.props.utms + '&utm_content=footerSocialTwitter'} name="social_footer_twitter" target="_blank" rel="noopener noreferrer" xt="SPCLICK"><img alt="twitter" border={0} width={47} height={47} src="https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/icon_twitter.jpg" style={{ display: 'block' }} /></a></td>
-                                                        <td></td>
+                                                        <td>&nbsp;</td>
                                                         <td align="center" valign="top" width={47} height={47}><a href={this.props.theme.org.social.li + this.props.utms + '&utm_content=footerSocialLinkedin'} name="social_footer_linkedin" target="_blank" rel="noopener noreferrer" xt="SPCLICK"><img alt="linkedin" border={0} width={47} height={47} src="https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/icon_linkedin.jpg" style={{ display: 'block' }} /></a></td>
                                                       </tr>
                                                     </tbody>

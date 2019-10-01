@@ -13,7 +13,7 @@ const themes = {
       },
       logos: {
         header: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/ADMA_assoc_header-logos_400x75.jpg',
-        lockup: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/ADMA_assoc_aadl-lockup_110x40.png',
+        lockup: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/lockup/ADMA-acs-lockup_edm-footer.png',
       },
     },
     colors: {
@@ -24,6 +24,14 @@ const themes = {
       bgColor: '#F6F6F6',
       link: '#CC0000',
       footer: '#363636'
+    },
+    campaign: {
+      globalForum: {
+        header: 'monthly'
+      }
+    },
+    opts: {
+      header: 'monthly'
     }
   },
   iq: {
@@ -40,7 +48,7 @@ const themes = {
       },
       logos: {
         header: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/IQ_assoc_header-logos_400x75.jpg',
-        lockup: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/ADMA_assoc_aadl-lockup_110x40.png',
+        lockup: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/lockup/ADMA-acs-lockup_edm-footer.png',
       },
     },
     colors: {
@@ -51,6 +59,9 @@ const themes = {
       bgColor: '#F6F6F6',
       link: '#CC0000',
       footer: '#363636'
+    },
+    opts: {
+      header: 'monthly'
     }
   },
   dtc: {
@@ -67,7 +78,7 @@ const themes = {
       },
       logos: {
         header: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/DTC_assoc_header-logos_400x75.jpg',
-        lockup: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/DTC_assoc_aadl-lockup_110x40.png',
+        lockup: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/lockup/DTC-acs-lockup_edm-footer.png',
       },
     },
     colors: {
@@ -79,6 +90,9 @@ const themes = {
       link: '#804bb4',
       footer: '#553278',
       footerStripe: '#363636',
+    },
+    opts: {
+      header: 'monthly'
     }
   }
 }
