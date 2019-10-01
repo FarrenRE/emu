@@ -136,7 +136,7 @@ class TemplatePicker extends React.Component {
               <button onClick={this.spawnChild} value='text'>Spawn text</button><br />
               <button onClick={this.spawnChild} value='heading'>Spawn heading</button><br />
               <button onClick={this.spawnChild} value='content2'>Spawn content2</button><br />
-              <button onClick={this.spawnChild} value='content-left'>Spawn content-left</button><br />
+              <button onClick={this.spawnChild} value='contentLeft'>Spawn content-left</button><br />
               <button onClick={this.spawnChild} value='banner'>Spawn banner</button><br />
               <button onClick={this.spawnChild} value='button1'>Spawn button1</button><br />
               <button onClick={this.spawnChild} value='button2'>Spawn button2</button><br />
