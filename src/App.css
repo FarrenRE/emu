@@ -16,6 +16,12 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+
+  height: 5vh;
+}
+
+main {
+  height: 95vh;
 }
 
 .App-link {
@@ -26,6 +32,19 @@
   display: none;
 }
 
+/* app edit area */
+.edit-area > .columns > .column {
+  max-height: 95vh;
+  overflow: auto;
+}
+
+.template-select {
+  position: relative;
+  left: 0;
+  right: 50%;
+}
+
+/* Editable */
 .editable.active {
   border: 2px dotted rebeccapurple;
 }
@@ -51,11 +70,15 @@
 }
 
 .demo-editor {
-  height: 275px !important;
+  height: 200px !important;
   background: #ddd;
   border: 1px solid #F1F1F1 !important;
   padding: 5px !important;
   border-radius: 2px !important;
+}
+
+.demo-content {
+  width: 100%;
 }
 
 @keyframes App-logo-spin {
