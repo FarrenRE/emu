@@ -66,13 +66,18 @@ class TemplatePicker extends React.Component {
   /** Set active Editable on click. Updates WYSIWYG */
   setActiveEdit = (e, el) => {
     e.preventDefault();
-    const id = e.currentTarget.id;
-    this.setState({
-      activeID: id,
-      currentEditable: el.myRef
-    });
-    // set editor content to active Editable's HTML
-    this.setEditorContent(el.myRef.current.innerHTML);
+    // determine whether editable text or image based on assigned element id
+    if (el.id.match('editable_')) { // string
+      const id = e.currentTarget.id;
+      this.setState({
+        activeID: id,
+        currentEditable: el.myRef
+      });
+      // set editor content to active Editable's HTML
+      this.setEditorContent(el.myRef.current.innerHTML);
+    } else if (el.id.match('editableimg_')) { // image
+      console.log('hello image');
+    }
   }
   /** Sets editor HTML
    * @param {String} content : HTML string (Editable contents)
@@ -111,8 +116,13 @@ class TemplatePicker extends React.Component {
           activeID={this.state.activeID} />);
     }
 
+    // generate list of available associations
+    const associations = this.themes;
+    let associationOptions = ``;
+    for (let a of Object.keys(associations)) {
+      associationOptions += `<option value='${a}'>${associations[a].org.abbr}</option>`;;
+    }
     // generate list of available campaigns
-    console.log('------- campaigns -------');
     const campaigns = this.themes[this.state.assoc].campaign;
     console.log(campaigns);
     let campaignOptions = ``;
@@ -120,57 +130,57 @@ class TemplatePicker extends React.Component {
       console.log(c);
       campaignOptions += `<option value='${c}'>${campaigns[c].name}</option>`;
     }
-    console.log('----------------------');
 
     return (
-      <div>
-        <select onChange={this.updateAssoc} className='select'>
-          <option value='adma'>ADMA</option>
-          <option value='iq'>IQ</option>
-          <option value='dtc'>D+TC</option>
-        </select>
-        <select onChange={this.updateCampaign} className='select' dangerouslySetInnerHTML={{ __html: campaignOptions }}></select>
-        <div className='columns'>
-          <div className='column'>
-            <h2>Preview</h2>
-            <div id='edm-content' style={{ border: '1px solid black' }}>
-              <Base
-                theme={this.themes[this.state.assoc]}
-                campaign={this.state.campaign}
-                utms={this.getUtmString()}
-                preheader={this.state.preheader}>
-                {childs}
-              </Base>
-            </div>
-          </div>
-          <div className='column'>
-            <div style={{ marginBottom: '1em' }}>
-              <DraftWYSIWYG
-                key={this.id}
-                content={this.state.editorContent}
-                updateEditable={this.updateEditable} />
-            </div>
-            <h2>Spawn Modules</h2>
-            <div style={{ marginBottom: '1em' }}>
-              <ModuleSpawner
-                spawnChild={this.spawnChild}
-                despawnChild={this.despawnChild} />
-            </div>
-            <div style={{ marginBottom: '1em' }}>
-              utm_medium=<input onChange={this.updateUtm} type='text' name='medium' defaultValue='Email' /><br />
-              utm_source=<input onChange={this.updateUtm} type='text' name='source' defaultValue={this.state.assoc.toUpperCase()} /><br />
-              utm_campaign<input onChange={this.updateUtm} type='text' name='campaign' defaultValue='Monthly' />
-            </div>
-            <div style={{ marginBottom: '1em' }}>
-              Preheader: <input onChange={this.onInputUpdate} type='text' name='preheader' defaultValue={'I\'ll be a header one day!'} />
-            </div>
-            <div style={{ marginBottom: '1em' }}>
-              <textarea id='edm-html' /><br />
-              <button onClick={this.getHtml}>Get HTML</button>
-            </div>
+      <div id='TemplatePicker'>
 
+        <div className='edit-area'>
+          <div className='columns'>
+            <div className='column'>
+              <div className='template-select'>
+                <select onChange={this.updateAssoc} className='select' dangerouslySetInnerHTML={{ __html: associationOptions }}></select>
+                <select onChange={this.updateCampaign} className='select' dangerouslySetInnerHTML={{ __html: campaignOptions }}></select>
+              </div>
+              <div id='edm-content' style={{ border: '1px solid black' }}>
+                <Base
+                  theme={this.themes[this.state.assoc]}
+                  campaign={this.state.campaign}
+                  utms={this.getUtmString()}
+                  preheader={this.state.preheader}>
+                  {childs}
+                </Base>
+              </div>
+            </div>
+            <div className='column'>
+              <div style={{ marginBottom: '1em' }}>
+                <DraftWYSIWYG
+                  key={this.id}
+                  content={this.state.editorContent}
+                  updateEditable={this.updateEditable} />
+              </div>
+              <h2>Spawn Modules</h2>
+              <div style={{ marginBottom: '1em' }}>
+                <ModuleSpawner
+                  spawnChild={this.spawnChild}
+                  despawnChild={this.despawnChild} />
+              </div>
+              <div style={{ marginBottom: '1em' }}>
+                utm_medium=<input onChange={this.updateUtm} type='text' name='medium' defaultValue='Email' /><br />
+                utm_source=<input onChange={this.updateUtm} type='text' name='source' defaultValue={this.state.assoc.toUpperCase()} /><br />
+                utm_campaign<input onChange={this.updateUtm} type='text' name='campaign' defaultValue='Monthly' />
+              </div>
+              <div style={{ marginBottom: '1em' }}>
+                Preheader: <input onChange={this.onInputUpdate} type='text' name='preheader' defaultValue={'I\'ll be a header one day!'} />
+              </div>
+              <div style={{ marginBottom: '1em' }}>
+                <textarea id='edm-html' /><br />
+                <button onClick={this.getHtml}>Get HTML</button>
+              </div>
+
+            </div>
           </div>
         </div>
+
       </div>
     )
   }
