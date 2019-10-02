@@ -13,22 +13,22 @@ class Button2 extends React.Component {
                 <tbody>
                   <tr>
                     <td>
-                      <table align="center" border={0} cellPadding={0} cellSpacing={0} style={{backgroundColor: `${ this.props.theme.colors.primary }`}} width={160}>
+                      <table align="center" border={0} cellPadding={0} cellSpacing={0} style={{ backgroundColor: `${this.props.theme.colors.primary}` }} width={160}>
                         <tbody>
                           <tr>
-                            <td align="center" height={40} style={{fontFamily: 'Helvetica, Arial, sans-serif', verticalAlign: 'middle', fontSize: '14px', textAlign: 'center', borderTop: `4px solid ${ this.props.theme.colors.primaryLighter }`, borderBottom: `4px solid ${ this.props.theme.colors.primaryDarker }`}} valign="middle">
-                              <Editable setActiveEdit={ this.props.setActiveEdit } activeID={ this.props.activeID }><a href={ `${ this.props.theme.org.website }${ this.props.utms }&content=Button2L` } name={ `Button2L CTA ${ this.props.id }` } style={{color: '#FFFFFF', display: 'block', textDecoration: 'none', fontWeight: 'bold'}} target="_blank" rel="noreferrer noopener">Click me!</a></Editable>
+                            <td align="center" height={40} style={{ fontFamily: 'Helvetica, Arial, sans-serif', verticalAlign: 'middle', fontSize: '14px', textAlign: 'center', borderTop: `4px solid ${this.props.theme.colors.primaryLighter}`, borderBottom: `4px solid ${this.props.theme.colors.primaryDarker}` }} valign="middle">
+                              <Editable setActiveEdit={this.props.setActiveEdit} activeID={this.props.activeID}><a href={`${this.props.theme.org.website}${this.props.utms}&content=Button2L`} name={`Button2L CTA ${this.props.id}`} style={{ color: `${this.props.theme.colors.secondary}`, display: 'block', textDecoration: 'none', fontWeight: 'bold' }} target="_blank" rel="noreferrer noopener">Click me!</a></Editable>
                             </td>
                           </tr>
                         </tbody>
                       </table>
                     </td>
                     <td>
-                      <table align="center" border={0} cellPadding={0} cellSpacing={0} style={{backgroundColor: `${ this.props.theme.colors.primary }`}} width={160}>
+                      <table align="center" border={0} cellPadding={0} cellSpacing={0} style={{ backgroundColor: `${this.props.theme.colors.primary}` }} width={160}>
                         <tbody>
                           <tr>
-                            <td align="center" height={40} style={{fontFamily: 'Helvetica, Arial, sans-serif', verticalAlign: 'middle', fontSize: '14px', textAlign: 'center', borderTop: `4px solid ${ this.props.theme.colors.primaryLighter }`, borderBottom: `4px solid ${ this.props.theme.colors.primaryDarker }`}} valign="middle">
-                            <Editable setActiveEdit={ this.props.setActiveEdit } activeID={ this.props.activeID }><a href={ `${ this.props.theme.org.website }${ this.props.utms }&content=Button2R` } name={ `Button2R CTA ${ this.props.id }` } style={{color: '#FFFFFF', display: 'block', textDecoration: 'none', fontWeight: 'bold'}} target="_blank" rel="noreferrer noopener">Me too!</a></Editable>
+                            <td align="center" height={40} style={{ fontFamily: 'Helvetica, Arial, sans-serif', verticalAlign: 'middle', fontSize: '14px', textAlign: 'center', borderTop: `4px solid ${this.props.theme.colors.primaryLighter}`, borderBottom: `4px solid ${this.props.theme.colors.primaryDarker}` }} valign="middle">
+                              <Editable setActiveEdit={this.props.setActiveEdit} activeID={this.props.activeID}><a href={`${this.props.theme.org.website}${this.props.utms}&content=Button2R`} name={`Button2R CTA ${this.props.id}`} style={{ color: `${this.props.theme.colors.secondary}`, display: 'block', textDecoration: 'none', fontWeight: 'bold' }} target="_blank" rel="noreferrer noopener">Me too!</a></Editable>
                             </td>
                           </tr>
                         </tbody>
@@ -36,7 +36,7 @@ class Button2 extends React.Component {
                     </td>
                   </tr>
                   <tr>
-                    <td colSpan={3} height={15} style={{fontSize: '1px', lineHeight: '1px'}}>&nbsp;</td>
+                    <td colSpan={3} height={15} style={{ fontSize: '1px', lineHeight: '1px' }}>&nbsp;</td>
                   </tr>
                 </tbody>
               </table>
