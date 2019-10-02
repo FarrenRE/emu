@@ -28,15 +28,16 @@ const themes = {
     campaign: {
       monthly: {
         name: 'Monthly',
-        header: 'monthly'
+        headerType: 'monthly'
       },
       globalForum: {
         name: 'Global Forum',
-        header: 'image'
+        headerType: 'image',
+        headerImage: ''
       },
       test: {
         name: 'Test Campaign',
-        header: 'monthly'
+        headerType: 'monthly'
       }
     }
   },
@@ -69,8 +70,47 @@ const themes = {
     campaign: {
       monthly: {
         name: 'Monthly',
-        header: 'monthly'
+        headerType: 'monthly'
       }
+    }
+  },
+  iapa: {
+    org: {
+      name: 'Institute for Analytics Professionals of Australia',
+      abbr: 'IAPA',
+      abn: '53 156 305 487',
+      addr: 'Level 27, Tower One, 100 Barangaroo Avenue, Sydney, NSW, 2000',
+      website: 'https://www.iapa.org.au',
+      social: {
+        fb: 'http://www.facebook.com/adma.com.au',
+        tw: 'https://twitter.com/IAPA_org_au',
+        li: 'https://www.linkedin.com/company/institute-of-analytics-professionals',
+      },
+      logos: {
+        header: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/IAPA_assoc_header-logos_400x75.jpg',
+        lockup: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/lockup/IAPA-acs-lockup_edm-footer.png',
+      },
+    },
+    colors: {
+      primary: '#fedb38',
+      primaryLighter: '#fee267',
+      primaryDarker: '#fed41b',
+      secondary: '#333333',
+      bgColor: '#F6F6F6',
+      link: '#fed41b',
+      footer: '#363636'
+    },
+    campaign: {
+      monthly: {
+        name: 'Monthly',
+        headerType: 'monthly',
+        headerImage: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/IAPA_assoc_header-logos_400x75.jpg'
+      },
+      globalForum: {
+        name: 'Global Forum',
+        headerType: 'image',
+        headerImage: ''
+      },
     }
   },
   dtc: {
@@ -103,7 +143,8 @@ const themes = {
     campaign: {
       monthly: {
         name: 'Monthly',
-        header: 'monthly'
+        headerType: 'monthly',
+        headerImage: ''
       }
     }
   }
