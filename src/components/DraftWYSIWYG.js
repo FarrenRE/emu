@@ -8,14 +8,14 @@ class DraftWYSIWYG extends Component {
   constructor(props) {
     super(props);
     console.log('--- constructor ---');
-    console.log(`content prop: ${ props.content }`);
+    console.log(`content prop: ${props.content}`);
 
     const blocksFromHtml = htmlToDraft(props.content);
     const { contentBlocks, entityMap } = blocksFromHtml;
-    const contentState = ContentState.createFromBlockArray( contentBlocks, entityMap );
-    const editorState = EditorState.createWithContent( contentState );
+    const contentState = ContentState.createFromBlockArray(contentBlocks, entityMap);
+    const editorState = EditorState.createWithContent(contentState);
     this.state = { editorState: editorState };
-    
+
     // this.state = {
     //   editorState: EditorState.createWithContent(ContentState.createFromBlockArray(initialContentBlock.contentBlocks))
     // };
@@ -34,10 +34,10 @@ class DraftWYSIWYG extends Component {
     console.log('onChange()');
     const convertedContent = draftToHtml(convertToRaw(this.state.editorState.getCurrentContent()))
     this.setState({ convertedContent, });
-    this.props.updateEditable( convertedContent );
+    this.props.updateEditable(convertedContent);
     console.log('-----------');
   }
-  
+
   render() {
     console.log('DraftTest render');
     const { editorState } = this.state;
@@ -51,7 +51,8 @@ class DraftWYSIWYG extends Component {
               wrapperClassName="demo-wrapper"
               editorClassName="demo-editor"
               onEditorStateChange={this.onEditorStateChange}
-              onChange={ this.onChange }
+              onChange={this.onChange}
+              spellCheck={true}
             />
             <textarea
               disabled
