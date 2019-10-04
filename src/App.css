@@ -71,6 +71,15 @@ main {
   display: none;
 }
 
+/* image editor */
+.editableimg-popup {
+  width: 50vw;
+}
+
+.editableimg-popup input {
+  width: 75%;
+}
+
 /* text editor */
 .rdw-editor-main {
   height: 100%;
