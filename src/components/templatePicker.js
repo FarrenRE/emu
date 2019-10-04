@@ -27,8 +27,8 @@ class TemplatePicker extends React.Component {
     super(props);
     this.state = {
       modules: ['text', 'heading', 'content2', 'contentLeft', 'banner', 'button2'],
-      assoc: 'iapa',
-      campaign: 'advancingAnalytics',
+      assoc: 'adma',
+      campaign: 'monthly',
       utm: { medium: 'Email', source: 'ADMA', campaign: 'Monthly' },
       activeEditableId: null,
       activeEditableRef: null,
