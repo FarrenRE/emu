@@ -20,7 +20,7 @@ class Base extends React.Component {
             \nimg{border:0!important;outline:none!important;}
             \ntable{border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;}
             \ntd{border-collapse:collapse;mso-line-height-rule:exactly;}
-            \na{color: ${ this.props.theme.colors.link}; }
+            \na{color: ${ this.props.theme.campaign.colors.link}; }
             \na,span{mso-line-height-rule:exactly;}
             \n.ExternalClass *{line-height:100%;}
             \nspan.MsoHyperlink{mso-style-priority:99;color:inherit;}
@@ -44,7 +44,7 @@ class Base extends React.Component {
               \ntd[class=em_align_cent1]{text-align:center!important;font-size:11px!important;line-height:14px!important;}
               \ntd[class=em_pad]{padding-left:10px!important;}
               \ntd[class=em_side]{padding-left:10px!important;padding-right:10px!important;}
-              \ndiv[class=hide_disktop]{display:table!important;float:none!important;width:100%!important;overflow:visible!important;height:auto!important;}
+              \ndiv[class=hide_desktop]{display:table!important;float:none!important;width:100%!important;overflow:visible!important;height:auto!important;}
               \ntable[class=em_tbl_312]{width:312px!important;}
               \n}
 
@@ -63,7 +63,7 @@ class Base extends React.Component {
               \ntd[class=em_align_cent1]{text-align:center!important;font-size:11px!important;line-height:14px!important;}
               \ntd[class=em_pad]{padding-left:10px!important;}
               \ntd[class=em_side]{padding-left:10px!important;padding-right:10px!important;}
-              \ndiv[class=hide_disktop]{display:table!important;float:none!important;width:100%!important;overflow:visible!important;height:auto!important;}
+              \ndiv[class=hide_desktop]{display:table!important;float:none!important;width:100%!important;overflow:visible!important;height:auto!important;}
               \nimg[class=em_w140]{width:80px!important;height:auto!important;}
               \nimg[class=em_w150]{width:110px!important;height:auto!important;}
               \nimg[class=em_w40]{width:40px!important;height:auto!important;}
@@ -73,7 +73,7 @@ class Base extends React.Component {
               \n}` }} />
         </head>
         <body>
-          <table align="center" bgcolor={this.props.theme.colors.bgColor} border={0} cellPadding={0} cellSpacing={0} width="100%">
+          <table align="center" bgcolor={this.props.theme.campaign.colors.bgColor} border={0} cellPadding={0} cellSpacing={0} width="100%">
             {/* ==Header Starts Here==*/}
             <tbody>
               <tr>
@@ -100,7 +100,7 @@ class Base extends React.Component {
                                   <table align="center" bgcolor="#ffffff" border={0} cellPadding={0} cellSpacing={0} width="100%">
                                     <tbody>
                                       <tr>
-                                        <td bgcolor="#FFFFFF"><span className="preheader" style={{ color: this.props.theme.colors.bgColor, fontSize: '1px' }}>{this.props.preheader}</span></td>
+                                        <td bgcolor="#FFFFFF"><span className="preheader" style={{ color: this.props.theme.campaign.colors.bgColor, fontSize: '1px' }}>{this.props.preheader}</span></td>
                                       </tr>
                                       <tr>
                                         <td style={{ textAlign: 'center', color: 'rgb(153, 153, 153)', fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '11px' }} valign="middle">If you cannot see this email, please <a href="#SPCLICKTOVIEW" name="SPCLICKTOVIEW" style={{ color: 'rgb(153, 153, 153)', textDecoration: 'underline' }} target="_blank" rel="noopener noreferrer" xt="SPCLICKTOVIEW">click to view it online</a></td>
@@ -141,13 +141,13 @@ class Base extends React.Component {
                               <tr>
                                 <td>
 
-                                  {this.props.theme.campaign[this.props.campaign].headerType === 'monthly' ? <HeaderMonthly theme={this.props.theme} utms={this.props.utms} /> : ''}
-                                  {this.props.theme.campaign[this.props.campaign].headerType === 'image' ? <HeaderImage theme={this.props.theme} utms={this.props.utms} /> : ''}
+                                  {this.props.theme.campaign.header.type === 'monthly' ? <HeaderMonthly theme={this.props.theme} utms={this.props.utms} /> : ''}
+                                  {this.props.theme.campaign.header.type === 'image' ? <HeaderImage theme={this.props.theme} utms={this.props.utms} /> : ''}
 
                                 </td>
                               </tr>
                               <tr>
-                                <td className="em_height" bgcolor="#ffffff" height={20} style={{ lineHeight: '1px', fontSize: '1px', borderTopColor: `${this.props.theme.colors.primary}`, borderTopWidth: '3px', borderTopStyle: 'solid' }}></td>
+                                <td className="em_height" bgcolor="#ffffff" height={20} style={{ lineHeight: '1px', fontSize: '1px', borderTopColor: `${this.props.theme.campaign.colors.primary}`, borderTopWidth: '3px', borderTopStyle: 'solid' }}></td>
                               </tr>
                               {/* Full Content Section starts here*/}
                               <tr>
@@ -178,7 +178,7 @@ class Base extends React.Component {
               {/* ===Footer Starts Here===*/}
               <tr>
                 <td align="center" valign="top">
-                  <table align="center" bgcolor={this.props.theme.colors.footer} border={0} cellPadding={0} cellSpacing={0} width="100%">
+                  <table align="center" bgcolor={this.props.theme.campaign.colors.footer} border={0} cellPadding={0} cellSpacing={0} width="100%">
                     <tbody>
                       <tr>
                         <td align="center" valign="top">&nbsp;</td>
@@ -274,7 +274,7 @@ class Base extends React.Component {
               {/* // Footer Ends Here*/}
               {/* Line Starts Here*/}
               <tr>
-                <td align="center" bgcolor={this.props.theme.colors.footerStripe ? this.props.theme.colors.footerStripe : this.props.theme.colors.primary} height={3}>
+                <td align="center" bgcolor={this.props.theme.campaign.colors.footerStripe ? this.props.theme.campaign.colors.footerStripe : this.props.theme.campaign.colors.primary} height={3}>
                   <table align="center" border={0} cellPadding={0} cellSpacing={0} style={{ tableLayout: 'fixed' }} width="100%">
                     <tbody>
                       <tr>
