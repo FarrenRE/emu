@@ -16,9 +16,7 @@ class DraftWYSIWYG extends Component {
   }
 
   onEditorStateChange = (editorState) => {
-    this.setState({
-      editorState,
-    });
+    this.setState({ editorState, });
   };
 
   onChange = () => {
@@ -40,7 +38,7 @@ class DraftWYSIWYG extends Component {
               editorClassName="demo-editor"
               onEditorStateChange={this.onEditorStateChange}
               onChange={this.onChange}
-              spellCheck={true}
+              spellCheck={false}
             />
             <textarea
               disabled
