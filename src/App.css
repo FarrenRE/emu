@@ -62,7 +62,16 @@ main {
   padding: 0 0.25em;
 }
 
-/* Draftjs demo */
+/* Editors */
+
+.editor.active {
+  display: block;
+}
+.editor.inactive {
+  display: none;
+}
+
+/* text editor */
 .rdw-editor-main {
   height: 100%;
   overflow: auto;
@@ -80,6 +89,8 @@ main {
 .demo-content {
   width: 100%;
 }
+
+/* Animations */
 
 @keyframes App-logo-spin {
   from {
