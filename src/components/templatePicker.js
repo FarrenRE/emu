@@ -102,7 +102,6 @@ class TemplatePicker extends React.Component {
       this.setState({ activeEditor: 'text' });
       this.setEditorContent(el.myRef.current.innerHTML); // set text editor content to active Editable's HTML
     } else if (el.id.match('editableimg_')) { // image
-      console.log(el.myRef.current);
       this.setState({ activeEditor: 'image' });
     }
   }
@@ -113,10 +112,6 @@ class TemplatePicker extends React.Component {
     this.id = _.uniqueId('editor'); // updating key triggers component update
     this.setState({ editorContent: content });
     console.log((content));
-  }
-  /** Sets image editor values */
-  setImageEditorValues = (values) => {
-
   }
   /** DraftWYSIWYG updateEditable() event handler */
   updateEditable = (updatedContent) => {
