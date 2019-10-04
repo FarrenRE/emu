@@ -17,8 +17,9 @@ class TemplatePicker extends React.Component {
     super(props);
     this.state = {
       modules: ['text', 'heading', 'content2', 'contentLeft', 'banner', 'button2'],
-      assoc: 'adma',
-      campaign: 'monthly',
+      assoc: 'iapa',
+      campaign: 'advancingAnalytics',
+      activeTheme: themes['adma'],
       utm: { medium: 'Email', source: 'ADMA', campaign: 'Monthly' },
       activeID: null,
       editorContent: '<p>To get started, <strong>click</strong> on an <span style="color:rebeccapurple;">editable element</span>. Then you may edit the contents <em>here</em>!</p>',
@@ -59,6 +60,20 @@ class TemplatePicker extends React.Component {
     newUTM[name] = value;
     this.setState({ utm: newUTM });
   }
+  /** Get active theme config from theme/assoc/campaign combo */
+  getActiveTheme = () => {
+    console.log('----------- getActiveTheme() -----------');
+    // current association/campaign values
+    const assoc = this.state.assoc;
+    const cmpgn = this.state.campaign;
+    let activeTheme = this.themes[assoc];
+    activeTheme['campaign'] = this.themes[assoc].campaigns[cmpgn];
+
+    console.log('activeTheme returned:');
+    console.log(activeTheme);
+    console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+    return activeTheme;
+  }
   /** Compiles valid entire UTM string for a URL */
   getUtmString = () => {
     return `?utm_medium=${this.state.utm.medium}&utm_source=${this.state.utm.source}&utm_campaign=${this.state.utm.campaign}`;
@@ -83,11 +98,9 @@ class TemplatePicker extends React.Component {
    * @param {String} content : HTML string (Editable contents)
    */
   setEditorContent = (content) => {
-    console.log('--- setEditorContent() ---');
     this.id = _.uniqueId('editor'); // updating key triggers component update
     this.setState({ editorContent: content });
     console.log((content));
-    console.log('-----------');
   }
   /** DraftWYSIWYG updateEditable() event handler */
   updateEditable = (updatedContent) => {
@@ -110,7 +123,7 @@ class TemplatePicker extends React.Component {
         <Module
           type={this.state.modules[i]}
           key={i} id={i}
-          theme={this.themes[this.state.assoc]}
+          theme={this.getActiveTheme()}
           utms={this.getUtmString()}
           setActiveEdit={this.setActiveEdit}
           activeID={this.state.activeID} />);
@@ -123,11 +136,9 @@ class TemplatePicker extends React.Component {
       associationOptions += `<option value='${a}'>${associations[a].org.abbr}</option>`;;
     }
     // generate list of available campaigns
-    const campaigns = this.themes[this.state.assoc].campaign;
-    console.log(campaigns);
+    const campaigns = this.themes[this.state.assoc].campaigns;
     let campaignOptions = ``;
     for (let c of Object.keys(campaigns)) {
-      console.log(c);
       campaignOptions += `<option value='${c}'>${campaigns[c].name}</option>`;
     }
 
@@ -143,8 +154,7 @@ class TemplatePicker extends React.Component {
               </div>
               <div id='edm-content' style={{ border: '1px solid black' }}>
                 <Base
-                  theme={this.themes[this.state.assoc]}
-                  campaign={this.state.campaign}
+                  theme={this.getActiveTheme()}
                   utms={this.getUtmString()}
                   preheader={this.state.preheader}>
                   {childs}
