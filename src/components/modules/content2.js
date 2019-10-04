@@ -21,7 +21,7 @@ class Content2 extends React.Component {
                               <table align="center" border={0} cellPadding={0} cellSpacing={0} width="100%">
                                 <tbody>
                                   <tr>
-                                    <td align="center" valign="top"><EditableImage setActiveEdit={this.props.setActiveEdit} activeID={this.props.activeID}><a href={`${this.props.theme.org.website}${this.props.utms}&content=Content`} name={`Content_${this.props.id}_IMAGE`} target="_blank" rel="noopener noreferrer" xt="SPCLICK"><img alt="content" border={0} height={190} src="https://via.placeholder.com/270x190.jpg" style={{ display: 'block' }} width={270} /></a></EditableImage></td>
+                                    <td align="center" valign="top"><EditableImage setActiveEdit={this.props.setActiveEdit} activeID={this.props.activeID}><img alt="content" border={0} height={190} src="https://via.placeholder.com/270x190.jpg" style={{ display: 'block' }} width={270} /></EditableImage></td>
                                   </tr>
                                   <tr>
                                     <td className="em_height" height={15} style={{ fontSize: '1px', lineHeight: '1px' }} />
@@ -33,10 +33,10 @@ class Content2 extends React.Component {
                                     <td className="em_height" height={7} style={{ fontSize: '1px', lineHeight: '1px' }} />
                                   </tr>
                                   <tr>
-                                    <td style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '13px', lineHeight: '21px', color: '#000000', textAlign: 'left' }}><Editable setActiveEdit={this.props.setActiveEdit} activeID={this.props.activeID}>Nulla scelerisque sapien elit, vitae ultricies magna iaculis eu. Morbi <figure><img src="https://via.placeholder.com/270x190.jpg" /></figure> interdum magna eu tortor scelerisque, quis dignissim urna egestas. Aliquam ac sollicitudin quam. Fusce erat elit, volutpat vitae lorem et, congue lacinia risus.</Editable></td>
+                                    <td style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '13px', lineHeight: '21px', color: '#000000', textAlign: 'left' }}><Editable setActiveEdit={this.props.setActiveEdit} activeID={this.props.activeID}>Nulla scelerisque sapien elit, vitae ultricies magna iaculis eu. Morbi interdum magna eu tortor scelerisque, quis dignissim urna egestas. Aliquam ac sollicitudin quam. Fusce erat elit, volutpat vitae lorem et, congue lacinia risus.</Editable></td>
                                   </tr>
                                   <tr>
-                                    <td style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '13px', lineHeight: '21px', textAlign: 'left' }}><Editable setActiveEdit={this.props.setActiveEdit} activeID={this.props.activeID}><a href={`${this.props.theme.org.website}${this.props.utms}&content=Content`} name={`Content_${this.props.id}_CTA`} style={{ textDecoration: 'none', color: this.props.theme.colors.link }} target="_blank" rel="noopener noreferrer" xt="SPCLICK">Find out more&nbsp;»</a></Editable></td>
+                                    <td style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '13px', lineHeight: '21px', textAlign: 'left' }}><Editable setActiveEdit={this.props.setActiveEdit} activeID={this.props.activeID}><a href={`${this.props.theme.org.website}${this.props.utms}&content=Content`} name={`Content_${this.props.id}_CTA`} style={{ textDecoration: 'none', color: this.props.theme.campaign.colors.link }} target="_blank" rel="noopener noreferrer" xt="SPCLICK">Find out more&nbsp;»</a></Editable></td>
                                   </tr>
                                 </tbody>
                               </table>
@@ -66,7 +66,7 @@ class Content2 extends React.Component {
                                     <td style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '13px', lineHeight: '21px', color: '#000000', textAlign: 'left' }}><Editable setActiveEdit={this.props.setActiveEdit} activeID={this.props.activeID}>Maecenas ornare, nisi at aliquam dictum, metus odio auctor nulla, vitae interdum augue nisl vitae sem.</Editable></td>
                                   </tr>
                                   <tr>
-                                    <td style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '13px', lineHeight: '21px', color: '#df1a23', textAlign: 'left' }}><Editable setActiveEdit={this.props.setActiveEdit} activeID={this.props.activeID}><a href={`${this.props.theme.org.website}${this.props.utms}&content=Content`} name={`Content_${this.props.id + 1}_CTA`} style={{ textDecoration: 'none', color: this.props.theme.colors.link }} target="_blank" rel="noopener noreferrer" xt="SPCLICK">Find out more&nbsp;»</a></Editable></td>
+                                    <td style={{ fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '13px', lineHeight: '21px', color: '#df1a23', textAlign: 'left' }}><Editable setActiveEdit={this.props.setActiveEdit} activeID={this.props.activeID}><a href={`${this.props.theme.org.website}${this.props.utms}&content=Content`} name={`Content_${this.props.id + 1}_CTA`} style={{ textDecoration: 'none', color: this.props.theme.campaign.colors.link }} target="_blank" rel="noopener noreferrer" xt="SPCLICK">Find out more&nbsp;»</a></Editable></td>
                                   </tr>
                                 </tbody>
                               </table>

@@ -16,7 +16,7 @@ class Heading extends React.Component {
                       <Editable setActiveEdit={this.props.setActiveEdit} activeID={this.props.activeID}>I am an attractive heading</Editable></td>
                   </tr>
                   <tr>
-                    <td className="em_height" height={20} style={{ fontSize: '1px', lineHeight: '1px', borderTop: `3px solid${this.props.theme.colors.primary}` }} />
+                    <td className="em_height" height={20} style={{ fontSize: '1px', lineHeight: '1px', borderTop: `3px solid${this.props.theme.campaign.colors.primary}` }} />
                   </tr>
                 </tbody>
               </table>

@@ -32,7 +32,7 @@ class ContentLeft extends React.Component {
                             <td style={{ textAlign: 'left', color: '#000000', lineHeight: '21px', fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '13px' }}><Editable setActiveEdit={this.props.setActiveEdit} activeID={this.props.activeID}>Mauris at sem et nunc aliquam vehicula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</Editable></td>
                           </tr>
                           <tr>
-                            <td style={{ textAlign: 'left', color: '#CC0000', lineHeight: '21px', fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '13px' }}><Editable setActiveEdit={this.props.setActiveEdit} activeID={this.props.activeID}><a href={this.props.theme.org.website + this.props.utms + '&utm_content=contentLeftLink'} name={`Content_${this.props.id}_Link`} style={{ textDecoration: 'none', color: `${this.props.theme.colors.link}` }} target="_blank" rel="noopener noreferrer" xt="SPCLICK">Read more&nbsp;»</a></Editable></td>
+                            <td style={{ textAlign: 'left', color: '#CC0000', lineHeight: '21px', fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '13px' }}><Editable setActiveEdit={this.props.setActiveEdit} activeID={this.props.activeID}><a href={this.props.theme.org.website + this.props.utms + '&utm_content=contentLeftLink'} name={`Content_${this.props.id}_Link`} style={{ textDecoration: 'none', color: `${this.props.theme.campaign.colors.link}` }} target="_blank" rel="noopener noreferrer" xt="SPCLICK">Read more&nbsp;»</a></Editable></td>
                           </tr>
                         </tbody>
                       </table>
