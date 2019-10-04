@@ -3,6 +3,7 @@ import _ from 'lodash';
 
 import Base from './Base';
 import DraftWYSIWYG from './DraftWYSIWYG';
+import ImageEditor from './ImageEditor';
 import Module from './Module';
 import ModuleSpawner from './ModuleSpawner';
 
@@ -10,7 +11,16 @@ import themes from './themes';
 
 /**
  * TemplatePicker class contains working email template, editor, and settings
- * TODO: Split into separate components
+ * TODO: Split into separate components?
+ * States:
+ * @param {Array} modules : ordered array of edm module names to be spawned
+ * @param {String} assoc : active Association template
+ * @param {String} string : active Campaign template
+ * @param {Object} utm : current UTM parameters
+ * @param {String} activeEditableId : id of active Editable
+ * @param {Ref} activeEditableRef : ref of active Editable
+ * @param {String} editorContent : initial text editor content
+ * @param {String} activeEditor : 
  */
 class TemplatePicker extends React.Component {
   constructor(props) {
@@ -19,11 +29,11 @@ class TemplatePicker extends React.Component {
       modules: ['text', 'heading', 'content2', 'contentLeft', 'banner', 'button2'],
       assoc: 'iapa',
       campaign: 'advancingAnalytics',
-      activeTheme: themes['adma'],
       utm: { medium: 'Email', source: 'ADMA', campaign: 'Monthly' },
-      activeID: null,
-      editorContent: '<p>To get started, <strong>click</strong> on an <span style="color:rebeccapurple;">editable element</span>. Then you may edit the contents <em>here</em>!</p>',
-      currentEditable: null
+      activeEditableId: null,
+      activeEditableRef: null,
+      activeEditor: 'text',
+      editorContent: '<p>To get started, <strong>click</strong> on an <span style="color:rebeccapurple;">editable element</span>. Then you may edit the contents <em>here</em>!</p>'
     };
     this.themes = themes;
     this.utmString = `?utm_medium=${this.state.utm.medium}&utm_source=${this.state.utm.source}&utm_campaign=${this.state.utm.campaign}`;
@@ -60,18 +70,16 @@ class TemplatePicker extends React.Component {
     newUTM[name] = value;
     this.setState({ utm: newUTM });
   }
-  /** Get active theme config from theme/assoc/campaign combo */
+  /** 
+   * Get active theme config from theme/assoc/campaign combo, assigning campaign themes
+   * to theme.campaign object (not to be confused with theme.campaigns)
+   */
   getActiveTheme = () => {
-    console.log('----------- getActiveTheme() -----------');
     // current association/campaign values
     const assoc = this.state.assoc;
     const cmpgn = this.state.campaign;
     let activeTheme = this.themes[assoc];
     activeTheme['campaign'] = this.themes[assoc].campaigns[cmpgn];
-
-    console.log('activeTheme returned:');
-    console.log(activeTheme);
-    console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
     return activeTheme;
   }
   /** Compiles valid entire UTM string for a URL */
@@ -81,17 +89,21 @@ class TemplatePicker extends React.Component {
   /** Set active Editable on click. Updates WYSIWYG */
   setActiveEdit = (e, el) => {
     e.preventDefault();
+    const id = e.currentTarget.id;
+
+    // update active editable in state
+    this.setState({
+      activeEditableId: id,
+      activeEditableRef: el.myRef,
+    });
+
     // determine whether editable text or image based on assigned element id
-    if (el.id.match('editable_')) { // string
-      const id = e.currentTarget.id;
-      this.setState({
-        activeID: id,
-        currentEditable: el.myRef
-      });
-      // set editor content to active Editable's HTML
-      this.setEditorContent(el.myRef.current.innerHTML);
+    if (el.id.match('editable_')) { // text
+      this.setState({ activeEditor: 'text' });
+      this.setEditorContent(el.myRef.current.innerHTML); // set text editor content to active Editable's HTML
     } else if (el.id.match('editableimg_')) { // image
-      console.log('hello image');
+      console.log(el.myRef.current);
+      this.setState({ activeEditor: 'image' });
     }
   }
   /** Sets editor HTML
@@ -102,10 +114,14 @@ class TemplatePicker extends React.Component {
     this.setState({ editorContent: content });
     console.log((content));
   }
+  /** Sets image editor values */
+  setImageEditorValues = (values) => {
+
+  }
   /** DraftWYSIWYG updateEditable() event handler */
   updateEditable = (updatedContent) => {
     console.log(updatedContent);
-    const currentRef = this.state.currentEditable;
+    const currentRef = this.state.activeEditableRef;
     currentRef.current.innerHTML = updatedContent;
   }
   /** TODO: React-ify this function... */
@@ -126,7 +142,7 @@ class TemplatePicker extends React.Component {
           theme={this.getActiveTheme()}
           utms={this.getUtmString()}
           setActiveEdit={this.setActiveEdit}
-          activeID={this.state.activeID} />);
+          activeID={this.state.activeEditableId} />);
     }
 
     // generate list of available associations
@@ -162,11 +178,16 @@ class TemplatePicker extends React.Component {
               </div>
             </div>
             <div className='column'>
-              <div style={{ marginBottom: '1em' }}>
-                <DraftWYSIWYG
-                  key={this.id}
-                  content={this.state.editorContent}
-                  updateEditable={this.updateEditable} />
+              <div className={`editor editor--text ${this.state.activeEditor === 'text' ? 'active' : 'inactive'}`}>
+                <div style={{ marginBottom: '1em' }}>
+                  <DraftWYSIWYG
+                    key={this.id}
+                    content={this.state.editorContent}
+                    updateEditable={this.updateEditable} />
+                </div>
+              </div>
+              <div className={`editor editor--text ${this.state.activeEditor === 'image' ? 'active' : 'inactive'}`}>
+                <ImageEditor />
               </div>
               <h2>Spawn Modules</h2>
               <div style={{ marginBottom: '1em' }}>

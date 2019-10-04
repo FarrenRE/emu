@@ -13,7 +13,16 @@ class EditableImage extends React.Component {
   }
   render() {
     return (
-      <div ref={this.myRef} className={`editableimg ${this.props.activeID === this.id ? 'active' : ''}`} id={this.id} onClick={(e) => { this.props.setActiveEdit(e, this) }}>{this.props.children}</div>
+      <img
+        ref={this.myRef}
+        className={`editableimg ${this.props.activeID === this.id ? 'active' : ''}`}
+        id={this.id}
+        onClick={(e) => { this.props.setActiveEdit(e, this) }}
+        src={this.props.src}
+        alt={this.props.alt} border={this.props.border}
+        style={this.props.style}
+        width={this.props.width}
+        height={this.props.height} />
     );
   }
 }
