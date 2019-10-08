@@ -4,7 +4,6 @@ import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import './App.css';
 
 import TemplatePicker from './components/templatePicker';
-// import ParentSelector from './components/test/parentSelector';
 
 function App() {
   return (
@@ -13,11 +12,8 @@ function App() {
         <h1>EMU</h1>
       </header>
       <main>
-        {/* <div>
-        <ParentSelector />
-        </div> */}
         <div>
-         <TemplatePicker />
+          <TemplatePicker />
         </div>
       </main>
     </div>
