@@ -52,7 +52,10 @@ class TemplatePicker extends React.Component {
   }
   /** Handler for Association <select> */
   updateAssoc = (evt) => {
-    this.setState({ assoc: evt.target.value });
+    this.setState({
+      assoc: evt.target.value,
+      campaign: 'monthly' // reset to avoid undefined campaign (i.e. there is no ADMA AMYs)
+    });
   }
   /** Handler for Campaign <select> */
   updateCampaign = (evt) => {
