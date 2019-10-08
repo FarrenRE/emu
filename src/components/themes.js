@@ -46,7 +46,7 @@ const themes = {
           link: '#CC0000',
           footer: '#363636'
         },
-        header: { type: 'image', image: 'https://via.placeholder.com/600x90.jpg' }
+        header: { type: 'image', image: 'https://imgur.com/T41cCt3.png' }
       },
       ace: {
         name: 'AC&E Awards',
