@@ -3,6 +3,7 @@ import React from 'react';
 import HeaderMonthly from './modules/HeaderMonthly';
 import HeaderImage from './modules/HeaderImage';
 import IQFooterLinks from './modules/iqFooterLinks';
+import SocialLinks from './SocialLinks';
 
 class Base extends React.Component {
   render() {
@@ -238,17 +239,7 @@ class Base extends React.Component {
                                             <tbody>
                                               <tr>
                                                 <td align="center" valign="top">
-                                                  <table align="left" border={0} cellPadding={0} cellSpacing={0} width={159}>
-                                                    <tbody>
-                                                      <tr>
-                                                        <td align="center" valign="top" width={47} height={47}><a href={this.props.theme.org.social.fb + this.props.utms + '&utm_content=footerSocialFacebook'} name="social_footer_facebook" target="_blank" rel="noopener noreferrer" xt="SPCLICK"><img alt="facebook" border={0} width={47} height={47} src="https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/icon_facebook.jpg" style={{ display: 'block' }} /></a></td>
-                                                        <td>&nbsp;</td>
-                                                        <td align="center" valign="top" width={47} height={47}><a href={this.props.theme.org.social.tw + this.props.utms + '&utm_content=footerSocialTwitter'} name="social_footer_twitter" target="_blank" rel="noopener noreferrer" xt="SPCLICK"><img alt="twitter" border={0} width={47} height={47} src="https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/icon_twitter.jpg" style={{ display: 'block' }} /></a></td>
-                                                        <td>&nbsp;</td>
-                                                        <td align="center" valign="top" width={47} height={47}><a href={this.props.theme.org.social.li + this.props.utms + '&utm_content=footerSocialLinkedin'} name="social_footer_linkedin" target="_blank" rel="noopener noreferrer" xt="SPCLICK"><img alt="linkedin" border={0} width={47} height={47} src="https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/icon_linkedin.jpg" style={{ display: 'block' }} /></a></td>
-                                                      </tr>
-                                                    </tbody>
-                                                  </table>
+                                                  <SocialLinks links={this.props.theme.org.social} utms={this.props.utms} />
                                                 </td>
                                               </tr>
                                             </tbody>
