@@ -6,7 +6,20 @@ const themes = {
       abn: '53 156 305 487',
       addr: 'Level 27, Tower One, 100 Barangaroo Avenue, Sydney, NSW, 2000',
       website: 'https://www.adma.com.au',
-      social: { fb: 'http://www.facebook.com/adma.com.au', tw: 'http://www.twitter.com/adma', li: 'https://www.linkedin.com/company/adma' },
+      social: {
+        fb: {
+          url: 'http://www.facebook.com/adma.com.au',
+          img: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/icon_facebook.jpg'
+        },
+        tw: {
+          url: 'http://www.twitter.com/adma',
+          img: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/icon_twitter.jpg'
+        },
+        li: {
+          url: 'https://www.linkedin.com/company/adma',
+          img: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/icon_linkedin.jpg'
+        }
+      },
       logos: {
         header: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/ADMA_assoc_header-logos_400x75.jpg',
         lockup: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/lockup/ADMA-acs-lockup_edm-footer.png',
@@ -83,7 +96,20 @@ const themes = {
       abn: '53 156 305 487',
       addr: 'Level 27, Tower One, 100 Barangaroo Avenue, Sydney, NSW, 2000',
       website: 'https://www.adma.com.au/iq',
-      social: { fb: 'http://www.facebook.com/adma.com.au', tw: 'http://www.twitter.com/adma', li: 'https://www.linkedin.com/company/adma' },
+      social: {
+        fb: {
+          url: 'http://www.facebook.com/adma.com.au',
+          img: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/icon_facebook.jpg'
+        },
+        tw: {
+          url: 'http://www.twitter.com/adma',
+          img: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/icon_twitter.jpg'
+        },
+        li: {
+          url: 'https://www.linkedin.com/company/adma',
+          img: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/icon_linkedin.jpg'
+        }
+      },
       logos: {
         header: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/IQ_assoc_header-logos_400x75.jpg',
         lockup: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/lockup/ADMA-acs-lockup_edm-footer.png',
@@ -121,7 +147,16 @@ const themes = {
       abn: '53 156 305 487',
       addr: 'Level 27, Tower One, 100 Barangaroo Avenue, Sydney, NSW, 2000',
       website: 'https://www.iapa.org.au',
-      social: { fb: 'http://www.facebook.com/adma.com.au', tw: 'https://twitter.com/IAPA_org_au', li: 'https://www.linkedin.com/company/institute-of-analytics-professionals' },
+      social: {
+        tw: {
+          url: 'https://twitter.com/IAPA_org_au',
+          img: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/icon_twitter.jpg'
+        },
+        li: {
+          url: 'https://www.linkedin.com/company/institute-of-analytics-professionals',
+          img: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/icon_linkedin.jpg'
+        }
+      },
       logos: {
         header: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/IAPA_assoc_header-logos_400x75.jpg',
         lockup: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/lockup/IAPA-acs-lockup_edm-footer.png',
@@ -136,7 +171,6 @@ const themes = {
         footer: '#363636'
       },
     },
-
     campaigns: {
       monthly: {
         name: 'Monthly',
@@ -173,10 +207,23 @@ const themes = {
       abn: '53 156 305 487',
       addr: 'Level 27, Tower One, 100 Barangaroo Avenue, Sydney, NSW, 2000',
       website: 'https://www.dtcollective.org.au',
-      social: { fb: 'https://www.facebook.com/DigitalTechnologyCollective', tw: 'https://twitter.com/DandTCollective', li: 'https://www.linkedin.com/company/72345' },
+      social: {
+        fb: {
+          url: 'https://www.facebook.com/DigitalTechnologyCollective',
+          img: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/icon_facebook.jpg'
+        },
+        tw: {
+          url: 'https://twitter.com/DandTCollective',
+          img: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/icon_twitter.jpg'
+        },
+        li: {
+          url: 'https://www.linkedin.com/company/72345',
+          img: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/icon_linkedin.jpg'
+        }
+      },
       logos: {
         header: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/DTC_assoc_header-logos_400x75.jpg',
-        lockup: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/lockup/DTC-acs-lockup_edm-footer.png',
+        lockup: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/lockup/DTC-acs-lockup_edm-footer.png'
       },
       colors: {
         primary: '#553278',
