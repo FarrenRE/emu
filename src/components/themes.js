@@ -210,15 +210,15 @@ const themes = {
       social: {
         fb: {
           url: 'https://www.facebook.com/DigitalTechnologyCollective',
-          img: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/icon_facebook.jpg'
+          img: 'https://res.cloudinary.com/adma/image/upload/v1570510437/EMU/dtc/email-footer-social-links_PURPLE_facebook_uuzf98.png'
         },
         tw: {
           url: 'https://twitter.com/DandTCollective',
-          img: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/icon_twitter.jpg'
+          img: 'https://res.cloudinary.com/adma/image/upload/v1570510437/EMU/dtc/email-footer-social-links_PURPLE_twitter_p759jb.png'
         },
         li: {
           url: 'https://www.linkedin.com/company/72345',
-          img: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/icon_linkedin.jpg'
+          img: 'https://res.cloudinary.com/adma/image/upload/v1570510437/EMU/dtc/email-footer-social-links_PURPLE_linkedin_z77jex.png'
         }
       },
       logos: {
