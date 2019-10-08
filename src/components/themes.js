@@ -264,6 +264,20 @@ const themes = {
           footer: '#553278',
           footerStripe: '#363636',
         }
+      },
+      amyAce: {
+        name: 'AC&E/AMY Awards',
+        header: { type: 'image', image: 'https://res.cloudinary.com/adma/image/upload/v1570504512/EMU/adma/awards/ace-amy-awards-DARK_600x90_n9uvum.png' },
+        colors: {
+          primary: '#553278',
+          primaryLighter: '#663c90',
+          primaryDarker: '#40265a',
+          secondary: '#FFFFFF',
+          bgColor: '#F6F6F6',
+          link: '#804bb4',
+          footer: '#553278',
+          footerStripe: '#363636',
+        }
       }
     }
   }
