@@ -1,9 +1,6 @@
 import React from 'react';
 
 const SocialLinks = ({ links, utms }) => {
-  console.log('SocialLinks!');
-  console.log(links.length);
-
   let html = '';
   let name = '';
   for (let l of Object.keys(links)) {
