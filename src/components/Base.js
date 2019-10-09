@@ -195,35 +195,25 @@ class Base extends React.Component {
                                       </tr>
                                       <tr>
                                         <td valign="top">
-                                          <table className="em_tbl_312" align="center" border={0} cellPadding={0} cellSpacing={0} width="100%">
+                                          <table align="center" border={0} cellPadding={0} cellSpacing={0} width="100%">
                                             <tbody>
                                               <tr>
                                                 <td valign="top">
-                                                  <table className="em_wrapper" align="left" border={0} cellPadding={0} cellSpacing={0} width={450}>
+
+                                                  {this.props.theme.org.abbr === 'ADMA IQ' ? <IQFooterLinks /> : ''}
+                                                  <table align="center" border={0} cellPadding={0} cellSpacing={0} width="100%">
                                                     <tbody>
                                                       <tr>
-                                                        <td valign="top">
-                                                          {this.props.theme.org.abbr === 'ADMA IQ' ? <IQFooterLinks /> : ''}
-                                                          <table align="center" border={0} cellPadding={0} cellSpacing={0} width="100%">
-                                                            <tbody>
-                                                              <tr>
-                                                                <td className="em_white" style={{ textAlign: 'left', color: 'rgb(255, 255, 255)', lineHeight: '13px', fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '10px' }}>
-                                                                  ACS trading as {this.props.theme.org.abbr}. {this.props.theme.org.addr}. ABN: {this.props.theme.org.abn}. This email was sent to %%email%%. Click <a href="http://www.pages01.net/adma/ADMAPreference/unsubscribe.html/" name="www_pages01_net_adma_ADMAPrefe" style={{ color: 'rgb(255, 255, 255)' }} xt="SPCLICK">here</a>	if you prefer not to receive emails from {this.props.theme.org.abbr} Australia. © Copyright {new Date().getFullYear()} {this.props.theme.org.abbr} Australia. All Rights Reserved.
-                                                        </td>
-                                                              </tr>
-                                                            </tbody>
-                                                          </table>
-                                                        </td>
-                                                      </tr>
-                                                    </tbody>
-                                                  </table>
-                                                  <table className="em_wrapper" align="right" border={0} cellPadding={0} cellSpacing={0} width={130}>
-                                                    <tbody>
-                                                      <tr>
+                                                        <td className="em_white" width={450} style={{ textAlign: 'left', color: 'rgb(255, 255, 255)', lineHeight: '13px', fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '10px' }}>
+                                                          ACS trading as {this.props.theme.org.abbr}. {this.props.theme.org.addr}. ABN: {this.props.theme.org.abn}. This email was sent to %%email%%. Click <a href="http://www.pages01.net/adma/ADMAPreference/unsubscribe.html/" name="www_pages01_net_adma_ADMAPrefe" style={{ color: 'rgb(255, 255, 255)' }} xt="SPCLICK">here</a>	if you prefer not to receive emails from {this.props.theme.org.abbr} Australia. © Copyright {new Date().getFullYear()} {this.props.theme.org.abbr} Australia. All Rights Reserved.</td>
+                                                        <td>&nbsp;</td>
                                                         <td className="em_pad_top" align="right" valign="top"><img alt="ADMA" border={0} height={40} src={this.props.theme.org.logos.lockup} style={{ display: 'block' }} title="ADMA" width={110} /></td>
+
                                                       </tr>
                                                     </tbody>
                                                   </table>
+
+
                                                 </td>
                                               </tr>
                                             </tbody>
