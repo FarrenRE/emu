@@ -5,7 +5,7 @@ class EditableImage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      src: 'https://via.placeholder.com/270x190.jpg',
+      src: `https://via.placeholder.com/${this.props.width}x${this.props.height}.jpg`,
     };
     this.id = this.setId();
     this.imgRef = React.createRef();
@@ -18,16 +18,26 @@ class EditableImage extends React.Component {
   }
   checkUploadResult = (resultEvent) => {
     if (resultEvent.event === 'success') {
-      console.log(`new source: ${resultEvent.info.url}`);
+      // console.log(`new source: ${resultEvent.info.url}`);
       this.setState({ src: resultEvent.info.url });
     } else {
-      console.log(`result event: ${resultEvent.event}`);
+      // console.log(`result event: ${resultEvent.event}`);
     }
+  }
+  getUploadPreset() {
+    let uploadPreset;
+    if (this.props.width === 270 && this.props.height === 190) {
+      uploadPreset = 'edm_content_270x190';
+    } else {
+      uploadPreset = 'my_preset';
+    }
+    console.log(`EditableImage ${this.id} using upload preset ${uploadPreset}`);
+    return uploadPreset;
   }
   render() {
     this.widget = window.cloudinary.createUploadWidget({
       cloudName: 'adma',
-      uploadPreset: 'edm_content_270x190'
+      uploadPreset: this.getUploadPreset()
     },
       (error, result) => { this.checkUploadResult(result) });
 
@@ -39,10 +49,11 @@ class EditableImage extends React.Component {
           id={this.id}
           onClick={(e) => { this.showWidget() }}
           src={this.state.src}
-          alt={this.props.alt} border={this.props.border}
+          alt={this.props.alt}
           style={this.props.style}
           width={this.props.width}
-          height={this.props.height} />
+          height={this.props.height}
+          border={0} />
       </div>
     );
   }
