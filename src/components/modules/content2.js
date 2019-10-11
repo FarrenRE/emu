@@ -51,7 +51,7 @@ class Content2 extends React.Component {
                               <table align="center" border={0} cellPadding={0} cellSpacing={0} width="100%">
                                 <tbody>
                                   <tr>
-                                    <td align="center" valign="top"><a href={`${this.props.theme.org.website}${this.props.utms}&content=Content`} name={`Content_${this.props.id}_CTA`} target="_blank" rel="noopener noreferrer" xt="SPCLICK"><img alt="content" border={0} width={270} height={190} src="https://via.placeholder.com/270x190.jpg" style={{ display: 'block' }} /></a></td>
+                                    <td align="center" valign="top"><EditableImage setActiveEdit={this.props.setActiveEdit} activeID={this.props.activeID} alt="content" border={0} height={190} src="https://via.placeholder.com/270x190.jpg" style={{ display: 'block' }} width={270} /></td>
                                   </tr>
                                   <tr>
                                     <td className="em_height" height={15} style={{ fontSize: '1px', lineHeight: '1px' }} />
