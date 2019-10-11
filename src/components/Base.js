@@ -79,11 +79,11 @@ class Base extends React.Component {
             <tbody>
               <tr>
                 <td align="center" valign="top">
-                  <table align="center" bgcolor="#ffffff" border={0} cellPadding={0} cellSpacing={0} width="100%">
+                  <table align="center" border={0} cellPadding={0} cellSpacing={0} width="100%">
                     <tbody>
                       <tr>
                         {/* Left side*/}
-                        <td className="em_hide" bgcolor="#f6f6f6" height={50} valign="top">
+                        <td className="em_hide" height={50} valign="top">
                           <table align="left" border={0} cellPadding={0} cellSpacing={0} width="100%">
                             <tbody>
                               <tr>
@@ -94,14 +94,14 @@ class Base extends React.Component {
                         </td>
                         {/* Center*/}
                         <td width={600}>
-                          <table className="em_wrapper" align="center" bgcolor="#ffffff" border={0} cellPadding={0} cellSpacing={0} height={50} style={{ tableLayout: 'fixed' }} width={600}>
+                          <table className="em_wrapper" align="center" bgcolor={this.props.theme.campaign.colors.header} border={0} cellPadding={0} cellSpacing={0} height={50} style={{ tableLayout: 'fixed' }} width={600}>
                             <tbody>
                               <tr>
                                 <td align="center" valign="middle" style={{ verticalAlign: 'middle' }}>
-                                  <table align="center" bgcolor="#ffffff" border={0} cellPadding={0} cellSpacing={0} width="100%">
+                                  <table align="center" border={0} cellPadding={0} cellSpacing={0} width="100%">
                                     <tbody>
                                       <tr>
-                                        <td bgcolor="#FFFFFF"><span className="preheader" style={{ color: this.props.theme.campaign.colors.bgColor, fontSize: '1px' }}>{this.props.preheader}</span></td>
+                                        <td><span className="preheader" style={{ color: this.props.theme.campaign.colors.bgColor, fontSize: '1px' }}>{this.props.preheader}</span></td>
                                       </tr>
                                       <tr>
                                         <td style={{ textAlign: 'center', color: 'rgb(153, 153, 153)', fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '11px' }} valign="middle">If you cannot see this email, please <a href="#SPCLICKTOVIEW" name="SPCLICKTOVIEW" style={{ color: 'rgb(153, 153, 153)', textDecoration: 'underline' }} target="_blank" rel="noopener noreferrer" xt="SPCLICKTOVIEW">click to view it online</a></td>
@@ -114,7 +114,7 @@ class Base extends React.Component {
                           </table>
                         </td>
                         {/* Right side*/}
-                        <td className="em_hide" bgcolor="#f6f6f6" height={50} valign="top">
+                        <td className="em_hide" height={50} valign="top">
                           <table align="left" border={0} cellPadding={0} cellSpacing={0} width="100%">
                             <tbody>
                               <tr>
@@ -136,7 +136,7 @@ class Base extends React.Component {
                     <tbody>
                       <tr>
                         <td align="center" valign="top">
-                          <table align="center" border={0} cellPadding={0} cellSpacing={0} width="100%">
+                          <table align="center" bgcolor={this.props.theme.campaign.colors.header} border={0} cellPadding={0} cellSpacing={0} width="100%">
                             {/* banner image starts here*/}
                             <tbody>
                               <tr>
@@ -148,12 +148,12 @@ class Base extends React.Component {
                                 </td>
                               </tr>
                               <tr>
-                                <td className="em_height" bgcolor="#ffffff" height={20} style={{ lineHeight: '1px', fontSize: '1px', borderTopColor: `${this.props.theme.campaign.colors.primary}`, borderTopWidth: '3px', borderTopStyle: 'solid' }}></td>
+                                <td className="em_height" bgcolor="#FFFFFF" height={20} style={{ lineHeight: '1px', fontSize: '1px', borderTopColor: `${this.props.theme.campaign.colors.primary}`, borderTopWidth: '3px', borderTopStyle: 'solid' }}></td>
                               </tr>
                               {/* Full Content Section starts here*/}
                               <tr>
                                 <td valign="top">
-                                  <table align="center" bgcolor="#ffffff" border={0} cellPadding={0} cellSpacing={0} width="100%">
+                                  <table align="center" bgcolor="#FFFFFF" border={0} cellPadding={0} cellSpacing={0} width="100%">
                                     <tbody>
                                       <tr>
                                         <td valign="top">

@@ -31,6 +31,7 @@ const themes = {
         secondary: '#FFFFFF',
         bgColor: '#F6F6F6',
         link: '#CC0000',
+        header: '#FFFFFF',
         footer: '#363636'
       }
     },
@@ -44,6 +45,7 @@ const themes = {
           secondary: '#FFFFFF',
           bgColor: '#F6F6F6',
           link: '#CC0000',
+          header: '#FFFFFF',
           footer: '#363636'
         },
         header: { type: 'monthly', image: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/ADMA_assoc_header-logos_400x75.jpg' }
@@ -57,11 +59,12 @@ const themes = {
           secondary: '#FFFFFF',
           bgColor: '#F6F6F6',
           link: '#CC0000',
+          header: '#FFFFFF',
           footer: '#363636'
         },
         header: { type: 'image', image: 'https://imgur.com/T41cCt3.png' }
       },
-      ace: {
+      aceAwards: {
         name: 'AC&E Awards',
         colors: {
           primary: '#FFC627',
@@ -70,9 +73,24 @@ const themes = {
           secondary: '#FFFFFF',
           bgColor: '#F6F6F6',
           link: '#ffbb00',
+          header: '#F6F6F6',
           footer: '#363636'
         },
-        header: { type: 'image', image: 'https://res.cloudinary.com/adma/image/upload/v1570504512/EMU/adma/awards/ace-amy-awards-DARK_600x90_n9uvum.png' }
+        header: { type: 'image', image: 'https://res.cloudinary.com/adma/image/upload/v1570776395/EMU/adma/awards/ace-awards_600x90_etczir.png' }
+      },
+      aceAmy: {
+        name: 'AC&E + AMY',
+        colors: {
+          primary: '#FFC627',
+          primaryLighter: '#ffcf4d',
+          primaryDarker: '#ffbb00',
+          secondary: '#FFFFFF',
+          bgColor: '#F6F6F6',
+          link: '#ffbb00',
+          header: '#333333',
+          footer: '#363636'
+        },
+        header: { type: 'image', image: 'https://res.cloudinary.com/adma/image/upload/v1570504513/EMU/adma/awards/ace-amy-awards-LIGHT_600x90_d4is6x.png' }
       },
       aceSchool: {
         name: 'AC&E School',
@@ -83,6 +101,7 @@ const themes = {
           secondary: '#FFFFFF',
           bgColor: '#F6F6F6',
           link: '#ffbb00',
+          header: '#F6F6F6',
           footer: '#363636'
         },
         header: { type: 'image', image: 'https://res.cloudinary.com/adma/image/upload/v1570504083/EMU/adma/awards/ace-school-GREY_600x90_obae2y.png' }
@@ -121,6 +140,7 @@ const themes = {
         secondary: '#FFFFFF',
         bgColor: '#F6F6F6',
         link: '#CC0000',
+        header: '#FFFFFF',
         footer: '#363636'
       },
     },
@@ -134,6 +154,7 @@ const themes = {
           secondary: '#FFFFFF',
           bgColor: '#F6F6F6',
           link: '#CC0000',
+          header: '#FFFFFF',
           footer: '#363636'
         },
         header: { type: 'monthly', image: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/ADMA_assoc_header-logos_400x75.jpg' }
@@ -168,6 +189,7 @@ const themes = {
         secondary: '#333333',
         bgColor: '#F6F6F6',
         link: '#fed41b',
+        header: '#FFFFFF',
         footer: '#363636'
       },
     },
@@ -182,6 +204,7 @@ const themes = {
           secondary: '#333333',
           bgColor: '#F6F6F6',
           link: '#fed41b',
+          header: '#FFFFFF',
           footer: '#363636'
         },
       },
@@ -195,6 +218,7 @@ const themes = {
           secondary: '#ffffff',
           bgColor: '#F6F6F6',
           link: '#37033e',
+          header: '#FFFFFF',
           footer: '#363636'
         },
       },
@@ -233,6 +257,7 @@ const themes = {
         bgColor: '#F6F6F6',
         link: '#804bb4',
         footer: '#553278',
+        header: '#FFFFFF',
         footerStripe: '#363636',
       }
     },
@@ -248,6 +273,7 @@ const themes = {
           bgColor: '#F6F6F6',
           link: '#804bb4',
           footer: '#553278',
+          header: '#FFFFFF',
           footerStripe: '#363636',
         }
       },
@@ -262,12 +288,13 @@ const themes = {
           bgColor: '#F6F6F6',
           link: '#804bb4',
           footer: '#553278',
+          header: '#FFFFFF',
           footerStripe: '#363636',
         }
       },
       amyAce: {
         name: 'AC&E/AMY Awards',
-        header: { type: 'image', image: 'https://res.cloudinary.com/adma/image/upload/v1570504512/EMU/adma/awards/ace-amy-awards-DARK_600x90_n9uvum.png' },
+        header: { type: 'image', image: 'https://res.cloudinary.com/adma/image/upload/v1570504513/EMU/adma/awards/ace-amy-awards-LIGHT_600x90_d4is6x.png' },
         colors: {
           primary: '#553278',
           primaryLighter: '#663c90',
@@ -276,6 +303,7 @@ const themes = {
           bgColor: '#F6F6F6',
           link: '#804bb4',
           footer: '#553278',
+          header: '#333333',
           footerStripe: '#363636',
         }
       }

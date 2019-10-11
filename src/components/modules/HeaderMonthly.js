@@ -2,7 +2,7 @@ import React from 'react';
 
 const HeaderMonthly = ({ theme, utms }) => {
   return (
-    <table align="center" bgcolor="#ffffff" border={0} cellPadding={0} cellSpacing={0} width="100%">
+    <table align="center" border={0} cellPadding={0} cellSpacing={0} width="100%">
       <tbody>
         <tr>
           <td align="left" valign="bottom" style={{ verticalAlign: 'bottom' }}>
@@ -17,7 +17,7 @@ const HeaderMonthly = ({ theme, utms }) => {
                   <td style={{ color: 'rgb(153, 153, 153)', lineHeight: '14px', fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '10px' }}>NEWSLETTER<br />{new Date().toLocaleString('en-AU', { month: 'long', year: 'numeric' }).toUpperCase()}</td>
                 </tr>
                 <tr>
-                  <td className="em_height" bgcolor="#ffffff" height={20} style={{ lineHeight: '1px', fontSize: '1px' }}>&nbsp;</td>
+                  <td className="em_height" height={20} style={{ lineHeight: '1px', fontSize: '1px' }}>&nbsp;</td>
                 </tr>
               </tbody>
             </table>
