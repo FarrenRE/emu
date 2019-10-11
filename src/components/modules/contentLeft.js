@@ -1,5 +1,6 @@
 import React from 'react';
 import Editable from './../Editable';
+import EditableImage from './../EditableImage';
 
 class ContentLeft extends React.Component {
   render() {
@@ -12,7 +13,7 @@ class ContentLeft extends React.Component {
               <table className="em_wrapper" align="left" border={0} cellPadding={0} cellSpacing={0} width={270}>
                 <tbody>
                   <tr>
-                    <td align="center" valign="top"><a href={this.props.theme.org.website + this.props.utms + '&utm_content=contentLeftImage'} style={{ display: 'block' }} name={`Content_${this.props.id}_Image`} target="_blank" rel="noopener noreferrer"><img alt="content" style={{ display: 'block' }} border={0} height={190} src="https://via.placeholder.com/270x190" width={270} xt="SPIMAGE" /></a></td>
+                    <td align="center" valign="top"><EditableImage setActiveEdit={this.props.setActiveEdit} activeID={this.props.activeID} alt="content" border={0} height={190} src="https://via.placeholder.com/270x190.jpg" style={{ display: 'block' }} width={270} /></td>
                   </tr>
                 </tbody>
               </table>
