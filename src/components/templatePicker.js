@@ -3,7 +3,6 @@ import _ from 'lodash';
 
 import Base from './Base';
 import DraftWYSIWYG from './DraftWYSIWYG';
-import ImageEditor from './ImageEditor';
 import Module from './Module';
 import ModuleSpawner from './ModuleSpawner';
 
@@ -20,7 +19,6 @@ import themes from './themes';
  * @param {String} activeEditableId : id of active Editable
  * @param {Ref} activeEditableRef : ref of active Editable
  * @param {String} editorContent : initial text editor content
- * @param {String} activeEditor : 
  */
 class TemplatePicker extends React.Component {
   constructor(props) {
@@ -32,7 +30,6 @@ class TemplatePicker extends React.Component {
       utm: { medium: 'Email', source: 'ADMA', campaign: 'Monthly' },
       activeEditableId: null,
       activeEditableRef: null,
-      activeEditor: 'text',
       editorContent: '<p>To get started, <strong>click</strong> on an <span style="color:rebeccapurple;">editable element</span>. Then you may edit the contents <em>here</em>!</p>'
     };
     this.themes = themes;
@@ -93,20 +90,12 @@ class TemplatePicker extends React.Component {
   setActiveEdit = (e, el) => {
     e.preventDefault();
     const id = e.currentTarget.id;
-
+    this.setEditorContent(el.myRef.current.innerHTML); // update editor contents
     // update active editable in state
     this.setState({
       activeEditableId: id,
       activeEditableRef: el.myRef,
     });
-
-    // determine whether editable text or image based on assigned element id
-    if (el.id.match('editable_')) { // text
-      this.setState({ activeEditor: 'text' });
-      this.setEditorContent(el.myRef.current.innerHTML); // set text editor content to active Editable's HTML
-    } else if (el.id.match('editableimg_')) { // image
-      this.setState({ activeEditor: 'image' });
-    }
   }
   /** Sets editor HTML
    * @param {String} content : HTML string (Editable contents)
@@ -176,16 +165,13 @@ class TemplatePicker extends React.Component {
               </div>
             </div>
             <div className='column'>
-              <div className={`editor editor--text ${this.state.activeEditor === 'text' ? 'active' : 'inactive'}`}>
+              <div className={`editor editor--text`}>
                 <div style={{ marginBottom: '1em' }}>
                   <DraftWYSIWYG
                     key={this.id}
                     content={this.state.editorContent}
                     updateEditable={this.updateEditable} />
                 </div>
-              </div>
-              <div className={`editor editor--text ${this.state.activeEditor === 'image' ? 'active' : 'inactive'}`}>
-                <ImageEditor />
               </div>
               <h2>Spawn Modules</h2>
               <div style={{ marginBottom: '1em' }}>

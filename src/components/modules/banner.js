@@ -1,4 +1,5 @@
 import React from 'react';
+import EditableImage from './../EditableImage';
 
 class Banner extends React.Component {
   render() {
@@ -7,10 +8,10 @@ class Banner extends React.Component {
       <table align="center" border={0} cellPadding={0} cellSpacing={0} width="100%">
         <tbody>
           <tr>
-            <td align="center"><a rel="noopener noreferrer" href={ `${ this.props.theme.org.website }${ this.props.utms }&content=Banner` } name={ `Banner_${ this.props.id }` } target="_blank" xt="SPCLICK"><img alt="Banner" border={0} height={330} src="https://via.placeholder.com/600x330" style={{display: 'block', height: 'auto', width: '100%', maxWidth: '600px'}} width={600} xt="SPIMAGE" /></a></td>
+            <td align="center"><EditableImage setActiveEdit={this.props.setActiveEdit} activeID={this.props.activeID} alt="banner" width={600} height={330} src="https://via.placeholder.com/600x330.jpg" style={{ display: 'block', height: 'auto', width: '100%', maxWidth: '600px' }} xt="SPIMAGE" /></td>
           </tr>
           <tr>
-            <td className="em_height" height={20} style={{fontSize: '1px', lineHeight: '1px'}} />
+            <td className="em_height" height={20} style={{ fontSize: '1px', lineHeight: '1px' }} />
           </tr>
         </tbody>
       </table>
