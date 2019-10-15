@@ -12,7 +12,7 @@ class Button2 extends React.Component {
               <table align="center" border={0} cellPadding={0} cellSpacing={0} width="100%">
                 <tbody>
                   <tr>
-                    <td>
+                    <td width={145}>
                       <table align="center" border={0} cellPadding={0} cellSpacing={0} style={{ backgroundColor: `${this.props.theme.campaign.colors.primary}` }} width={145}>
                         <tbody>
                           <tr>
@@ -23,7 +23,7 @@ class Button2 extends React.Component {
                         </tbody>
                       </table>
                     </td>
-                    <td>
+                    <td width={145}>
                       <table align="center" border={0} cellPadding={0} cellSpacing={0} style={{ backgroundColor: `${this.props.theme.campaign.colors.primary}` }} width={145}>
                         <tbody>
                           <tr>

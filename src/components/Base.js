@@ -93,8 +93,8 @@ class Base extends React.Component {
                           </table>
                         </td>
                         {/* Center*/}
-                        <td width={600}>
-                          <table className="em_wrapper" align="center" bgcolor={this.props.theme.campaign.colors.header} border={0} cellPadding={0} cellSpacing={0} height={50} style={{ tableLayout: 'fixed' }} width={600}>
+                        <td width={600} bgcolor={this.props.theme.campaign.colors.header}>
+                          <table className="em_wrapper" align="center" border={0} cellPadding={0} cellSpacing={0} height={50} style={{ tableLayout: 'fixed' }} width={600}>
                             <tbody>
                               <tr>
                                 <td align="center" valign="middle" style={{ verticalAlign: 'middle' }}>
