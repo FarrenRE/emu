@@ -4,7 +4,7 @@ import Editable from './../Editable';
 class Heading extends React.Component {
   render() {
     return (
-      <table align="center" border={0} cellPadding={0} cellSpacing={0} style={{ minWidth: '100%' }} width="100%">
+      <table className="emu_heading" align="center" border={0} cellPadding={0} cellSpacing={0} style={{ minWidth: '100%' }} width="100%">
         <tbody>
           <tr>
             <td className="em_width" valign="top" width="20">&nbsp;</td>

@@ -5,7 +5,7 @@ import EditableImage from './../EditableImage';
 class Content2 extends React.Component {
   render() {
     return (
-      <table align="center" border={0} cellPadding={0} cellSpacing={0} width="100%">
+      <table className="emu_content-2" align="center" border={0} cellPadding={0} cellSpacing={0} width="100%">
         <tbody>
           <tr>
             <td className="em_width" width={20}>&nbsp;</td>
