@@ -13,7 +13,7 @@ class Button2 extends React.Component {
                 <tbody>
                   <tr>
                     <td>
-                      <table align="center" border={0} cellPadding={0} cellSpacing={0} style={{ backgroundColor: `${this.props.theme.campaign.colors.primary}` }} width={160}>
+                      <table align="center" border={0} cellPadding={0} cellSpacing={0} style={{ backgroundColor: `${this.props.theme.campaign.colors.primary}` }} width={145}>
                         <tbody>
                           <tr>
                             <td align="center" height={40} style={{ fontFamily: 'Helvetica, Arial, sans-serif', verticalAlign: 'middle', fontSize: '14px', textAlign: 'center', borderTop: `4px solid ${this.props.theme.campaign.colors.primaryLighter}`, borderBottom: `4px solid ${this.props.theme.campaign.colors.primaryDarker}` }} valign="middle">
@@ -24,7 +24,7 @@ class Button2 extends React.Component {
                       </table>
                     </td>
                     <td>
-                      <table align="center" border={0} cellPadding={0} cellSpacing={0} style={{ backgroundColor: `${this.props.theme.campaign.colors.primary}` }} width={160}>
+                      <table align="center" border={0} cellPadding={0} cellSpacing={0} style={{ backgroundColor: `${this.props.theme.campaign.colors.primary}` }} width={145}>
                         <tbody>
                           <tr>
                             <td align="center" height={40} style={{ fontFamily: 'Helvetica, Arial, sans-serif', verticalAlign: 'middle', fontSize: '14px', textAlign: 'center', borderTop: `4px solid ${this.props.theme.campaign.colors.primaryLighter}`, borderBottom: `4px solid ${this.props.theme.campaign.colors.primaryDarker}` }} valign="middle">

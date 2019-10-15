@@ -8,7 +8,7 @@ const HeaderImage = ({ theme, utms }) => {
     <table align="center" border={0} cellPadding={0} cellSpacing={0} width="100%">
       <tbody>
         <tr>
-          <td><img style={{ display: 'block' }} alt="another desc" src={theme.campaign.header.image} /></td>
+          <td><img style={{ display: 'block', width: '100%', maxWidth: '600px' }} alt={theme.campaign.name} src={theme.campaign.header.image} /></td>
         </tr>
       </tbody>
     </table>
