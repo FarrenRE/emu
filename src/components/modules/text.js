@@ -8,7 +8,7 @@ class Text extends React.Component {
   }
   render() {
     return (
-      <table className="emu_intro" align="center" border={0} cellPadding={0} cellSpacing={0} width="100%">
+      <table className="emu_text" align="center" border={0} cellPadding={0} cellSpacing={0} width="100%">
         <tbody>
           <tr>
             <td className="em_width" width={20}>&nbsp;</td>

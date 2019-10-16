@@ -2,6 +2,7 @@ import React from 'react';
 
 /* EDM Modules */
 import Text from './modules/text';
+import Text2 from './modules/text2';
 import Content2 from './modules/content2';
 import ContentLeft from './modules/contentLeft';
 import Banner from './modules/banner';
@@ -25,6 +26,9 @@ class Module extends React.Component {
         break;
       case 'text':
         newModule = <Text key={this.props.id} id={this.props.id} theme={this.props.theme} utms={this.props.utms} setActiveEdit={this.props.setActiveEdit} activeID={this.props.activeID} />;
+        break;
+      case 'text2':
+        newModule = <Text2 key={this.props.id} id={this.props.id} theme={this.props.theme} utms={this.props.utms} setActiveEdit={this.props.setActiveEdit} activeID={this.props.activeID} />;
         break;
       case 'banner':
         newModule = <Banner key={this.props.id} id={this.props.id} theme={this.props.theme} utms={this.props.utms} setActiveEdit={this.props.setActiveEdit} activeID={this.props.activeID} />;
