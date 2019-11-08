@@ -17,7 +17,7 @@ class Base extends React.Component {
           <title>%%MAILING_ID%%</title>
           <style type="text/css" dangerouslySetInnerHTML={{
             __html: `
-            \nbody{-webkit-text-size-adjust:100%!important;-ms-text-size-adjust:100%!important;-webkit-font-smoothing:antialiased!important;}
+            \nbody{-webkit-text-size-adjust:100%!important;-ms-text-size-adjust:100%!important;-webkit-font-smoothing:antialiased!important;padding:0!important;margin:0!important;}
             \nimg{border:0!important;outline:none!important;}
             \ntable{border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;}
             \ntd{border-collapse:collapse;mso-line-height-rule:exactly;}
@@ -73,7 +73,7 @@ class Base extends React.Component {
               \n.date {width:20% !important}
               \n}` }} />
         </head>
-        <body style="margin:0!important;padding:0!important;">
+        <body style={{ margin: '0', padding: '0' }}>
           <table align="center" bgcolor={this.props.theme.campaign.colors.bgColor} border={0} cellPadding={0} cellSpacing={0} width="100%">
             {/* ==Header Starts Here==*/}
             <tbody>
