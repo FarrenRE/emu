@@ -73,7 +73,7 @@ class Base extends React.Component {
               \n.date {width:20% !important}
               \n}` }} />
         </head>
-        <body>
+        <body style="margin:0!important;padding:0!important;">
           <table align="center" bgcolor={this.props.theme.campaign.colors.bgColor} border={0} cellPadding={0} cellSpacing={0} width="100%">
             {/* ==Header Starts Here==*/}
             <tbody>
