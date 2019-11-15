@@ -22,7 +22,7 @@ const themes = {
       },
       logos: {
         header: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/ADMA_assoc_header-logos_400x75.jpg',
-        lockup: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/lockup/ADMA-acs-lockup_edm-footer.png',
+        lockup: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/adma/ADMA-logo_footer_white_275x100.png',
       },
       colors: {
         primary: '#CC0000',
@@ -131,7 +131,7 @@ const themes = {
       },
       logos: {
         header: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/IQ_assoc_header-logos_400x75.jpg',
-        lockup: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/lockup/ADMA-acs-lockup_edm-footer.png',
+        lockup: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/adma/ADMA-logo_footer_white_275x100.png',
       },
       colors: {
         primary: '#CC0000',
