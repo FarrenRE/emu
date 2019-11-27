@@ -1,9 +1,8 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import ThemeContext from './../ThemeContext'
 
-const HeaderImage = ({ theme, utms }) => {
-  console.log('HeaderImage theme');
-  console.log(theme);
-  console.log(theme.campaign.header.image);
+export default function HeaderImage ({ utms }) {
+  const theme = useContext(ThemeContext)
   return (
     <table align="center" border={0} cellPadding={0} cellSpacing={0} width="100%">
       <tbody>
@@ -14,5 +13,3 @@ const HeaderImage = ({ theme, utms }) => {
     </table>
   );
 };
-
-export default HeaderImage;

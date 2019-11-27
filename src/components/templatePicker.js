@@ -7,6 +7,8 @@ import Module from './Module';
 import ModuleSpawner from './ModuleSpawner';
 
 import themes from './themes';
+import ThemeContext from './ThemeContext';
+import { ThemeProvider } from './ThemeContext';
 
 /**
  * TemplatePicker class contains working email template, editor, and settings
@@ -21,6 +23,7 @@ import themes from './themes';
  * @param {String} editorContent : initial text editor content
  */
 class TemplatePicker extends React.Component {
+  static contextType = ThemeContext;
   constructor(props) {
     super(props);
     this.state = {
@@ -35,6 +38,9 @@ class TemplatePicker extends React.Component {
     this.themes = themes;
     this.utmString = `?utm_medium=${this.state.utm.medium}&utm_source=${this.state.utm.source}&utm_campaign=${this.state.utm.campaign}`;
     this.id = _.uniqueId('editor');
+  }
+  componentDidMount() {
+    const theme = this.context;
   }
   /** Adds element to bottom of edm template */
   spawnChild = (evt) => {
@@ -156,12 +162,13 @@ class TemplatePicker extends React.Component {
                 <select onChange={this.updateCampaign} className='select' dangerouslySetInnerHTML={{ __html: campaignOptions }}></select>
               </div>
               <div id='edm-content' style={{ border: '1px solid black' }}>
-                <Base
-                  theme={this.getActiveTheme()}
-                  utms={this.getUtmString()}
-                  preheader={this.state.preheader}>
-                  {childs}
-                </Base>
+                <ThemeProvider value={ this.getActiveTheme() }>
+                  <Base
+                    utms={this.getUtmString()}
+                    preheader={this.state.preheader}>
+                    {childs}
+                  </Base>
+                </ThemeProvider>
               </div>
             </div>
             <div className='column'>
