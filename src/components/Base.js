@@ -18,7 +18,7 @@ export default function Base(props) {
         <title>%%MAILING_ID%%</title>
         <style type="text/css" dangerouslySetInnerHTML={{
           __html: `
-          \nbody{-webkit-text-size-adjust:100%!important;-ms-text-size-adjust:100%!important;-webkit-font-smoothing:antialiased!important;}
+          \nbody{-webkit-text-size-adjust:100%!important;-ms-text-size-adjust:100%!important;-webkit-font-smoothing:antialiased!important;margin:0!important;padding:0!important;}
           \nimg{border:0!important;outline:none!important;}
           \ntable{border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;}
           \ntd{border-collapse:collapse;mso-line-height-rule:exactly;}
@@ -206,7 +206,7 @@ export default function Base(props) {
                                                   <tbody>
                                                     <tr>
                                                       <td className="em_white" width={450} style={{ textAlign: 'left', color: 'rgb(255, 255, 255)', lineHeight: '13px', fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '10px' }}>
-                                                        ACS trading as {theme.org.abbr}. {theme.org.addr}. ABN: {theme.org.abn}. This email was sent to %%email%%. Click <a href="http://www.pages01.net/adma/ADMAPreference/unsubscribe.html/" name="www_pages01_net_adma_ADMAPrefe" style={{ color: 'rgb(255, 255, 255)' }} xt="SPCLICK">here</a>	if you prefer not to receive emails from {theme.org.abbr} Australia. © Copyright {new Date().getFullYear()} {theme.org.abbr} Australia. All Rights Reserved.</td>
+                                                        ACS trading as {theme.org.abbr}. {theme.org.addr}. ABN: {theme.org.abn}. This email was sent to %%email%%. Click <a href="http://www.pages01.net/adma/ADMAPreference/unsubscribe.html/" name="www_pages01_net_adma_ADMAPrefe" style={{ color: 'rgb(255, 255, 255)' }} xt="SPCLICK">here</a>	if you prefer not to receive emails from {theme.org.abbr}.</td>
                                                       <td>&nbsp;</td>
                                                       <td className="em_pad_top" align="right" valign="top"><img alt="ADMA" border={0} height={40} src={theme.org.logos.lockup} style={{ display: 'block' }} title="ADMA" width={110} /></td>
 
@@ -281,14 +281,11 @@ export default function Base(props) {
                 <table className="em_wrapper" align="center" border={0} cellPadding={0} cellSpacing={0} style={{ tableLayout: 'fixed' }} width={580}>
                   <tbody>
                     <tr>
-                      <td className="em_hide" bgcolor="#010101" height={1} style={{ lineHeight: '0px', fontSize: '0px' }}>&nbsp;</td>
-                    </tr>
-                    <tr>
                       <td align="center" valign="top">
                         <table align="center" border={0} cellPadding={0} cellSpacing={0} width="100%">
                           <tbody>
                             <tr>
-                              <td className="em_side" height={40} style={{ textAlign: 'left', verticalAlign: 'middle', color: 'rgb(111, 111, 111)', fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '11px' }} valign="middle">© {theme.org.abbr} Australia. All rights reserved.</td>
+                              <td height={40} style={{ textAlign: 'left', verticalAlign: 'middle', color: 'rgb(111, 111, 111)', fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '11px' }} valign="middle">© {new Date().getFullYear()} {theme.org.abbr}. All Rights Reserved.</td>
                             </tr>
                           </tbody>
                         </table>

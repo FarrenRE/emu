@@ -7,22 +7,13 @@ const themes = {
       addr: 'Level 27, Tower One, 100 Barangaroo Avenue, Sydney, NSW, 2000',
       website: 'https://www.adma.com.au',
       social: {
-        fb: {
-          url: 'http://www.facebook.com/adma.com.au',
-          img: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/icon_facebook.jpg'
-        },
-        tw: {
-          url: 'http://www.twitter.com/adma',
-          img: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/icon_twitter.jpg'
-        },
-        li: {
-          url: 'https://www.linkedin.com/company/adma',
-          img: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/icon_linkedin.jpg'
-        }
+        fb: { url: 'http://www.facebook.com/adma.com.au' },
+        tw: { url: 'http://www.twitter.com/adma' },
+        li: { url: 'https://www.linkedin.com/company/adma' }
       },
       logos: {
         header: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/ADMA_assoc_header-logos_400x75.jpg',
-        lockup: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/adma/ADMA-logo_footer_white_275x100.png',
+        lockup: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/adma/adma_alone_footer_275x100.png',
       },
       colors: {
         primary: '#CC0000',
@@ -32,7 +23,8 @@ const themes = {
         bgColor: '#F6F6F6',
         link: '#CC0000',
         header: '#FFFFFF',
-        footer: '#363636'
+        footer: '#363636',
+        socialIcons: '#4d4d4d'
       }
     },
     campaigns: {
@@ -116,22 +108,13 @@ const themes = {
       addr: 'Level 27, Tower One, 100 Barangaroo Avenue, Sydney, NSW, 2000',
       website: 'https://www.adma.com.au/iq',
       social: {
-        fb: {
-          url: 'http://www.facebook.com/adma.com.au',
-          img: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/icon_facebook.jpg'
-        },
-        tw: {
-          url: 'http://www.twitter.com/adma',
-          img: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/icon_twitter.jpg'
-        },
-        li: {
-          url: 'https://www.linkedin.com/company/adma',
-          img: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/icon_linkedin.jpg'
-        }
+        fb: { url: 'http://www.facebook.com/adma.com.au' },
+        tw: { url: 'http://www.twitter.com/adma' },
+        li: { url: 'https://www.linkedin.com/company/adma' }
       },
       logos: {
         header: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/IQ_assoc_header-logos_400x75.jpg',
-        lockup: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/adma/ADMA-logo_footer_white_275x100.png',
+        lockup: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/adma/adma_alone_footer_275x100.png',
       },
       colors: {
         primary: '#CC0000',
@@ -141,7 +124,8 @@ const themes = {
         bgColor: '#F6F6F6',
         link: '#CC0000',
         header: '#FFFFFF',
-        footer: '#363636'
+        footer: '#363636',
+        socialIcons: '#4d4d4d'
       },
     },
     campaigns: {
@@ -169,14 +153,8 @@ const themes = {
       addr: 'Level 27, Tower One, 100 Barangaroo Avenue, Sydney, NSW, 2000',
       website: 'https://www.iapa.org.au',
       social: {
-        tw: {
-          url: 'https://twitter.com/IAPA_org_au',
-          img: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/icon_twitter.jpg'
-        },
-        li: {
-          url: 'https://www.linkedin.com/company/institute-of-analytics-professionals',
-          img: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/adma/icon_linkedin.jpg'
-        }
+        tw: { url: 'https://twitter.com/IAPA_org_au' },
+        li: { url: 'https://www.linkedin.com/company/institute-of-analytics-professionals' }
       },
       logos: {
         header: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/IAPA_assoc_header-logos_400x75.jpg',
@@ -190,7 +168,8 @@ const themes = {
         bgColor: '#F6F6F6',
         link: '#fed41b',
         header: '#FFFFFF',
-        footer: '#363636'
+        footer: '#363636',
+        socialIcons: '#4d4d4d'
       },
     },
     campaigns: {
@@ -224,6 +203,7 @@ const themes = {
       },
     }
   },
+
   dtc: {
     org: {
       name: 'Digital + Technology Collective',
@@ -232,18 +212,9 @@ const themes = {
       addr: 'Level 27, Tower One, 100 Barangaroo Avenue, Sydney, NSW, 2000',
       website: 'https://www.dtcollective.org.au',
       social: {
-        fb: {
-          url: 'https://www.facebook.com/DigitalTechnologyCollective',
-          img: 'https://res.cloudinary.com/adma/image/upload/v1570510437/EMU/dtc/email-footer-social-links_PURPLE_facebook_uuzf98.png'
-        },
-        tw: {
-          url: 'https://twitter.com/DandTCollective',
-          img: 'https://res.cloudinary.com/adma/image/upload/v1570510437/EMU/dtc/email-footer-social-links_PURPLE_twitter_p759jb.png'
-        },
-        li: {
-          url: 'https://www.linkedin.com/company/72345',
-          img: 'https://res.cloudinary.com/adma/image/upload/v1570510437/EMU/dtc/email-footer-social-links_PURPLE_linkedin_z77jex.png'
-        }
+        fb: { url: 'https://www.facebook.com/DigitalTechnologyCollective' },
+        tw: { url: 'https://twitter.com/DandTCollective' },
+        li: { url: 'https://www.linkedin.com/company/72345' }
       },
       logos: {
         header: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/DTC_assoc_header-logos_400x75.jpg',
@@ -259,6 +230,7 @@ const themes = {
         footer: '#553278',
         header: '#FFFFFF',
         footerStripe: '#363636',
+        socialIcons: '#663c90'
       }
     },
     campaigns: {
@@ -307,6 +279,54 @@ const themes = {
           footerStripe: '#363636',
         }
       }
+    }
+  },
+
+  dga: {
+    org: {
+      name: 'Data Governance Australia',
+      abbr: 'DGA',
+      abn: '53 156 305 487',
+      addr: 'Level 27, Tower One, 100 Barangaroo Avenue, Sydney, NSW, 2000',
+      website: 'https://www.datagovernanceaus.com.au',
+      social: {
+        fb: { url: 'https://www.facebook.com/DataGovernanceAustralia' },
+        li: { url: 'https://www.linkedin.com/company/data-governance-australia' },
+        tw: { url: 'https://twitter.com/DataGovAus' }
+      },
+      logos: {
+        header: 'https://imgur.com/bbEfJHU.png',
+        lockup: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/dga/dga_alone_footer_275x100.png'
+      },
+      colors: {
+        primary: '#00adef',
+        primaryLighter: '#663c90',
+        primaryDarker: '#40265a',
+        secondary: '#FFFFFF',
+        bgColor: '#F6F6F6',
+        link: '#00adef',
+        footer: '#002C3D',
+        header: '#FFFFFF',
+        footerStripe: '#00adef',
+        socialIcons: '#004966'
+      }
+    },
+    campaigns: {
+      monthly: {
+        name: 'Monthly',
+        header: { type: 'monthly', image: 'https://imgur.com/bbEfJHU.png' },
+        colors: {
+          primary: '#002C3D',
+          primaryLighter: '#004966',
+          primaryDarker: '#00121a',
+          secondary: '#FFFFFF',
+          bgColor: '#F6F6F6',
+          link: '#00adef',
+          footer: '#002C3D',
+          header: '#FFFFFF',
+          footerStripe: '#00adef',
+        }
+      },
     }
   }
 }
