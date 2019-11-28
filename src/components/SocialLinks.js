@@ -1,25 +1,32 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import ThemeContext from './ThemeContext'
 
-const SocialLinks = ({ links, utms }) => {
+export default function SocialLinks ({ links, utms }) {
+  const theme = useContext(ThemeContext)
   let html = '';
   let name = '';
+  let iconUrl = '';
   for (let l of Object.keys(links)) {
+
     switch (l) {
       case 'fb':
         name = 'Facebook';
+        iconUrl = 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/social-ico_fb.png';
         break;
       case 'tw':
         name = 'Twitter';
+        iconUrl = 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/social-ico_tw.png';
         break;
       case 'li':
         name = 'LinkedIn';
+        iconUrl = 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/social-ico_li.png';
         break;
       default:
         console.log('SocialLinks error: default reached');
         break;
     }
 
-    html += `<td align="center" valign="top" width="47" height="47"><a href=${links[l].url + utms + '&utm_content=footerSocial' + name} name="social_footer_${name}" target="_blank" rel="noopener noreferrer" xt="SPCLICK"><img alt="${name}" border="0" width="47" height="47" src="${links[l].img}" style="display: block;" /></a></td>`;
+    html += `<td align="center" valign="top" width="47" height="47" bgcolor="${ theme.org.colors.socialIcons }"><a href=${links[l].url + utms + '&utm_content=footerSocial' + name} name="social_footer_${name}" target="_blank" rel="noopener noreferrer" xt="SPCLICK"><img alt="${name}" border="0" width="47" height="47" src="${iconUrl}" style="display: block;" /></a></td>`;
     html += `<td>&nbsp;</td>`;
   }
 
@@ -33,5 +40,3 @@ const SocialLinks = ({ links, utms }) => {
     </table>
   );
 };
-
-export default SocialLinks;
