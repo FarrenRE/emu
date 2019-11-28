@@ -17,7 +17,7 @@ export default function Button1(props) {
                     <table align="center" border={0} cellPadding={0} cellSpacing={0} style={{ backgroundColor: `${theme.campaign.colors.primary}` }} width={160}>
                       <tbody>
                         <tr>
-                          <td align="center" height={40} style={{ fontFamily: 'Helvetica, Arial, sans-serif', verticalAlign: 'middle', fontSize: '14px', textAlign: 'center', borderTop: `4px solid ${theme.campaign.colors.primaryLighter}`, borderBottom: `4px solid ${theme.campaign.colors.primaryDarker}` }} valign="middle"><Editable setActiveEdit={props.setActiveEdit} activeID={props.activeID}><a href={`${theme.org.website}${props.utms}&content=Button1`} name={`Button CTA ${props.id}`} style={{ color: `${theme.campaign.colors.secondary}`, display: 'block', textDecoration: 'none', fontWeight: 'bold' }} target="_blank" rel="noreferrer noopener">Click me!</a></Editable></td>
+                          <td align="center" width={160} height={40} style={{ fontFamily: 'Helvetica, Arial, sans-serif', verticalAlign: 'middle', fontSize: '14px', textAlign: 'center', borderTop: `4px solid ${theme.campaign.colors.primaryLighter}`, borderBottom: `4px solid ${theme.campaign.colors.primaryDarker}` }} valign="middle"><Editable setActiveEdit={props.setActiveEdit} activeID={props.activeID}><a href={`${theme.org.website}${props.utms}&content=Button1`} name={`Button CTA ${props.id}`} style={{ color: `${theme.campaign.colors.secondary}`, display: 'block', textDecoration: 'none', fontWeight: 'bold' }} target="_blank" rel="noreferrer noopener">Click me!</a></Editable></td>
                         </tr>
                       </tbody>
                     </table>

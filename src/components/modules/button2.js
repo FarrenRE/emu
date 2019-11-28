@@ -17,7 +17,7 @@ export default function Button2(props) {
                     <table align="center" border={0} cellPadding={0} cellSpacing={0} style={{ backgroundColor: `${theme.campaign.colors.primary}` }} width={145}>
                       <tbody>
                         <tr>
-                          <td align="center" height={40} style={{ fontFamily: 'Helvetica, Arial, sans-serif', verticalAlign: 'middle', fontSize: '14px', textAlign: 'center', borderTop: `4px solid ${theme.campaign.colors.primaryLighter}`, borderBottom: `4px solid ${theme.campaign.colors.primaryDarker}` }} valign="middle">
+                          <td align="center" width={145} height={40} style={{ fontFamily: 'Helvetica, Arial, sans-serif', verticalAlign: 'middle', fontSize: '14px', textAlign: 'center', borderTop: `4px solid ${theme.campaign.colors.primaryLighter}`, borderBottom: `4px solid ${theme.campaign.colors.primaryDarker}` }} valign="middle">
                             <Editable setActiveEdit={props.setActiveEdit} activeID={props.activeID}><a href={`${theme.org.website}${props.utms}&content=Button2L`} name={`Button2L CTA ${props.id}`} style={{ color: `${theme.campaign.colors.secondary}`, display: 'block', textDecoration: 'none', fontWeight: 'bold' }} target="_blank" rel="noreferrer noopener">Click me!</a></Editable>
                           </td>
                         </tr>
@@ -28,7 +28,7 @@ export default function Button2(props) {
                     <table align="center" border={0} cellPadding={0} cellSpacing={0} style={{ backgroundColor: `${theme.campaign.colors.primary}` }} width={145}>
                       <tbody>
                         <tr>
-                          <td align="center" height={40} style={{ fontFamily: 'Helvetica, Arial, sans-serif', verticalAlign: 'middle', fontSize: '14px', textAlign: 'center', borderTop: `4px solid ${theme.campaign.colors.primaryLighter}`, borderBottom: `4px solid ${theme.campaign.colors.primaryDarker}` }} valign="middle">
+                          <td align="center" width={145} height={40} style={{ fontFamily: 'Helvetica, Arial, sans-serif', verticalAlign: 'middle', fontSize: '14px', textAlign: 'center', borderTop: `4px solid ${theme.campaign.colors.primaryLighter}`, borderBottom: `4px solid ${theme.campaign.colors.primaryDarker}` }} valign="middle">
                             <Editable setActiveEdit={props.setActiveEdit} activeID={props.activeID}><a href={`${theme.org.website}${props.utms}&content=Button2R`} name={`Button2R CTA ${props.id}`} style={{ color: `${theme.campaign.colors.secondary}`, display: 'block', textDecoration: 'none', fontWeight: 'bold' }} target="_blank" rel="noreferrer noopener">Me too!</a></Editable>
                           </td>
                         </tr>

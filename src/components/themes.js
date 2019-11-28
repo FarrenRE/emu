@@ -25,7 +25,8 @@ const themes = {
         header: '#FFFFFF',
         footer: '#363636',
         socialIcons: '#4d4d4d'
-      }
+      },
+      mailClient: 'acoustic'
     },
     campaigns: {
       monthly: {
@@ -127,6 +128,7 @@ const themes = {
         footer: '#363636',
         socialIcons: '#4d4d4d'
       },
+      mailClient: 'acoustic'
     },
     campaigns: {
       monthly: {
@@ -171,6 +173,7 @@ const themes = {
         footer: '#363636',
         socialIcons: '#4d4d4d'
       },
+      mailClient: 'acoustic'
     },
     campaigns: {
       monthly: {
@@ -218,7 +221,7 @@ const themes = {
       },
       logos: {
         header: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/DTC_assoc_header-logos_400x75.jpg',
-        lockup: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/lockup/DTC-acs-lockup_edm-footer.png'
+        lockup: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/dtc/dtc_footer-logo.png'
       },
       colors: {
         primary: '#553278',
@@ -231,7 +234,8 @@ const themes = {
         header: '#FFFFFF',
         footerStripe: '#363636',
         socialIcons: '#663c90'
-      }
+      },
+      mailClient: 'cm'
     },
     campaigns: {
       monthly: {
@@ -309,7 +313,8 @@ const themes = {
         header: '#FFFFFF',
         footerStripe: '#00adef',
         socialIcons: '#004966'
-      }
+      },
+      mailClient: 'cm'
     },
     campaigns: {
       monthly: {

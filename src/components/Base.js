@@ -84,18 +84,18 @@ export default function Base(props) {
                   <tbody>
                     <tr>
                       {/* Left side*/}
-                      <td className="em_hide" height={50} valign="top">
+                      <td className="em_hide" height={30} valign="top">
                         <table align="left" border={0} cellPadding={0} cellSpacing={0} width="100%">
                           <tbody>
                             <tr>
-                              <td className="em_height" height={50}>&nbsp;</td>
+                              <td className="em_height" height={30}>&nbsp;</td>
                             </tr>
                           </tbody>
                         </table>
                       </td>
                       {/* Center*/}
                       <td width={600} bgcolor={theme.campaign.colors.header}>
-                        <table className="em_wrapper" align="center" border={0} cellPadding={0} cellSpacing={0} height={50} style={{ tableLayout: 'fixed' }} width={600}>
+                        <table className="em_wrapper" align="center" border={0} cellPadding={0} cellSpacing={0} height={30} style={{ tableLayout: 'fixed' }} width={600}>
                           <tbody>
                             <tr>
                               <td align="center" valign="middle" style={{ verticalAlign: 'middle' }}>
@@ -115,11 +115,11 @@ export default function Base(props) {
                         </table>
                       </td>
                       {/* Right side*/}
-                      <td className="em_hide" height={50} valign="top">
+                      <td className="em_hide" height={30} valign="top">
                         <table align="left" border={0} cellPadding={0} cellSpacing={0} width="100%">
                           <tbody>
                             <tr>
-                              <td className="em_height" height={50}>&nbsp;</td>
+                              <td className="em_height" height={30}>&nbsp;</td>
                             </tr>
                           </tbody>
                         </table>

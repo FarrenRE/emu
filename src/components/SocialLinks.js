@@ -26,10 +26,10 @@ export default function SocialLinks ({ links, utms }) {
         break;
     }
 
-    html += `<td align="center" valign="top" width="47" height="47" bgcolor="${ theme.org.colors.socialIcons }"><a href=${links[l].url + utms + '&utm_content=footerSocial' + name} name="social_footer_${name}" target="_blank" rel="noopener noreferrer" xt="SPCLICK"><img alt="${name}" border="0" width="47" height="47" src="${iconUrl}" style="display: block;" /></a></td>`;
+    html += `<td align="center" valign="top" width="47" height="47" bgcolor="${theme.campaign.colors.socialIcons ? theme.campaign.colors.socialIcons : theme.org.colors.socialIcons}"><a href=${links[l].url + utms + '&utm_content=footerSocial' + name} name="social_footer_${name}" target="_blank" rel="noopener noreferrer" xt="SPCLICK"><img alt="${name}" border="0" width="47" height="47" src="${iconUrl}" style="display: block;" /></a></td>`;
     html += `<td>&nbsp;</td>`;
   }
-
+  
   return (
     <table align="left" border={0} cellPadding={0} cellSpacing={0} width={60 * Object.keys(links).length}>
       <tbody>
