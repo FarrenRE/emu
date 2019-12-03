@@ -1,5 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
+import pretty from 'pretty';
 
 import Base from './Base';
 import DraftWYSIWYG from './DraftWYSIWYG';
@@ -122,7 +123,7 @@ class TemplatePicker extends React.Component {
     const edmHtml = document.getElementById('edm-content');
     const textarea = document.getElementById('edm-html');
 
-    textarea.value = edmHtml.innerHTML;
+    textarea.value = pretty( edmHtml.innerHTML );
   }
   render() {
     // spawn all Modules in array
