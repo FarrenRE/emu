@@ -76,98 +76,64 @@ export default function Base(props) {
       </head>
       <body>
         <table align="center" bgcolor={theme.campaign.colors.bgColor} border={0} cellPadding={0} cellSpacing={0} width="100%">
-          {/* ==Header Starts Here==*/}
           <tbody>
+            {/* 600px wrapper */}
             <tr>
-              <td align="center" valign="top">
-                <table align="center" border={0} cellPadding={0} cellSpacing={0} width="100%">
+              <td align="center" >
+                <table className="em_wrapper" align="center" border={0} cellPadding={0} cellSpacing={0} style={{ tableLayout: 'fixed' }} bgcolor={theme.campaign.colors.header} width={600}>
                   <tbody>
                     <tr>
-                      {/* Left side*/}
-                      <td className="em_hide" height={30} valign="top">
-                        <table align="left" border={0} cellPadding={0} cellSpacing={0} width="100%">
+                      <td align="center" valign="middle" style={{ verticalAlign: 'middle' }}>
+                        <table align="center" border={0} cellPadding={0} cellSpacing={0} width="100%">
                           <tbody>
                             <tr>
-                              <td className="em_height" height={30}>&nbsp;</td>
+                              <td><span className="preheader" style={{ color: theme.campaign.colors.bgColor, fontSize: '1px' }}>{props.preheader}</span></td>
                             </tr>
-                          </tbody>
-                        </table>
-                      </td>
-                      {/* Center*/}
-                      <td width={600} bgcolor={theme.campaign.colors.header}>
-                        <table className="em_wrapper" align="center" border={0} cellPadding={0} cellSpacing={0} height={30} style={{ tableLayout: 'fixed' }} width={600}>
-                          <tbody>
                             <tr>
-                              <td align="center" valign="middle" style={{ verticalAlign: 'middle' }}>
-                                <table align="center" border={0} cellPadding={0} cellSpacing={0} width="100%">
-                                  <tbody>
-                                    <tr>
-                                      <td><span className="preheader" style={{ color: theme.campaign.colors.bgColor, fontSize: '1px' }}>{props.preheader}</span></td>
-                                    </tr>
-                                    <tr>
-                                      <td style={{ textAlign: 'center', color: 'rgb(153, 153, 153)', fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '11px' }} valign="middle">If you cannot see this email, please <a href="#SPCLICKTOVIEW" name="SPCLICKTOVIEW" style={{ color: 'rgb(153, 153, 153)', textDecoration: 'underline' }} target="_blank" rel="noopener noreferrer" xt="SPCLICKTOVIEW">click to view it online</a></td>
-                                    </tr>
-                                  </tbody>
-                                </table>
+                              <td className="em_height" height={5} style={{ fontSize: '1px', lineHeight: '1px' }}>&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td style={{ textAlign: 'center', color: 'rgb(153, 153, 153)', fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '11px' }} valign="middle">
+                                If you cannot see this email, please&nbsp;
+                                {theme.org.mailClient === 'acoustic' ? (
+                                  <a href="#SPCLICKTOVIEW" name="SPCLICKTOVIEW" style={{ color: 'rgb(153, 153, 153)', textDecoration: 'underline' }} target="_blank" rel="noopener noreferrer" xt="SPCLICKTOVIEW">click to view it online</a>
+                                ) : (
+                                  <webversion>click to view it online</webversion>
+                                )}
                               </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </td>
-                      {/* Right side*/}
-                      <td className="em_hide" height={30} valign="top">
-                        <table align="left" border={0} cellPadding={0} cellSpacing={0} width="100%">
-                          <tbody>
-                            <tr>
-                              <td className="em_height" height={30}>&nbsp;</td>
                             </tr>
                           </tbody>
                         </table>
                       </td>
                     </tr>
-                  </tbody>
-                </table>
-              </td>
-            </tr>
-            {/* // header ends here==*/}
-            {/* ==Body Starts Here==*/}
-            <tr>
-              <td align="center">
-                <table className="em_wrapper" align="center" border={0} cellPadding={0} cellSpacing={0} style={{ tableLayout: 'fixed' }} width={600}>
-                  <tbody>
                     <tr>
                       <td align="center" valign="top">
                         <table align="center" bgcolor={theme.campaign.colors.header} border={0} cellPadding={0} cellSpacing={0} width="100%">
-                          {/* banner image starts here*/}
                           <tbody>
                             <tr>
                               <td>
-
                                 {theme.campaign.header.type === 'monthly' ? <HeaderMonthly theme={theme} utms={props.utms} /> : ''}
                                 {theme.campaign.header.type === 'image' ? <HeaderImage theme={theme} utms={props.utms} /> : ''}
-
                               </td>
                             </tr>
                             <tr>
                               <td className="em_height" bgcolor="#FFFFFF" height={20} style={{ lineHeight: '1px', fontSize: '1px', borderTopColor: `${theme.campaign.colors.primary}`, borderTopWidth: '3px', borderTopStyle: 'solid' }}></td>
                             </tr>
-                            {/* Full Content Section starts here*/}
                             <tr>
                               <td valign="top">
                                 <table align="center" bgcolor="#FFFFFF" border={0} cellPadding={0} cellSpacing={0} width="100%">
                                   <tbody>
                                     <tr>
                                       <td valign="top">
-                                        {/* body*/}
+                                        {/* modules */}
                                         {props.children}
-                                        {/* /body*/}
+                                        {/* /modules */}
                                       </td>
                                     </tr>
                                   </tbody>
                                 </table>
                               </td>
                             </tr>
-                            {/* // Full Content section ends here*/}
                           </tbody>
                         </table>
                       </td>
@@ -176,8 +142,8 @@ export default function Base(props) {
                 </table>
               </td>
             </tr>
-            {/* // Body Ends Here*/}
-            {/* ===Footer Starts Here===*/}
+            {/* /600px wrapper */}
+            {/* footer */}
             <tr>
               <td align="center" valign="top">
                 <table align="center" bgcolor={theme.campaign.colors.footer} border={0} cellPadding={0} cellSpacing={0} width="100%">
@@ -206,7 +172,15 @@ export default function Base(props) {
                                                   <tbody>
                                                     <tr>
                                                       <td className="em_white" width={450} style={{ textAlign: 'left', color: 'rgb(255, 255, 255)', lineHeight: '13px', fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '10px' }}>
-                                                        ACS trading as {theme.org.abbr}. {theme.org.addr}. ABN: {theme.org.abn}. This email was sent to %%email%%. Click <a href="http://www.pages01.net/adma/ADMAPreference/unsubscribe.html/" name="www_pages01_net_adma_ADMAPrefe" style={{ color: 'rgb(255, 255, 255)' }} xt="SPCLICK">here</a>	if you prefer not to receive emails from {theme.org.abbr}.</td>
+                                                        Australian Computer Society (ACS) trading as {theme.org.name} ({theme.org.abbr}). {theme.org.addr}. ABN: {theme.org.abn}. 
+                                                        This email was sent to {theme.org.mailClient === 'acoustic' ? `%%email%%` : `[email]`}. 
+                                                        Click {theme.org.mailClient === 'acoustic' ? (
+                                                          <a href="http://www.pages01.net/adma/ADMAPreference/unsubscribe.html/" name="www_pages01_net_adma_ADMAPrefe" style={{ color: 'rgb(255, 255, 255)', textDecoration: 'underline' }} xt="SPCLICK">here</a>
+                                                        ) : (
+                                                          <unsubscribe>here</unsubscribe>
+                                                        )}
+                                                        &nbsp;if you prefer not to receive emails from {theme.org.abbr}.
+                                                      </td>
                                                       <td>&nbsp;</td>
                                                       <td className="em_pad_top" align="right" valign="top"><img alt="ADMA" border={0} height={40} src={theme.org.logos.lockup} style={{ display: 'block' }} title="ADMA" width={110} /></td>
 
@@ -253,8 +227,6 @@ export default function Base(props) {
                 </table>
               </td>
             </tr>
-            {/* // Footer Ends Here*/}
-            {/* Line Starts Here*/}
             <tr>
               <td align="center" bgcolor={theme.campaign.colors.footerStripe ? theme.campaign.colors.footerStripe : theme.campaign.colors.primary} height={3}>
                 <table align="center" border={0} cellPadding={0} cellSpacing={0} style={{ tableLayout: 'fixed' }} width="100%">
@@ -274,8 +246,6 @@ export default function Base(props) {
                 </table>
               </td>
             </tr>
-            {/* // Line Ends Here*/}
-            {/* Copy Rights Starts Here*/}
             <tr>
               <td align="center" bgcolor="#010101">
                 <table className="em_wrapper" align="center" border={0} cellPadding={0} cellSpacing={0} style={{ tableLayout: 'fixed' }} width={580}>
@@ -295,7 +265,6 @@ export default function Base(props) {
                 </table>
               </td>
             </tr>
-            {/* //Copy Rights Ends Here*/}
           </tbody>
         </table>
       </body>

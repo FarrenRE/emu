@@ -16,7 +16,7 @@ export default function Text(props) {
                 <tr>
                   <td align="left" style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontSize: '14px', color: '#494949' }}>
                     <Editable setActiveEdit={props.setActiveEdit} activeID={props.activeID}>
-                      Hello %%FIRST NAME%%,<br /><br />Lorem ipsum dolor sit amet, consectetur <a href={`${theme.org.website}${props.utms}&content=inline`}>adipiscing elit</a>. Nullam hendrerit fermentum turpis sit amet luctus. Curabitur ac purus tortor. <br /><br /> Praesent non pretium ex.
+                      Hello {theme.org.mailClient === 'acoustic' ? `%%FIRST NAME%%` : `[firstname, fallback=there]`},<br /><br />Lorem ipsum dolor sit amet, consectetur <a href={`${theme.org.website}${props.utms}&content=inline`}>adipiscing elit</a>. Nullam hendrerit fermentum turpis sit amet luctus. Curabitur ac purus tortor. <br /><br /> Praesent non pretium ex.
                     </Editable>
                   </td>
                 </tr>

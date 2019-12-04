@@ -11,6 +11,8 @@ const ModuleSpawner = ({ spawnChild, despawnChild }) => {
       <button className='button' onClick={spawnChild} value='banner'>Spawn banner</button>
       <button className='button' onClick={spawnChild} value='button1'>Spawn button1</button>
       <button className='button' onClick={spawnChild} value='button2'>Spawn button2</button>
+      <button className='button' onClick={spawnChild} value='calendar'>Spawn calendar</button>
+      <button className='button' onClick={spawnChild} value='dateBlock'>Spawn dateBlock</button>
       <button className='button is-danger' onClick={despawnChild}>Despawn module</button>
     </div>
   );

@@ -1,5 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
+import pretty from 'pretty';
 
 import Base from './Base';
 import DraftWYSIWYG from './DraftWYSIWYG';
@@ -27,7 +28,7 @@ class TemplatePicker extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      modules: ['text', 'heading', 'content2', 'contentLeft', 'text2', 'button2', 'banner', 'button1'],
+      modules: ['text', 'heading', 'content2', 'contentLeft', 'text2', 'button2', 'banner', 'heading', 'dateBlock', 'dateBlock', 'calendar', 'button1'],
       assoc: 'adma',
       campaign: 'monthly',
       utm: { medium: 'Email', source: 'ADMA', campaign: 'Monthly' },
@@ -122,7 +123,7 @@ class TemplatePicker extends React.Component {
     const edmHtml = document.getElementById('edm-content');
     const textarea = document.getElementById('edm-html');
 
-    textarea.value = edmHtml.innerHTML;
+    textarea.value = pretty( edmHtml.innerHTML );
   }
   render() {
     // spawn all Modules in array

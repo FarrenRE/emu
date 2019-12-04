@@ -26,6 +26,9 @@ const themes = {
         footer: '#363636',
         socialIcons: '#4d4d4d'
       },
+      styles: {
+        fontFamily: 'Arial, Helvetica, sans-serif'
+      },
       mailClient: 'acoustic'
     },
     campaigns: {
@@ -114,7 +117,7 @@ const themes = {
         li: { url: 'https://www.linkedin.com/company/adma' }
       },
       logos: {
-        header: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/IQ_assoc_header-logos_400x75.jpg',
+        header: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/iq/adma-iq_emu-header.png',
         lockup: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/adma/adma_alone_footer_275x100.png',
       },
       colors: {
@@ -127,6 +130,9 @@ const themes = {
         header: '#FFFFFF',
         footer: '#363636',
         socialIcons: '#4d4d4d'
+      },
+      styles: {
+        fontFamily: 'Arial, Helvetica, sans-serif'
       },
       mailClient: 'acoustic'
     },
@@ -173,6 +179,9 @@ const themes = {
         footer: '#363636',
         socialIcons: '#4d4d4d'
       },
+      styles: {
+        fontFamily: 'Helvetica, Arial, sans-serif'
+      },
       mailClient: 'acoustic'
     },
     campaigns: {
@@ -185,7 +194,7 @@ const themes = {
           primaryDarker: '#fed41b',
           secondary: '#333333',
           bgColor: '#F6F6F6',
-          link: '#fed41b',
+          link: '#363636',
           header: '#FFFFFF',
           footer: '#363636'
         },
@@ -234,6 +243,9 @@ const themes = {
         header: '#FFFFFF',
         footerStripe: '#363636',
         socialIcons: '#663c90'
+      },
+      styles: {
+        fontFamily: 'Arial, Helvetica, sans-serif'
       },
       mailClient: 'cm'
     },
@@ -313,6 +325,9 @@ const themes = {
         header: '#FFFFFF',
         footerStripe: '#00adef',
         socialIcons: '#004966'
+      },
+      styles: {
+        fontFamily: 'Arial, Helvetica, sans-serif'
       },
       mailClient: 'cm'
     },
