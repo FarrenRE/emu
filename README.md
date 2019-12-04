@@ -5,6 +5,7 @@ transform this menial task into something a little more convenient for all.
 
 This app will put together pre-defined modules (HTML blocks) in a variety of configurations (at the user's discretion).
 
+Demo: [admaemu.netlify.com](http://admaemu.netlify.com/)
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
