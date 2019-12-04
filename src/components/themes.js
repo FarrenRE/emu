@@ -117,7 +117,7 @@ const themes = {
         li: { url: 'https://www.linkedin.com/company/adma' }
       },
       logos: {
-        header: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/IQ_assoc_header-logos_400x75.jpg',
+        header: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/iq/adma-iq_emu-header.png',
         lockup: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/adma/adma_alone_footer_275x100.png',
       },
       colors: {
