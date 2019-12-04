@@ -26,6 +26,9 @@ const themes = {
         footer: '#363636',
         socialIcons: '#4d4d4d'
       },
+      styles: {
+        fontFamily: 'Arial, Helvetica, sans-serif'
+      },
       mailClient: 'acoustic'
     },
     campaigns: {
@@ -128,6 +131,9 @@ const themes = {
         footer: '#363636',
         socialIcons: '#4d4d4d'
       },
+      styles: {
+        fontFamily: 'Arial, Helvetica, sans-serif'
+      },
       mailClient: 'acoustic'
     },
     campaigns: {
@@ -173,6 +179,9 @@ const themes = {
         footer: '#363636',
         socialIcons: '#4d4d4d'
       },
+      styles: {
+        fontFamily: 'Helvetica, Arial, sans-serif'
+      },
       mailClient: 'acoustic'
     },
     campaigns: {
@@ -185,7 +194,7 @@ const themes = {
           primaryDarker: '#fed41b',
           secondary: '#333333',
           bgColor: '#F6F6F6',
-          link: '#fed41b',
+          link: '#363636',
           header: '#FFFFFF',
           footer: '#363636'
         },
@@ -234,6 +243,9 @@ const themes = {
         header: '#FFFFFF',
         footerStripe: '#363636',
         socialIcons: '#663c90'
+      },
+      styles: {
+        fontFamily: 'Arial, Helvetica, sans-serif'
       },
       mailClient: 'cm'
     },
@@ -313,6 +325,9 @@ const themes = {
         header: '#FFFFFF',
         footerStripe: '#00adef',
         socialIcons: '#004966'
+      },
+      styles: {
+        fontFamily: 'Arial, Helvetica, sans-serif'
       },
       mailClient: 'cm'
     },
