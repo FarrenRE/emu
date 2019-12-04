@@ -105,7 +105,14 @@ export default function Base(props) {
                                       <td><span className="preheader" style={{ color: theme.campaign.colors.bgColor, fontSize: '1px' }}>{props.preheader}</span></td>
                                     </tr>
                                     <tr>
-                                      <td style={{ textAlign: 'center', color: 'rgb(153, 153, 153)', fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '11px' }} valign="middle">If you cannot see this email, please <a href="#SPCLICKTOVIEW" name="SPCLICKTOVIEW" style={{ color: 'rgb(153, 153, 153)', textDecoration: 'underline' }} target="_blank" rel="noopener noreferrer" xt="SPCLICKTOVIEW">click to view it online</a></td>
+                                      <td style={{ textAlign: 'center', color: 'rgb(153, 153, 153)', fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '11px' }} valign="middle">
+                                        If you cannot see this email, please&nbsp;
+                                        {theme.org.mailClient === 'acoustic' ? (
+                                          <a href="#SPCLICKTOVIEW" name="SPCLICKTOVIEW" style={{ color: 'rgb(153, 153, 153)', textDecoration: 'underline' }} target="_blank" rel="noopener noreferrer" xt="SPCLICKTOVIEW">click to view it online</a>
+                                        ) : (
+                                          <webversion>click to view it online</webversion>
+                                        )}
+                                      </td>
                                     </tr>
                                   </tbody>
                                 </table>
@@ -206,7 +213,15 @@ export default function Base(props) {
                                                   <tbody>
                                                     <tr>
                                                       <td className="em_white" width={450} style={{ textAlign: 'left', color: 'rgb(255, 255, 255)', lineHeight: '13px', fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '10px' }}>
-                                                        ACS trading as {theme.org.abbr}. {theme.org.addr}. ABN: {theme.org.abn}. This email was sent to %%email%%. Click <a href="http://www.pages01.net/adma/ADMAPreference/unsubscribe.html/" name="www_pages01_net_adma_ADMAPrefe" style={{ color: 'rgb(255, 255, 255)' }} xt="SPCLICK">here</a>	if you prefer not to receive emails from {theme.org.abbr}.</td>
+                                                        Australian Computer Society (ACS) trading as {theme.org.name} ({theme.org.abbr}). {theme.org.addr}. ABN: {theme.org.abn}. 
+                                                        This email was sent to {theme.org.mailClient === 'acoustic' ? `%%email%%` : `[email]`}. 
+                                                        Click {theme.org.mailClient === 'acoustic' ? (
+                                                          <a href="http://www.pages01.net/adma/ADMAPreference/unsubscribe.html/" name="www_pages01_net_adma_ADMAPrefe" style={{ color: 'rgb(255, 255, 255)', textDecoration: 'underline' }} xt="SPCLICK">here</a>
+                                                        ) : (
+                                                          <unsubscribe>here</unsubscribe>
+                                                        )}
+                                                        &nbsp;if you prefer not to receive emails from {theme.org.abbr}.
+                                                      </td>
                                                       <td>&nbsp;</td>
                                                       <td className="em_pad_top" align="right" valign="top"><img alt="ADMA" border={0} height={40} src={theme.org.logos.lockup} style={{ display: 'block' }} title="ADMA" width={110} /></td>
 
