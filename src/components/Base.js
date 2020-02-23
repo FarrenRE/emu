@@ -175,9 +175,9 @@ export default function Base(props) {
                                                         Australian Computer Society (ACS) trading as {theme.org.name} ({theme.org.abbr}). {theme.org.addr}. ABN: {theme.org.abn}. 
                                                         This email was sent to {theme.org.mailClient === 'acoustic' ? `%%email%%` : `[email]`}. 
                                                         To manage your preferences or unsubscribe, {theme.org.mailClient === 'acoustic' ? (
-                                                          <a href="https://www.pages01.net/adma/ADMAPreference/preferences" name="preference_centre" style={{ color: 'rgb(255, 255, 255)', textDecoration: 'underline' }} xt="SPCLICK">click here</a>
+                                                          <a href={theme.org.preferencesURL} name="preference_centre" style={{ color: 'rgb(255, 255, 255)', textDecoration: 'underline' }} xt="SPCLICK">click here</a>
                                                         ) : (
-                                                          <unsubscribe>click here</unsubscribe>
+                                                          <preferences>click here</preferences>
                                                         )}.
                                                       </td>
                                                       <td>&nbsp;</td>

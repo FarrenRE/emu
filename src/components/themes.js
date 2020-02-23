@@ -29,7 +29,8 @@ const themes = {
       styles: {
         fontFamily: 'Arial, Helvetica, sans-serif'
       },
-      mailClient: 'acoustic'
+      mailClient: 'acoustic',
+      preferencesURL: 'https://www.pages01.net/adma/preference-centre/adma-edm/'
     },
     campaigns: {
       monthly: {
@@ -104,6 +105,7 @@ const themes = {
       }
     }
   },
+
   iq: {
     org: {
       name: 'Association for Data-driven Marketing and Advertising',
@@ -134,7 +136,8 @@ const themes = {
       styles: {
         fontFamily: 'Arial, Helvetica, sans-serif'
       },
-      mailClient: 'acoustic'
+      mailClient: 'acoustic',
+      preferencesURL: 'https://www.pages01.net/adma/preference-centre/adma-edm/'
     },
     campaigns: {
       monthly: {
@@ -153,6 +156,7 @@ const themes = {
       }
     }
   },
+
   iapa: {
     org: {
       name: 'Institute for Analytics Professionals of Australia',
@@ -182,7 +186,8 @@ const themes = {
       styles: {
         fontFamily: 'Helvetica, Arial, sans-serif'
       },
-      mailClient: 'acoustic'
+      mailClient: 'acoustic',
+      preferencesURL: 'https://www.pages01.net/adma/preference-centre/iapa-edm/'
     },
     campaigns: {
       monthly: {
@@ -247,7 +252,7 @@ const themes = {
       styles: {
         fontFamily: 'Arial, Helvetica, sans-serif'
       },
-      mailClient: 'cm'
+      mailClient: 'cm',
     },
     campaigns: {
       monthly: {
