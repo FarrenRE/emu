@@ -44,22 +44,27 @@ main {
   right: 50%;
 }
 
+.editor-header-1 {
+  font-size: 2rem;
+}
+
 /* Editable */
 .editable.active {
   border: 2px dotted rebeccapurple;
 }
 
 /* Module Spawner */
-.module-spawner {
-  display: flex;
-  flex-flow: row wrap;
-  margin: auto;
-  max-width: 450px;
+.module-spawner h1 {
+  font-size: 1.25rem;
+  font-weight: bold;
 }
 
-.module-spawner > * {
-  margin: auto;
-  padding: 0 0.25em;
+.module-spawner__group {
+  margin: 0 auto 1rem auto;
+}
+
+.module-spawner__group > * {
+  margin: 0.25rem;
 }
 
 /* Editors */
