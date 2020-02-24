@@ -10,7 +10,9 @@ import Button1 from './modules/button1';
 import Button2 from './modules/button2';
 import Heading from './modules/heading';
 import Calendar from './modules/calendar';
+import DynamicContentCourses from './modules/DynamicContentCourses';
 import DateBlock from './modules/dateBlock';
+import DynamicContentEvents from './modules/DynamicContentEvents';
 
 class Module extends React.Component {
   constructor(props) {
@@ -47,8 +49,14 @@ class Module extends React.Component {
       case 'calendar':
         newModule = <Calendar key={this.props.id} id={this.props.id} utms={this.props.utms} />;
         break;
+      case 'dynamicContentCourses':
+        newModule = <DynamicContentCourses key={this.props.id} id={this.props.id} />;
+        break;
       case 'dateBlock':
         newModule = <DateBlock key={this.props.id} id={this.props.id} utms={this.props.utms} />;
+        break;
+      case 'dynamicContentEvents':
+        newModule = <DynamicContentEvents key={this.props.id} id={this.props.id} />;
         break;
       default:
         break;

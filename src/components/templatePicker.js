@@ -175,27 +175,28 @@ class TemplatePicker extends React.Component {
             <div className='column'>
               <div className={`editor editor--text`}>
                 <div style={{ marginBottom: '1em' }}>
+                  <h1 className='editor-header-1'>Editor</h1>
                   <DraftWYSIWYG
                     key={this.id}
                     content={this.state.editorContent}
                     updateEditable={this.updateEditable} />
                 </div>
               </div>
-              <h2>Spawn Modules</h2>
               <div style={{ marginBottom: '1em' }}>
+                <h1 className='editor-header-1'>Spawn Modules</h1>
                 <ModuleSpawner
                   spawnChild={this.spawnChild}
                   despawnChild={this.despawnChild} />
               </div>
               <div style={{ marginBottom: '1em' }}>
+                <h1 className='editor-header-1'>UTMs &amp; Preheader</h1>
                 utm_medium=<input onChange={this.updateUtm} type='text' name='medium' defaultValue='Email' /><br />
                 utm_source=<input onChange={this.updateUtm} type='text' name='source' defaultValue={this.state.assoc.toUpperCase()} /><br />
-                utm_campaign<input onChange={this.updateUtm} type='text' name='campaign' defaultValue='Monthly' />
-              </div>
-              <div style={{ marginBottom: '1em' }}>
+                utm_campaign<input onChange={this.updateUtm} type='text' name='campaign' defaultValue='Monthly' /><br />
                 Preheader: <input onChange={this.onInputUpdate} type='text' name='preheader' defaultValue={'I\'ll be a header one day!'} />
               </div>
               <div style={{ marginBottom: '1em' }}>
+               <h1 className='editor-header-1'>Export</h1>
                 <textarea id='edm-html' /><br />
                 <button onClick={this.getHtml}>Get HTML</button>
               </div>
