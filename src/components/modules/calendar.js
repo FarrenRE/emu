@@ -11,7 +11,7 @@ export default function Calendar(props) {
             <table align="center" border={0} cellPadding={0} cellSpacing={0} width="100%" style={{fontFamily: theme.org.styles.fontFamily}}>
               <tbody>
                 <tr bgcolor={theme.campaign.colors.primary} height={45}>
-                  <th align="center" valign="middle" style={{textAlign: 'center', color: theme.campaign.colors.secondary, verticalAlign: 'middle', fontSize: '16px', fontWeight: 'bold', lineHeight: '30px'}}>Upcoming Courses</th>
+                  <th align="center" valign="middle" style={{textAlign: 'center', color: theme.campaign.colors.secondary, verticalAlign: 'middle', fontSize: '16px', fontWeight: 'bold', lineHeight: '30px'}}>Course</th>
                   <th align="center" valign="middle" style={{textAlign: 'center', color: theme.campaign.colors.secondary, verticalAlign: 'middle', fontSize: '16px', fontWeight: 'bold', lineHeight: '30px'}}>Location</th>
                   <th align="center" valign="middle" style={{textAlign: 'center', color: theme.campaign.colors.secondary, verticalAlign: 'middle', fontSize: '16px', fontWeight: 'bold', lineHeight: '30px'}}>Date</th>
                 </tr>
