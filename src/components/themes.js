@@ -61,6 +61,20 @@ const themes = {
         },
         header: { type: 'image', image: 'https://imgur.com/T41cCt3.png' }
       },
+      dataWeek: {
+        name: 'Data Week',
+        colors: {
+          primary: '#CC0000',
+          primaryLighter: '#e60000',
+          primaryDarker: '#b30000',
+          secondary: '#FFFFFF',
+          bgColor: '#F6F6F6',
+          link: '#CC0000',
+          header: '#FFFFFF',
+          footer: '#363636'
+        },
+        header: { type: 'image', image: 'https://adma-public-assets.s3-ap-southeast-2.amazonaws.com/edm/EMU/adma/adma-data-week-emu-header_400x75.png' }
+      },
       aceAwards: {
         name: 'AC&E Awards',
         colors: {
