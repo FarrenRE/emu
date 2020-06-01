@@ -13,6 +13,7 @@ import Calendar from './modules/calendar';
 import DynamicContentCourses from './modules/DynamicContentCourses';
 import DateBlock from './modules/dateBlock';
 import DynamicContentEvents from './modules/DynamicContentEvents';
+import ProgramTable from './modules/ProgramTable';
 
 class Module extends React.Component {
   constructor(props) {
@@ -57,6 +58,9 @@ class Module extends React.Component {
         break;
       case 'dynamicContentEvents':
         newModule = <DynamicContentEvents key={this.props.id} id={this.props.id} />;
+        break;
+      case 'programTable':
+        newModule = <ProgramTable key={this.props.id} id={this.props.id} />
         break;
       default:
         break;
