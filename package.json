@@ -17,7 +17,7 @@
     "react-dom": "^16.9.0",
     "react-draft-wysiwyg": "^1.13.2",
     "react-popupbox": "^2.0.8",
-    "react-scripts": "3.1.1"
+    "react-scripts": "5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
